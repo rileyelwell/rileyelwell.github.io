@@ -1,2 +1,2 @@
 # rileyelwell.github.io
-My Portfolio
+This repo contains code for my personal website and portfolio!
