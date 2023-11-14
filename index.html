@@ -17,40 +17,23 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
+
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="#page-top">Riley Elwell</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li> -->
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="about.html">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded active-page" href="#">Portfolio</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="resume.html">Resume</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="blog.html">Blog</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/portfolio/riley_profile.jpg" alt="..." />
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Riley Elwell</h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Computer Science - Game Design/Development - Software Engineering</p>
-            </div>
-        </header>
+
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
@@ -62,343 +45,65 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+
+
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+
+                    <a href="truck-stop.html" class="col-md-6 col-lg-4 mb-5 mb-md-0" style="padding-bottom: 30px;">
+                        <div class="portfolio-item mx-auto">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"><i>Truck Stop (Personal)</i></div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/truckstop.png" alt="..." />
                         </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                    </a>
+
+                    <a href="galaga-reinspired.html" class="col-md-6 col-lg-4 mb-5 mb-md-0" style="padding-bottom: 30px;">
+                        <div class="portfolio-item mx-auto">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"><i>Galaga Reinspired (Personal)</i></div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/galaga_title.png" alt="..." />
                         </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                    </a>
+
+                    <a href="grass-shader.html" class="col-md-6 col-lg-4 mb-5 mb-md-0" style="padding-bottom: 30px;">
+                        <div class="portfolio-item mx-auto">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"><i>Grass Shader (Academic)</i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/grass_shader_title.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/grass_shader.png" alt="..." />
                         </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                    </a>
+
+                    <a href="object-hunt.html" class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                        <div class="portfolio-item mx-auto">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"><i>Object Hunt (Academic)</i></div>
                             </div>
                             <img class="img-fluid" src="assets/img/portfolio/object_hunt_title.png" alt="..." />
                         </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <!-- <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                    </a>
+
+                    <a href="capstone.html" class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                        <div class="portfolio-item mx-auto">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"><i>Capstone Vehicle Simulator (Academic)</i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/chess_title.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/capstone_title.png" alt="..." />
                         </div>
-                    </div> -->
-                    <!-- Portfolio Item 6-->
-                    <!-- <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="..." />
-                        </div>
-                    </div> -->
+                    </a>
+                    
                 </div>
             </div>
         </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Computer science student with a strong passion for software engineering, game development, and new technology. Strong collaboration and technical skills. Looking to create innovative solutions to tackle challenges associated with high-volume demands and enhance the overall player experience.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">My expected graduation date is June 2024. I am currently applying for graduate programs and summer internship opportunities with the goal of expanding my knowledge and experience in the industry!</p></div>
-                </div>
-                <!-- About Social Icons-->
-                <div class="social-icons">
-                    <h4 class="text-uppercase mb-4">Other Links</h4>
-                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a>
-                </div>
-            </div>
-        </section>
+
         
         
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container">rileyelwell2@gmail.com | (661) 337-8086</div>
-        </div>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Truck Stop</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <p class="mb-4" style="white-space: pre-line">Genre: 2D Infinite Side-Scroller
-                                        Software: Unity, Aesprite
-                                        Languages: C#
-                                        Project Role: Solo Developer
-                                    </p>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/truckstop_title.png" alt="..." />
-                                    <iframe width="640" height="360" src="https://www.youtube.com/embed/iiA_4t6DRVA" frameborder="0" allowfullscreen></iframe> 
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4" style="white-space: pre-line">Description: This is a simple 2D infinite side-scroller game where you control a truck that must stop at infinitely-appearing stop signs. There are gameplay elements that include varying truck speeds and road friction to increase difficulty. I developed a pooling system for resetting GameObjects (signs, truck, background, etc.) to optimize the performance.
-
-                                        Inspiration: During Summer 2023 I interned at Daimler Truck North America and was inspired by their trucks (and my time there). I wanted to show an original creative product to my co-workers before leaving, so I constructed this project in 4-5 days. I created all assets, except a free truck horn audio clip.
-                                        
-                                        The game can be played here: https://rileyelwell.itch.io/truck-stop</p>
-                                    <!-- <img class="img-fluid rounded mb-5" src="assets/img/portfolio/truckstop.png" alt="..." /> -->
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Galaga ReInspired</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <p class="mb-4" style="white-space: pre-line">Genre: 2D Space Shooter
-                                        Software: Unity, Aesprite
-                                        Languages: C#
-                                        Project Role: Solo Developer
-                                    </p>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/galaga_.png" alt="..." />
-                                    <iframe width="640" height="360" src="https://www.youtube.com/embed/ID8pjIds1vY" frameborder="0" allowfullscreen></iframe>                                    
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4" style="white-space: pre-line">Description: Inspired by the original Galaga, this is a simple 2D space shooter game. You control a small ship, and your goal is to shoot bullets to hit the ships that infinitely appear. There are three types of ships that all have slightly different movement mechanics. The higher the score the better!
-                                        
-                                        The Inspiration: This is my first game I developed and I wanted to start with something simple. I remembered how much I enjoyed playing Galaga as a kid, so I decided recreate elements from that game while using my own ideas too. I used Unity and created the assets myself (except the free space background image), taking about a month to flesh out details. I experimented with bullet pools and spawning ships with different methods to improve performance. 
-                                        
-                                        The game can be played at: https://rileyelwell.itch.io/galaga-reinspired</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">GLSL Grass Shader</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <p class="mb-4" style="white-space: pre-line">Genre: Grass Shader, Experimenting
-                                        Software: Visual Studio
-                                        Languages: OpenGL/GLSL, C++
-                                        Project Role: Solo Developer
-                                    </p>
-                                    <!-- Portfolio Modal - Image + Video-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/grass_shader.png" alt="..." />
-                                    <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/391241/sp/39124100/embedIframeJs/uiconf_id/22119142/partner_id/391241?iframeembed=true&playerId=kaltura_player&entry_id=1_5e39cyra&flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_c3l4n4xn" width="480" height="304" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="CS 457 - Final Project - Grass Shader"></iframe>
-                                    
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4" style="white-space: pre-line">Description: During my Computer Graphics Shaders course at Oregon State University, I was tasked with creating a final project experimenting with a shader not explored in the curriculum. I decided on researching and developing a realistic grass shader.
-                                    
-                                        The video goes more in depth, but my process included applying methods such as billboarding, adding rotated quads for fuller grass, and Fractal Brownian Motion for a somewhat random color of grass across a period of space. For the wind simulation, I used a noise texture and applied it to the top of the grass for "random" movement.   
-                                    </p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Object Hunt</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <p class="mb-4" style="white-space: pre-line">Genre: Multiplayer Mobile Game (Android)
-                                        Software: Android Studio
-                                        Languages: Kotlin, JS
-                                        Project Role: Google Maps API Dev / Backend Assister
-                                    </p>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/object_hunt.png" alt="..." />
-                                    <iframe width="640" height="360" src="https://www.youtube.com/embed/Jfhe_h0TT1U" frameborder="0" allowfullscreen></iframe>
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4" style="white-space: pre-line">ObjectHunt is a fun and interactive two-player game that challenges players to find objects based on their name and location. The objective of the game is to be the first player to locate the object and take a picture of it while being in the right location. Each successful capture earns a point, and the game continues until all objects in the submitted queue have been found.
-
-                                        To detect objects, ObjectHunt uses Android ML Kit on the frontend and Google's Vision API on the backend. Additionally, to support the app's multiplayer capability, our team wrote a custom backend using Node.js as the framework and Socket.IO as the communication library.
-                                        
-                                        Team Members: Adilbek Bazarkulov, Anh Nguyen, Riley Elwell, Imgyeong Lee
-                                    </p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">2D Chess Website</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <p class="mb-4" style="white-space: pre-line">Genre: Website, 2D Chess
-                                        Software: Unity, Node.js
-                                        Languages: HTML, CSS, JS, C#
-                                        Project Role: Unity Developer, Backend Assister
-                                    </p>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>

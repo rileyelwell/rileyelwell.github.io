@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Grass Shader - Riley Elwell</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Riley Elwell</a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="about.html">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">Portfolio</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="resume.html">Resume</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="blog.html">Blog</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Grass Shader</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                
+                <!-- Demo Video Embed -->                                    
+                <iframe width="1280" height="720" style="padding-bottom: 30px;" class="center-image" src="https://cdnapisec.kaltura.com/p/391241/sp/39124100/embedIframeJs/uiconf_id/22119142/partner_id/391241?iframeembed=true&playerId=kaltura_player&entry_id=1_5e39cyra&flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_c3l4n4xn" frameborder="0" allowfullscreen></iframe>
+                
+                <h1>Overall Description</h1>
+                <p>
+                    During my Computer Graphics Shaders course at Oregon State University, I was not only exposed to the foundational principles of computer graphics but also 
+                    had the exciting opportunity to explore its applications in the real world. As the course progressed, I became fascinated with the creative 
+                    possibilities that shaders offered, and I was eager to apply my newfound knowledge to a unique project.
+                </p>
+                <p>
+                    For the final assignment of the course, we were encouraged to push the boundaries of our shader programming skills by selecting a shader type that wasn't 
+                    explicitly covered in the curriculum. After conducting thorough research and contemplating various options, I was drawn to the idea of creating a realistic 
+                    grass shader. The decision was inspired by my appreciation for the natural world, the desire to simulate it in a virtual environment, and its connection
+                    to the game development space. Grass, with its intricate details, complex interaction with light, and the way it sways in the wind, presented a compelling 
+                    challenge for a shader project.
+                </p>
+                
+                <h1>My Role & The Process</h1>
+                <p style="white-space: pre-line"> Project Type: Academic, Solo
+                    Role: Programmer
+                    Software: Visual Studio
+                    Languages: OpenGL/GLSL, C++
+                </p>
+                <p>
+                    The grass was initially created by generating an array of points, which were then processed through shaders to create billboards ("Billboarding") for the 
+                    grass. A grass texture was applied to these billboards along with lighting. To enhance realism, three billboards were used, each rotated in 3D space and 
+                    randomized along the y-axis. To simulate natural color variation, a technique called Fractal Brownian Motion was employed with a noise texture. This color 
+                    randomness was introduced to the grass to give a more natural look. Different grass blade heights were achieved using a custom random function in shaders, 
+                    adjusting each quad's height for variation while avoiding extremes. Lastly, wind effects were added by using noise textures and variables to define wind 
+                    direction and strength. The wind was applied to the top portion of the grass quads by roataintg the vector, and this created a realistic movement effect.
+                    
+                    I kicked off this project by delving into research on established methods for crafting realistic grass shaders, and I aimed to adapt these techniques 
+                    for use with OpenGL and GLSL. 
+                </p>
+
+                <h1>What I Learned & What I Would Improve</h1>
+                <p>
+                    I had a limited window of approximately two weeks to delve into shading techniques and apply them to my simulation. Initially, I encountered methods that were 
+                    primarily designed for various game engines or reliant on plugins incompatible with OpenGL. Nevertheless, through persistent exploration, I unearthed valuable 
+                    insights, such as the utilization of Fractal Brownian Motion, billboarding, and the incorporation of noise textures. While industry-standard game engines and 
+                    other software may employ more efficient methods, these techniques collectively equipped me with a foundational understanding of shading (especially in terms of
+                    video game implementation), offering a means to enhance performance without compromising quality.
+                </p>
+                <p>
+                    With additional time and greater flexibility in the project requirements, my aim would be to master the art of crafting a highly realistic grass shader within 
+                    Unreal Engine 5. My specific goals would encompass refining the wind effects to introduce more randomized and lifelike movements, precisely defining the height 
+                    of the grass blades, and elevating the overall quality of textures and graphics for the grass. Leveraging Unreal Engine's extensive capabilities and plugins, 
+                    I'd strive to create a shader of such exceptional quality that it could potentially find application in a professional video game product, pushing the 
+                    boundaries of visual realism and immersion.
+                </p>
+
+                <h1>Screenshots</h1>
+                <img class="mb-5" src="assets/img/portfolio/grass_shader.png" alt="..." />
+                    
+            </div>
+        </section>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
