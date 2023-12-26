@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Present Plunge - Riley Elwell</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Riley Elwell</a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="about.html">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">Portfolio</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="resume.html">Resume</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="blog.html">Blog</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="archive.html">Archive</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Present Plunge</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                
+                <!-- Demo Video Embed -->
+                <iframe width="1280" height="720" style="padding-bottom: 30px;" class="center-image" src="https://www.youtube.com/embed/W1juRJaULxs" frameborder="0" allowfullscreen></iframe>
+                
+
+                <h1>Description</h1>
+                <p>
+                    Every festive season, Santa embarks on his global sleigh journey, spreading holiday cheer by delivering presents 
+                    to homes. Who can blame him for dropping a couple along the way? Besides, that's what elves are for! Step into the 
+                    jolly shoes of one of Santa's little helpers and catch the presents that fall from his sleigh. But beware of the 
+                    dangerous anvils plummeting from above! Make sure to be on your best behavior as you try to earn Santa's special 
+                    rewards for swift grabs and impressive catches. Best of luck on this merry mission!
+                </p>
+                <p>Present Plunge can be played on my itch.io page <a href="https://rileyelwell.itch.io/present-plunge">here</a>.</p>
+                
+                <h1>My Role & The Process</h1>
+                <p style="white-space: pre-line"> Project Type: Game Jam (itch.io), Solo
+                    Project Role: Designer, Programmer, Artist
+                    Software: Unity, Aseprite
+                    Languages: C#
+                </p>
+                <p>
+                    For this game jam, the designated theme was Christmas, and the unique gameplay element, a major focus, was an anvil. 
+                    My initial concept centered around stacking presents, with the anvil serving as a disruptor to heighten the game's 
+                    difficulty. Given the Christmas theme, I envisioned an elf catching and stacking presents falling from the sky or 
+                    Santa's sleigh.
+                </p>
+                <p>
+                    In terms of implementation, I began by ensuring that presents, anvils, and the player each had the necessary 
+                    colliders, rigidbodies, tags, and collision layers. Leveraging these elements, I could discern whether a present 
+                    was falling, part of the stack, or the topmost present. This allowed for the dynamic adjustment of colliders and the 
+                    manipulation of object positions and sorting layers to achieve the desired effects.
+                </p>
+                <p>
+                    The spawning mechanism for presents and anvils relied on an InvokeRepeating call, employing an object pool to 
+                    mitigate constant instantiation and destruction in the scene. All sprites, background elements, and UI components 
+                    were crafted using Aseprite, including the animation for the player's feet. It's noteworthy that the game's control 
+                    structure is facilitated by several singletons attached to empty game objects that I refer to as "managers." These 
+                    encompass managers for gameplay, audio, object pooling, and object spawning.
+                </p>
+
+                <h1>What I Learned & What I Would Improve</h1>
+                <p>
+                    Throughout the development of this project, I gained valuable insights into efficiency and the art of designing 
+                    a game within specified parameters. Given the Game Jam's objective of creating a game within a limited timeframe, 
+                    I quickly realized the importance of clearly defining my goals and identifying ambitious ideas as stretch goals. 
+                    While I wasn't able to implement all of my stretch goals by the submission deadline, this process allowed me to 
+                    hone my skills in pixel art sprite creation, which constituted a significant portion of the game's assets. I devoted 
+                    considerable time to enhancing the aesthetics of the UI elements, strategically considering their placement relative 
+                    to the user. Despite the challenges and time constraints, this experience not only improved my understanding of 
+                    effective game design but also provided valuable insights into prioritization and decision-making in the creative 
+                    process.
+                </p>
+                <p>
+                    As mentioned earlier, several ideas on my list were impractical given the limited time available in the game jam. 
+                    One such idea involved implementing an upgrade and level system, enabling users to modify gameplay aspects over time
+                    (e.g., faster movement, jumping, dash mechanics, temporary invincibility). Another consideration was the introduction
+                    of different power-ups, like presents that grant extra lives or anvils that move both vertically and horizontally 
+                    to increase difficulty. To enhance the gameplay's dynamism, I propose implementing a system for managing the present 
+                    stack, requiring users to balance presents, especially as the stack height and movement speed increase. Additionally, 
+                    a technical improvement would involve optimizing scene management and saving specific variables to ensure seamless 
+                    audio transitions, such as background music, between scenes and overall performance enhancements.
+                </p>
+
+                <h1>Screenshots</h1>
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/present-plunge/present1.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/present-plunge/present2.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/present-plunge/present3.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/present-plunge/present4.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/present-plunge/present5.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/present-plunge/present6.png" alt="..." />
+                    
+            </div>
+        </section>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
