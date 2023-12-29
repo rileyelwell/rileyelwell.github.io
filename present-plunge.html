@@ -29,7 +29,12 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="resume.html">Resume</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="blog.html">Blog</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="archive.html">Archive</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="contact.html">Contact</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                            target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                            target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                            target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -75,29 +80,28 @@
                 </p>
                 <p>
                     In terms of implementation, I began by ensuring that presents, anvils, and the player each had the necessary 
-                    colliders, rigidbodies, tags, and collision layers. Leveraging these elements, I could discern whether a present 
+                    colliders, rigidbody components, tags, and collision layers. Leveraging these elements, I could discern whether a present 
                     was falling, part of the stack, or the topmost present. This allowed for the dynamic adjustment of colliders and the 
                     manipulation of object positions and sorting layers to achieve the desired effects.
                 </p>
                 <p>
                     The spawning mechanism for presents and anvils relied on an InvokeRepeating call, employing an object pool to 
                     mitigate constant instantiation and destruction in the scene. All sprites, background elements, and UI components 
-                    were crafted using Aseprite, including the animation for the player's feet. It's noteworthy that the game's control 
-                    structure is facilitated by several singletons attached to empty game objects that I refer to as "managers." These 
-                    encompass managers for gameplay, audio, object pooling, and object spawning.
+                    were crafted using Aseprite, including the animation for the player's feet. Notably, the game's control structure 
+                    is facilitated by several singletons attached to empty game objects that I refer to as "managers." These encompass 
+                    managers for gameplay, audio, object pooling, and object spawning.
                 </p>
 
                 <h1>What I Learned & What I Would Improve</h1>
                 <p>
                     Throughout the development of this project, I gained valuable insights into efficiency and the art of designing 
-                    a game within specified parameters. Given the Game Jam's objective of creating a game within a limited timeframe, 
+                    a game within specified parameters. Given the game jam's objective of creating a game within a limited timeframe, 
                     I quickly realized the importance of clearly defining my goals and identifying ambitious ideas as stretch goals. 
                     While I wasn't able to implement all of my stretch goals by the submission deadline, this process allowed me to 
                     hone my skills in pixel art sprite creation, which constituted a significant portion of the game's assets. I devoted 
                     considerable time to enhancing the aesthetics of the UI elements, strategically considering their placement relative 
-                    to the user. Despite the challenges and time constraints, this experience not only improved my understanding of 
-                    effective game design but also provided valuable insights into prioritization and decision-making in the creative 
-                    process.
+                    to the user. Despite the challenges and time constraints, this experience improved my understanding of effective game
+                    design and provided valuable insights into prioritization and decision-making in the creative process.
                 </p>
                 <p>
                     As mentioned earlier, several ideas on my list were impractical given the limited time available in the game jam. 
