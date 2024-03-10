@@ -59,35 +59,56 @@
                 <h1>Description</h1>
                 <p>
                     The Game Design Competition is my team's senior capstone project at Oregon State University. We are tasked with 
-                    creating a driving simulator centered around a single-driver vehicle of our choice. The objective is to develop a 
-                    playable simulation that incorporates Advanced Driver Assistance Systems (ADAS) features, Artificial Intelligence 
-                    (AI) traffic tailored to the selected vehicle and setting, and realistic visual elements. For example, the ADAS 
-                    features might encompass body collision detection and avoidance through Automatic Emergency Braking (AEB), which 
-                    enhances a player's gameplay performance. The AI traffic should mimic the real world with physically accurate 
-                    movements, including smooth braking, accelerating, and turning inputs. To complete the Game Design Competition, we 
-                    are expected to deliver a demo game showcasing these components and providing a comprehensive and immersive driving 
-                    experience.
+                    creating a driving simulator game with Advanced Driver Assistance Systems (ADAS), Artificial Intelligence 
+                    (AI) traffic, and realistic visual elements. 
+                    
+                    Our vision for this project is to simulate the food delivery robots that are Oregon State Unviersity's campus. They have their own sensors
+                    and behaviors that we intend to simulate, and we plan to have AI vehicles and pedestrians as "obstacles." The main objective of the game will 
+                    be to drive the robot in third-person view to deliver food to nearby customers in as little time as possible. Our main focus remains delivering
+                    a realistic environment, accurate ADAS, and believable AI traffic.
                 </p>
                 
                 <h1>My Role & The Process</h1>
                 <p style="white-space: pre-line"> Project Type: Academic, Group
                     Project Role: Designer, Programmer, Artist
-                    Software: Unreal Engine 5, Blender
-                    Languages: C++
+                    Software: Unity, Blender, Quixel Mixer
+                    Languages: C#
                 </p>
                 <p>
-                    My main role in the project is to develop the map setting for the vehicles to traverse. Our team decided on recreating 
-                    a version of the Oregon State University campus, containing landmarks that locals and students are familiar with. Using
-                    Unreal Engine 5 (UE5) and Blender, I have started designing and modeling this map level. More information to come soon!
+                    My main role in this project is to develop the environment map for our robot vehicle to drive through. I am attempting to create an accurate 
+                    representation of the Oregon State University campus, containing landmarks that locals and students are familiar with. Additionally, I am responsible
+                    for designing the core gameplay loop and the mechanics the player-controlled robot will possess.
+                    
+                    This process has involved using Quixel Mixer and my own reference images for generating realistic textures. Then, I apply these texture
+                    images to the models I have created in Blender and adjust their appearance by editing the UV maps. The models are almost 1:1 scale as I have been
+                    utilizing the measurement features on Google Earth for accuracy, and the geometry is purposely low-poly to help prevent potential performance drops.
+
+                    The core gameplay loop will be simple in principle, tasking the player with delivering a food order to a nearby customer. While pursuing this objective,
+                    the player must avoid other vehicles and people, stay on their designated path, and achieve the goal as quickly as possible. The implemented
+                    mechanics will also be fairly limited, but will include different movement abilities (such as a dash) to allow for more control over avoiding obstacles. 
                 </p>
 
                 <h1>What I Learned & What I Would Improve</h1>
-                <p>This section will be updated as continue and then finish the project.</p>
+                <p>
+                    We still have until June to complete this project, but I've already gained valuable insights. I've significantly improved my skills with Blender, particularly 
+                    in modeling, texturing, UV editing, and exporting. I now understand how to synthesize textures in different applications and edit them in Quixel Mixer. 
+                    Learning about seamless textures, tiling, and techniques like adding noise and random rotations has helped minimize repetitive patterns on surfaces.
 
-                <h1>Other Info</h1>
-                <p>This project is currently under development and will not be fully finished until March 2024. But I will be posting updates here!</p>
+                    In Unity, I've learned about using mesh colliders on imported objects and their interactions with rigid bodies based on topology. I'm eager to continue 
+                    exploring and learning throughout this project and to showcase the final product upon completion!
+                </p>
 
-                <!-- <img class="center-image mb-5" src="assets/img/portfolio/truckstop_title.png" alt="..." /> -->
+                <h1>(Work in Progress) Screenshots</h1>
+                <p>
+                    This project is still currently under development and will not be fully finished until June 2024. Here are some current screenshots of some progress
+                    I have made so far (mainly in Blender)!
+                </p>
+
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/models_trees.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/textured_trees.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/modeled_robot.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/textured_robot.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/full_view_textured.png" alt="..." />
                     
             </div>
         </section>
