@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Capstone: Game Design Competition - Riley Elwell</title>
+        <title>A Day in the Life of a Delivery Robot - Riley Elwell</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -44,7 +44,7 @@
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
                 <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Capstone: Game Design Competition</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">A Day in the Life of a Delivery Robot</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -53,57 +53,80 @@
                 </div>
                 
                 <!-- Demo Video Embed -->
-                <!-- <iframe width="1280" height="720" style="padding-bottom: 30px;" class="center-image" src="https://www.youtube.com/embed/iiA_4t6DRVA" frameborder="0" allowfullscreen></iframe> -->
+                <iframe width="1280" height="720" style="padding-bottom: 30px;" class="center-image" src="https://www.youtube.com/embed/wRAzDWgXAmA" frameborder="0" allowfullscreen></iframe>
                 
 
                 <h1>Description</h1>
                 <p>
-                    The Game Design Competition is my team's senior capstone project at Oregon State University. We are tasked with 
-                    creating a driving simulator game with Advanced Driver Assistance Systems (ADAS), Artificial Intelligence 
-                    (AI) traffic, and realistic visual elements. 
-                    
-                    Our vision for this project is to simulate the food delivery robots that are Oregon State Unviersity's campus. They have their own sensors
-                    and behaviors that we intend to simulate, and we plan to have AI vehicles and pedestrians as "obstacles." The main objective of the game will 
-                    be to drive the robot in third-person view to deliver food to nearby customers in as little time as possible. Our main focus remains delivering
-                    a realistic environment, accurate ADAS, and believable AI traffic.
+                    The Game Design Competition was my senior capstone project at Oregon State University, in which my team made A Day in the Life of a Delivery Robot. 
+                    My team was tasked with creating a driving simulator centered around a single-driver vehicle of our choice. Other objectives included incorporating 
+                    Advanced Driver Assistance Systems (ADAS) features, Artificial Intelligence (AI) traffic, and realistic visual elements.
+                </p><p>
+                    Our vision was to simulate the Starship robots that are Oregon State Unviersity's campus, tasking users with delivering food orders to students.
+                    The robot the player is controlling has sensors and ADAS features that are activated by the surrounding A.I. pedestrians, vehicles, and trains. In order
+                    to maintain a consistent and realsitic theme, we decided to create part of the Oregon State University campus as our dirving environment. The main goal
+                    of the game is to avoid being hit by obstacles while driving your delivery robot, but still deliver your food order to its location in the alotted time.
+                    For more information on gameplay, processes, and a downloadable .exe build go to our <a href="https://github.com/rileyelwell/CS-GameDesignCompetition-23-24">Github Page</a>! 
                 </p>
                 
                 <h1>My Role & The Process</h1>
                 <p style="white-space: pre-line"> Project Type: Academic, Group
-                    Project Role: Designer, Programmer, Artist
+                    Project Role: Designer (Level/UI/System), Programmer, Artist
                     Software: Unity, Blender, Quixel Mixer
                     Languages: C#
                 </p>
                 <p>
-                    My main role in this project is to develop the environment map for our robot vehicle to drive through. I am attempting to create an accurate 
-                    representation of the Oregon State University campus, containing landmarks that locals and students are familiar with. Additionally, I am responsible
-                    for designing the core gameplay loop and the mechanics the player-controlled robot will possess.
-                    
-                    This process has involved using Quixel Mixer and my own reference images for generating realistic textures. Then, I apply these texture
-                    images to the models I have created in Blender and adjust their appearance by editing the UV maps. The models are almost 1:1 scale as I have been
-                    utilizing the measurement features on Google Earth for accuracy, and the geometry is purposely low-poly to help prevent potential performance drops.
-
-                    The core gameplay loop will be simple in principle, tasking the player with delivering a food order to a nearby customer. While pursuing this objective,
-                    the player must avoid other vehicles and people, stay on their designated path, and achieve the goal as quickly as possible. The implemented
-                    mechanics will also be fairly limited, but will include different movement abilities (such as a dash) to allow for more control over avoiding obstacles. 
+                    My main role in this project was to develop the map environment for our robot to drive in. In attempting to create an accurate 
+                    representation of a part of the Oregon State University campus, I took over one hundred images for reference and textures. Using Quixel Mixer and
+                    an online website to synthesize images (for seamlessness), I was able to adjust the previously taken photos into usable textures. In Blender, I
+                    devloped all building, street, and sidewalk models from scratch, trying to keep the geometry low-poly to help with performance. Most of the generic
+                    detail objects were found as free online models for fair use, including items such as trees, bushes, pedestrians, cars, goals, and the train. 
+                </p><p>
+                    As our small team struggled to find time to implement every featurew we wanted, I began taking on other roles as well. While my partners worked on
+                    the ADAS features, the pedestrians and vehicles pathing, and the delivery system, I designed the user interface. The logos and clip art used was from 
+                    online to save time, but I made sure to place each bit of information in a special way to hopefully assist rather than distract the user. Designing 
+                    the UI also included doing the backend to ensure each component was updated properly during gameplay.
+                </p><p>
+                    Other smaller tasks I completed include creating and balancing the scoring system, implementing lighting into our scene, and developing certain robot
+                    mechanics such as the boost, reset/flip, and camera display options. My main goals towardas the end of our project was to implement as many small "fun"
+                    features or visuals that would entertain our audience as this project would be presented at our Engineering Expo. So, my final addition was a robot 
+                    customizer screen that would allow you to add silly stickers or hats on your robot, allowing each player to have a different robot! 
                 </p>
 
                 <h1>What I Learned & What I Would Improve</h1>
                 <p>
-                    We still have until June to complete this project, but I've already gained valuable insights. I've significantly improved my skills with Blender, particularly 
-                    in modeling, texturing, UV editing, and exporting. I now understand how to synthesize textures in different applications and edit them in Quixel Mixer. 
-                    Learning about seamless textures, tiling, and techniques like adding noise and random rotations has helped minimize repetitive patterns on surfaces.
-
-                    In Unity, I've learned about using mesh colliders on imported objects and their interactions with rigid bodies based on topology. I'm eager to continue 
-                    exploring and learning throughout this project and to showcase the final product upon completion!
+                    This game project was very involved, however it was very rewarding in the end, especially showing it to family and peers. Working as a group of four
+                    students with other classes and jobs, we had little time to communicate and work as a team effectively. This was easily the hardest part for me, but I think our
+                    goal of developing a fun and short game was successful in the end. 
+                </p><p>
+                    In terms of technical knowledge I learned, I significantly improved my skills with Blender, particularly in modeling, texturing, UV editing, and 
+                    exporting. I now understand how to synthesize textures in different applications and edit them in Quixel Mixer. Also, learning about seamless textures,
+                    tiling, and techniques like adding noise and random rotations has helped minimize repetitive patterns on my created surfaces. In Unity, I've learned 
+                    about using mesh colliders on imported objects and their interactions with rigid bodies based on topology. I improved upon my programming skills in C#,
+                    became better at testing features that need to be balanced (partly through conducting playtests), and how to do lighting.
+                </p><p>
+                    Overall, I think there are a lot of necessary improvements for this project if it were to be revisited in the future. With our time crunch and poor 
+                    communication habits, the final version of the game has several large bugs and poor performance. Features added towards the end did not have enough
+                    time to be properly tested, the map has a couple collision issues, and the difficulty was harder than intended. With more time, better planning, and an 
+                    in-sync team, I would love to implement a larger map, a better physics system, fix bugs, balance more appropriately, and adjust scenes for better 
+                    performance. 
                 </p>
 
-                <h1>(Work in Progress) Screenshots</h1>
-                <p>
-                    This project is still currently under development and will not be fully finished until June 2024. Here are some current screenshots of some progress
-                    I have made so far (mainly in Blender)!
-                </p>
+                <h1>Final Version Screenshots</h1>
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone1.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone2.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone3.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone4.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone5.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone6.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone7.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone8.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone9.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone10.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone11.png" alt="..." />
+                <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/capstone12.png" alt="..." />
 
+                <h1>Development Screenshots</h1>
                 <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/models_trees.png" alt="..." />
                 <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/textured_trees.png" alt="..." />
                 <img style='height: 100%; width: 100%; object-fit: contain' class="mb-5" src="assets/img/portfolio/capstone/modeled_robot.png" alt="..." />
