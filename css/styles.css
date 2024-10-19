@@ -11,6 +11,13 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+  --bs-miles-blue: #01F8EF;
+  --bs-electricblue: #1F8FFF;
+  --bs-crimsonred: #E84545;
+  --bs-fuschiared: #F3014B;
+  --bs-deeppurple: #4B0082;
+  --bs-spidermanblack: #1E1C1D;
+  --bs-spidermanwhite: #E9FBFF;
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -35,7 +42,7 @@
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: #1abc9c;
-  --bs-secondary: #2c3e50;
+  --bs-secondary: #E84545;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
@@ -43,7 +50,7 @@
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
   --bs-primary-rgb: 26, 188, 156;
-  --bs-secondary-rgb: 44, 62, 80;
+  --bs-secondary-rgb: 75, 0, 130; /* Navbar RBG */
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
@@ -61,8 +68,8 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
-  --bs-body-bg: #fff;
+  --bs-body-color: #F5F5F5;
+  --bs-body-bg: #1E1C1D;
   --bs-border-width: 0.125rem;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -73,8 +80,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #1abc9c;
-  --bs-link-hover-color: #15967d;
+  --bs-link-color: var(--bs-miles-blue);
+  --bs-link-hover-color: var(--bs-fuschiared);
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -131,6 +138,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: calc(1.325rem + 0.9vw);
+  color: var(--bs-fuschiared);
 }
 @media (min-width: 1200px) {
   h2, .h2 {
@@ -308,6 +316,7 @@ img,
 svg {
   vertical-align: middle;
 }
+
 
 table {
   caption-side: bottom;
@@ -10838,8 +10847,14 @@ html {
   padding: 10rem 0;
 }
 .page-section .page-section-heading {
-  font-size: 2.25rem;
-  line-height: 2rem;
+  /* font-size: 2.25rem;
+  line-height: 2rem; */
+  font-size: 2em; /* Adjust size as needed */
+  font-weight: bold; /* Bold for emphasis */
+  color: var(--bs-fuschiared); /* Use white or another color based on your palette */
+  margin-bottom: 20px; /* Space below the heading */
+  text-align: left; /* Align to the left */
+  text-transform: uppercase; /* Makes the text uppercase */
 }
 @media (min-width: 992px) {
   .page-section .page-section-heading {
@@ -10902,22 +10917,22 @@ html {
   font-weight: 700;
 }
 #mainNav .navbar-brand {
-  color: #fff;
+  color: var(--bs-spidermanwhite); /* Navbar text color */
 }
 #mainNav .navbar-nav {
   margin-top: 1rem;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link {
-  color: #fff;
+  color: var(--bs-spidermanwhite);
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-  color: #1abc9c;
+  color: var(--bs-fuschiared);
 }
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
-  color: #fff;
+  color: var(--bs-spidermanwhite);
 }
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
-  color: #1abc9c;
+  color: var(--bs-fuschiared);
 }
 #mainNav .navbar-toggler {
   font-size: 80%;
@@ -10988,9 +11003,13 @@ html {
 
 .about-image {
   width: 15rem;
+  height: 15em;
   display: block;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
+  /* border-radius: 50%; */
+  /* border: 1.5px solid var(--bs-miles-blue); */
 }
 
 .center-image {
@@ -11005,10 +11024,27 @@ html {
   margin-right: auto;
 }
 
+.pdf-viewer-2 {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pdf-viewer-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pdf-viewer-container-2 {
+  width: 100%;
+  margin-top: 20px;
+}
+
 .image-container {
   position: relative;
   width: 50%;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
 }
 
 
@@ -11120,4 +11156,380 @@ html {
   border-top-color: black;
   color: white; 
   background-color: black;
+}
+
+/* Read More Button Styling */
+.read-more-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px 20px;
+  background-color: var(--bs-miles-blue);
+  color: black;
+  text-decoration: none;
+  border-radius: 3.5px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect for the Button */
+.read-more-btn:hover {
+  background-color: var(--bs-deeppurple);
+  color: var(--bs-miles-blue); /* Change text color on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Container for each game */
+.game-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Space between game sections */
+  padding-bottom: 20px; /* Internal padding for the section */
+  border-bottom: 1px solid var(--bs-miles-blue); /* Divider at the bottom */
+}
+
+/* Ensure the last section has no bottom margin */
+.game-section:last-child {
+  margin-bottom: 0;
+  border-bottom: none; /* Optional: remove the last border if desired */
+}
+
+
+/* Left text section */
+.text-section {
+  width: 100%; /* Set the desired width */
+}
+
+.text-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: var(--bs-fuschiared);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text-section p {
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: var(--bs-spidermanwhite);
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+/* Image Section */
+.image-section {
+  display: flex;
+  justify-content: space-between; /* Ensure images stay side by side */
+  align-items: center;
+  margin-left: 20px; /* Adjust this for more room for text and smaller images */
+}
+
+/* Styling for the images */
+.image-section img {
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Ensures that images fill the defined width/height */
+  max-width: 800px; /* Example of setting a max size if needed */
+  max-height: 600px; /* Example of setting a max height */
+  width: 49%; /* Ensures equal width (with some space in between) */
+  border: 2px solid var(--bs-miles-blue); /* Example electric blue border */
+  border-radius: 2px; /* Rounded corners (optional) */
+  padding: 2px;
+}
+
+.project-info {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 0.9em; /* Adjust size to be slightly smaller (90% of the parent size) */
+  color: var(--bs-spidermanwhite); /* Optional: Change text color for better visibility */
+  margin-top: 5px; /* Optional: Add some space above the text */
+}
+
+.container h3 {
+  font-size: 2.1em;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .game-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-section, .image-section {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+.video-embed {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  width: 50%;
+  margin-right: 20px;
+}
+
+.video-and-details {
+  display: flex; /* Use flexbox for video and description */
+  gap: 20px; /* Space between video and description */
+}
+
+.game-details {
+  display: flex; /* Flexbox for game details */
+  gap: 20px; /* Space between detail items */
+  flex-wrap: wrap; /* Allow wrapping if needed */
+  margin-bottom: 20px; /* Space below the heading */
+  border-bottom: 1px solid var(--bs-miles-blue); /* Example electric blue border */
+}
+
+.detail-item {
+  display: flex; /* Flexbox for icon and text alignment */
+  align-items: center; /* Center vertically */
+  margin-bottom: 15px; /* Space between items */
+}
+
+.detail-item span {
+  color: var(--bs-spidermanwhite);
+}
+
+.detail-icon {
+  width: 30px; /* Icon size */
+  height: 30px; /* Icon size */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.game-details span {
+  font-size: 1em; /* Adjust font size as needed */
+}
+
+.project-description {
+  max-width: 600px; /* Limit width for better layout */
+}
+
+.project-description p {
+  color: var(--bs-spidermanwhite); /* Use your desired color */
+}
+
+.project-description h2 {
+  color: var(--bs-fuschiared); /* Use your desired color */
+}
+
+.block-section {
+  /* margin-bottom: 20px; */
+  border-top: 1px solid var(--bs-miles-blue);
+  margin-top: 20px;
+}
+
+.block-section h2 {
+  margin-top: 20px;
+}
+
+.block-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.block-text {
+  margin-bottom: 20px;
+}
+
+/* Layout for visuals - images distributed equally */
+.block-visuals {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  width: 31%; /* Adjust to fit the layout */
+  text-align: center;
+}
+
+.image-container-2 {
+  width: 24%; /* Adjust to fit the layout */
+  text-align: center;
+}
+
+.image-container img {
+  width: 100%; /* Ensures image scales to container width */
+  aspect-ratio: 16 / 9;
+  border: 2px solid var(--bs-miles-blue);
+  padding: 2px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.image-container-2 img {
+  width: 100%; /* Ensures image scales to container width */
+  aspect-ratio: 16 / 9;
+  border: 2px solid var(--bs-miles-blue);
+  padding: 2px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.image-container-vert {
+  width: 31%; /* Adjust to fit the layout */
+  text-align: center;
+}
+
+.image-container-vert img {
+  width: 100%; /* Ensures image scales to container width */
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--bs-miles-blue);
+  padding: 2px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* Hover effect for the images */
+.image-container img:hover {
+  transform: scale(1.1);
+}
+
+.image-container-2 img:hover {
+  transform: scale(1.1);
+}
+
+.image-container-vert img:hover {
+  transform: scale(1.1);
+}
+
+/* Caption styling */
+.caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--bs-spidermanwhite);
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Centering the modal content */
+.modal-content {
+  margin: auto;
+  /* display: block; */
+  width: 90%;
+  max-width: 800px;
+  border-radius: 0%;
+  padding: 2px;
+  background-color: var(--bs-spidermanblack);
+  border: 2px solid var(--bs-miles-blue);
+}
+
+.video-container video {
+  width: 100%; /* Ensures image scales to container width */
+  aspect-ratio: 16 / 9;
+  border: 2px solid var(--bs-miles-blue);
+  padding: 2px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Hover effect for the images */
+.video-container:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* .caption {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+} */
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Fullscreen video inside the modal */
+.modal video {
+  width: 100%;
+  height: auto;
+}
+
+.my-divider {
+  border: 1px solid var(--bs-miles-blue);
+  margin-bottom: 20px;
+}
+
+.icon {
+  margin-top: 10px; /* Adjust the spacing between the paragraph and the icon */
+  text-align: left; /* Align the icon to the left, change to center or right if needed */
+}
+
+.icon a {
+  color: var(--bs-spidermanwhite); /* Your desired color */
+  margin-right: 10px; /* Add space between the two icons */
+}
+
+.icon img {
+    vertical-align: middle; /* Ensure the custom itch.io image aligns with the Font Awesome icon */
+}
+
+.icon a:hover {
+  color: var(--bs-fuschiared); /* Color on hover (optional) */
+}
+
+.footer {
+  background-color: var(--bs-deeppurple); /* Dark background */
+  color: white;           /* White text */
+  padding: 20px 0;       /* Vertical padding */
+  text-align: center;     /* Centered text */
+}
+
+.footer-text {
+  margin: 0;             /* Remove default margin */
+  font-size: 14px;       /* Text size */
+}
+
+.credits-section {
+  margin-top: 10px;      /* Space between footer text and credits */
+}
+
+.credits-toggle {
+  cursor: pointer;           /* Pointer cursor on hover */
+  font-weight: bold;         /* Bold text */
+  text-decoration: underline; /* Underline text */
+  color: white;              /* Default text color */
+  transition: color 0.3s;    /* Smooth color transition */
+}
+
+.credits-toggle:hover {
+  color: #ffcc00;            /* Change this color to whatever you prefer */
+}
+
+.credits-content {
+  display: none;             /* Hidden by default */
+  margin-top: 10px;         /* Space above credits */
+  text-align: center;        /* Center align text */
+}
+
+.credits-content p {
+  margin: 5px 0;            /* Margin for paragraphs */
+  color: white;             /* Text color */
 }

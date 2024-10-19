@@ -51,4 +51,40 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+
+
+    // Get the modal
+    var modal = document.getElementById("imageModal");
+
+    // Get the images and bind click event
+    var images = document.querySelectorAll(".block-visuals img");
+    var modalImg = document.getElementById("expandedImg");
+
+    // Hide the modal on page load
+    modal.style.display = "none"; // Ensure it's hidden by default
+
+    images.forEach(img => {
+        img.onclick = function(){
+            modal.style.display = "flex"; // Show the modal when an image is clicked
+            modalImg.src = this.src;
+        }
+    });
+
+    // Close modal when clicking anywhere outside the image
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Close modal with "Esc" key
+    document.onkeydown = function(event) {
+        if (event.key === "Escape") {
+            modal.style.display = "none";
+        }
+    }
+
+
+
+
 });

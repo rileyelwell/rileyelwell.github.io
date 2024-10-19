@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Squirrel Bros | Riley Elwell</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Riley Elwell | Game Designer</a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="about.html">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">Portfolio</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="sandbox.html">Sandbox</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="resume.html">Resume</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="blog.html">Blog</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                            target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                            target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                            target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h3 class="page-section-heading text-uppercase">Squirrel Bros</h3>
+
+                <!-- Game Details Section -->
+                <div class="game-details">
+                    <div class="detail-item">
+                        <img src="assets/icons/calendar.svg" class="detail-icon">
+                        <span>September 2024</span>
+                    </div>
+                    <div class="detail-item">
+                        <img src="assets/icons/type.svg" class="detail-icon">
+                        <span>Futuregames Course Project</span>
+                    </div>
+                    <div class="detail-item">
+                        <img src="assets/icons/role.svg" class="detail-icon">
+                        <span>Level & Systems Design, UI/UX, Pixel-Art</span>
+                    </div>
+                    <div class="detail-item">
+                        <img src="assets/icons/software.svg" class="detail-icon">
+                        <span>Unity, C#, Aseprite</span>
+                    
+                    </div>
+                </div>
+
+                <div class="video-and-details">
+                    <!-- Demo Video Embed -->
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/6BNyLtlrD8c" frameborder="0" allowfullscreen></iframe>
+                    
+                    <!-- Project Description -->
+                    <div class="project-description">
+                        <h2>Description</h2>
+                        <p>
+                            I made <i>Squirrel Bros</i> as part of my first course at Futuregames, where we were asked to develop a platformer game in three weeks. In this 2D pixel-art game, you play as a squirrel trying to find the Golden Acorn with the help of his brothers. Using your abilities to run, jump, and interact with the environment, you must overcome obstacles and hazards to reach your goal. The main gameplay revolves around precision platforming and solving puzzles while exploring the trees.
+                        </p>
+                        <h2>Links</h2>
+                        <div class="icon">
+                            <a class="rounded btn btn-social mx-1" 
+                            target="_blank" rel="noopener noreferrer" 
+                            href="https://rileyelwell.itch.io/squirrel-bros">
+                            <i class="fab fa-fw fa-itch-io fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-section">
+                    <h2>Platforming</h2>
+                    <div class="block-inner">
+                        <div class="block-text">
+                            <p>
+                                My goal for this project was to keep things fairly simple when it came to the actions the player could perform. However, most of the map is vertically focused, so I gave the player several ways to move vertically (often through the environment):
+                            </p>
+
+                            <ul>
+                                <li>
+                                    <strong>Jumping</strong>
+                                    <ul>
+                                        <li>I implemented variable height calculation to give the player more control over where they land based on their input.</li>
+                                        <li>This includes special gravity calculations based on how high or low the player is.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Climbing Vines</strong>
+                                    <ul>
+                                        <li>The player can jump to attach onto vines, allowing them to move up or down. From there, they can jump off to reach platforms they couldn't access before.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Bouncy Mushrooms</strong>
+                                    <ul>
+                                        <li>When the player lands on these, they bounce much higher, enabling them to clear obstacles that would otherwise be too high.</li>
+                                        <li>Initially, I allowed the player to control the bounce force by jumping directly on the mushrooms, but it was too inconsistent. To make the game easier, I made every bounce the same force, requiring the player to focus more on timing when to move over obstacles.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Tree Entrances</strong>
+                                    <ul>
+                                        <li>Similar to the green pipes in Mario, these simply “teleport” the player to its corresponding location.</li>
+                                        <li>There are only a couple of these spread throughout the level, but serve to act as another form of “movement” for the player.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Moving Platform (Flying Bird) -> Scrapped Idea</strong>
+                                    <ul>
+                                        <li>A bird that flew from one side of the screen to the other on a timer, and the player could jump on to ride.</li>
+                                        <li>I encountered problems with allowing the player to jump and ride on the bird at varying speeds while still allowing full player movement.</li>
+                                        <li>The horizontal movement was interesting and added some variety, however, the vines fit the vertical map better.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="block-visuals">
+                            <div class="image-container-2">
+                                <!-- <img src="assets/img/portfolio/squirrelbros/jump-heights-gif.gif">
+                                <p class="caption">Different jump heights based on input</p> -->
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/jump-heights.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/jump-heights.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">Different jump heights based on input</p>
+                                </div>
+                            </div>
+                            <div class="image-container-2">
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/climbing-vine.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/climbing-vine.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">The player interacting with a climbing vine</p>
+                                </div>
+                            </div>
+                            <div class="image-container-2">
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/mushroom-bounce.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/mushroom-bounce.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">The player interacting with a bouncy mushroom</p>
+                                </div>
+                                <!-- <p class="caption">Player interacting with a bouncy mushroom</p> -->
+                            </div>
+                            <div class="image-container-2">
+                                <!-- <img src="assets/img/portfolio/squirrelbros/entrance.gif"> -->
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/entrance.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/entrance.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">The player using a tree entrance to get around</p>
+                                </div>
+                                <!-- <p class="caption">Player using a tree entrance to get around the map</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-section">
+                    <h2>Hazards & Enemies</h2>
+                    <div class="block-inner">
+                        <div class="block-text">
+                            <!-- <h4><strong>No Combat?</strong></h4> -->
+                            <p>
+                                I started this project by brainstorming ideas for my overall main theme of a squirrel in a tree. This led to a large scope, as projects often do, so I then created a list of "Must Haves," "Should Haves," and "Would Be Nice to Haves." While some of these ideas were realized in the end, many were cut or heavily modified due to scope and time constraints.
+                            </p>
+
+                            <ol>
+                                <li>Initially, I planned for the player to have multiple attacks, starting with a throwable item that would return, like a yo-yo. However, after prototyping it, the mechanic didn't feel smooth or fun.</li>
+                                <li>Another experiment I tried was a throwable stick that would stun enemies (see below), but I could not get the throw to feel right.</li>
+                                <li>I also realized that developing a solid combat system would take too much time and shift focus away from the platforming and movement.</li>
+                                <li>As a result, I scrapped all combat ideas and focused entirely on refining player movement and creating interesting puzzles.</li>
+                            </ol>
+
+                        </div>
+                        <div class="block-visuals">
+                            <div class="image-container">
+                                <img src="assets/img/portfolio/squirrelbros/squirrel-mockup1.jpg">
+                                <p class="caption">Original mockup for ideas</p>
+                            </div>
+                            <div class="image-container">
+                                <img src="assets/img/portfolio/squirrelbros/squirrel-mockup2.jpg">
+                                <p class="caption">Original mockup for ideas p2</p>
+                            </div>
+                            <div class="image-container">
+                                <!-- <img src="assets/img/portfolio/">
+                                <p class="caption">Prototype for stick throwable?</p> -->
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/throw-stick.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/throw-stick.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">Prototype for stick throwable</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block-text">
+                            <p>
+                                Even without a combat system, there still needed to be hazards and enemies to make the platforming more challenging. Since these enemies can't be defeated, I designed these based on my original ideas:
+                            </p>
+
+                            <ul>
+                                <li>
+                                    <strong>Dynamic Enemies (Spiders)</strong>
+                                    <ul>
+                                        <li>One variant drops down when the player triggers a specific spot on the map, creating a surprise element.</li>
+                                        <li>The more common variant moves up and down its thread at different speeds.</li>
+                                        <li>Both variants cause the player to take damage and respawn.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Static Hazards (Wooden Spikes)</strong>
+                                    <ul>
+                                        <li>A simple hazard placed throughout the map, with varying heights.</li>
+                                        <li>If the player makes contact, they take damage and respawn.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>Squirrel Guard (Scrapped Idea)</strong>
+                                    <ul>
+                                        <li>An enemy that would "guard" an acorn (health item).</li>
+                                        <li>When the player is in range, it would follow the player.</li>
+                                        <li>With no combat, this was hard to balance between too difficult and too easy</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="block-visuals">
+                            <div class="image-container">
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/spider_drop.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/spider_drop.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">Dynamic spider enemy (when player triggers its range)</p>
+                                </div>
+                            </div>
+                            <div class="image-container">
+                                <img src="assets/img/portfolio/squirrelbros/wooden-spikes.png">
+                                <p class="caption">Static wooden spike hazards</p>
+                            </div>
+                            <div class="image-container">
+                                <!-- <img src="assets/img/portfolio/capstone/">
+                                <p class="caption">Prototype for squirrel guard</p> -->
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/squirrel_guard.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/squirrel_guard.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">Prototype for squirrel guard</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="block-section">
+                    <h2>Trigger Point System</h2>
+                    <div class="block-inner">
+                        <div class="block-text">
+                            <p>
+                                For many actions in my game, I needed a way to trigger specific events when the player reached certain locations. Although it may not be the most efficient method, I developed a singleton class to handle these "trigger points." For each trigger point, I:
+                            </p>
+
+                            <ol>
+                                <li>Created an empty GameObject with a box collider at the desired location and set it as a trigger.</li>
+                                <li>Attached a trigger point script with booleans to determine the type of trigger.</li>
+                                <li>Assigned an index to the trigger point if needed, allowing it to be referenced in a list. For example, a checkpoint trigger would be added to the respawn triggers list to be used by the respawn system later.</li>
+                            </ol>
+
+                        </div>
+                        <div class="block-visuals">
+                            <div class="image-container">
+                                <img src="assets/img/portfolio/squirrelbros/trigger-point-setup.png">
+                                <p class="caption">Example trigger point setup in Unity</p>
+                            </div>
+                            <!-- <div class="image-container-2">
+                                <img src="assets/img/portfolio/capstone/">
+                                <p class="caption">Example trigger respawn list</p>
+                            </div> -->
+                            <div class="image-container">
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/trigger-checkpoint.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/trigger-checkpoint.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">The player triggers a respawn checkpoint</p>
+                                </div>
+                            </div>
+                            <div class="image-container">
+                                <!-- <img src="assets/img/portfolio/capstone/"> -->
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/dialogue-trigger.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/dialogue-trigger.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">The player triggers a dialogue point</p>
+                                </div>
+                                <!-- <p class="caption">The player triggers a dialogue point</p> -->
+                            </div>
+                        </div>
+
+                        <div class="block-text">
+                            <p>
+                                The first major use of these trigger points was for player checkpoints. Since there's no combat in my game, I had to decide whether enemies and hazards would:
+                            </p>
+
+                            <ul>
+                                <li>Cause a player respawn, or</li>
+                                <li>Simply knock the player back, giving them a chance to react.</li>
+                            </ul>
+
+                            <strong>Testing Knockback:</strong>
+                            <ul>
+                                <li>I initially tested giving the player invincibility frames with knockback.</li>
+                                <li>The knockback was inconsistent and didn't work well with my player controller's physics.</li>
+                                <li>It also made it difficult to tell when the player was taking damage, which wasn't ideal.</li>
+                            </ul>
+
+                            <strong>Final Decision:</strong>
+                            <ul>
+                                <li>Rather than adding special FX and animations, which I wasn't skilled in, I opted to have the player respawn every time they took damage.</li>
+                                <li>This made each platforming section a consistent challenge the player had to pass before reaching the next checkpoint, which fit better.</li>
+                            </ul>
+
+                            <strong>Checkpoint Setup:</strong>
+                            <ul>
+                                <li>I added numerous checkpoints to reward players for overcoming each challenge.</li>
+                                <li>These were set up using my trigger points, with a list of respawn points stored inside a manager object.</li>
+                                <li>Each checkpoint had an ID to track the player's current respawn point.</li>
+                            </ul>
+
+                            <div class="block-visuals">
+                                <div class="image-container">
+                                    <!-- <img src="assets/img/portfolio/capstone/">
+                                    <p class="caption">Testing the invincibility frames and knockback when player takes damage</p> -->
+                                    <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/testing_iframes.mp4">
+                                        <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                            <source src="assets/img/portfolio/squirrelbros/testing_iframes.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <p class="caption">Testing invincibility frames when the player takes damage from a spider</p>
+                                    </div>
+                                </div>
+                                <div class="image-container">
+                                    <!-- <img src="assets/img/portfolio/capstone/">
+                                    <p class="caption">Player takes damage and respawns at lastest checkpoint</p> -->
+                                    <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/respawn.mp4">
+                                        <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                            <source src="assets/img/portfolio/squirrelbros/respawn.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <p class="caption">The player takes damage and respawns at the lastest checkpoint</p>
+                                    </div>
+                                </div>
+                                <div class="image-container">
+                                    <img src="assets/img/portfolio/squirrelbros/unity_triggers-setup.png">
+                                    <p class="caption">Checkpoint setup in Unity</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-section">
+                    <h2>Puzzles System & Design</h2>
+                    <div class="block-inner">
+                        <div class="block-text">
+                            <p>
+                                As a fan of video game puzzles, I was especially excited about creating this part of my game. I enjoy puzzles that are challenging but not impossible, so I aimed to bring that balance into my design. I focused on:
+                            </p>
+
+                            <ul>
+                                <li><strong>One Main Mechanic</strong>
+                                    <ul>
+                                        <li>In <i>Portal</i> you solve every puzzle with the portal gun</li>
+                                        <li>I designed every puzzle around controlling two squirrels at once</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Familiar Platforming & Hazards</strong>
+                                    <ul>
+                                        <li>Same hazards and platforming objects the player is already used to</li>
+                                        <li>Controlling the second squirrel adds the complexity, or second layer to gameplay</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Puzzle Areas</strong>
+                                    <ul>
+                                        <li>When entering past a blue flag, the second squirrel starts following your inputs</li>
+                                        <li>It stops following when you exit again</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Interconnected Puzzles</strong>
+                                    <ul>
+                                        <li>Lever and door system, where certain areas are locked until other sections are solved</li>
+                                        <li>Ties the puzzles together, making each section feel like an important piece of a larger goal</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Puzzle Progression</strong>
+                                    <ul>
+                                        <li>One simple puzzle introduces players to the system</li>
+                                        <li>Four interconnected puzzles follow, and solving all of them unlocks the final doors</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="block-visuals">
+                            <div class="image-container-2">
+                                <!-- <img src="assets/img/portfolio/capstone/">
+                                <p class="caption">Player entering and exiting puzzle area</p> -->
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/puzzle_system.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/puzzle_system.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">How the puzzle system works (blue flag indicator)</p>
+                                </div>
+                            </div>
+                            <div class="image-container-2">
+                                <!-- <img src="image2.jpg">
+                                <p class="caption">Player solving puzzle with lever and opening door</p> -->
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/puzzle_solve.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/puzzle_solve.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">Solving a puzzle with lever pulls that opens doors</p>
+                                </div>
+                            </div>
+                            <div class="image-container-2">
+                                <!-- <img src="image1.jpg">
+                                <p class="caption">What happens when either one of the squirrels takes damage</p> -->
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/puzzle_fail.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/puzzle_fail.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">What happens when any squirrel takes damage during a puzzle</p>
+                                </div>
+                            </div>
+                            <div class="image-container-2">
+                                <img src="assets/img/portfolio/squirrelbros/puzzle_level_design.png">
+                                <p class="caption">Interconnected puzzle designs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-section">
+                    <h2>Reflection</h2>
+                    <div class="block-inner">
+                        <div class="block-text">
+                            <p>
+                                This project was a valuable learning experience for me, especially in terms of planning. I believe my biggest mistake was not establishing design pillars from the beginning, which made it challenging to navigate changes or problems, as I wasn't clear on the game's core identity. Around halfway through, I finally decided that my game should focus on movement, platforming, and puzzles. This clarity made it significantly easier to make subsequent changes.
+                            </p>
+                            <p>
+                                During this project, I tried a new method of documentation: I wrote down design thoughts and solutions for each major problem encountered (excluding minor bugs). I also captured screenshots, videos, and documented decisions for future reference and comparison. All of these practices helped me make more informed decisions by allowing me to take the time to think through and document my ideas first.
+                             </p>
+                            <p>
+                                Overall, I consider the project a success. However, I would have liked to include audio, more levels for players to explore, and additional puzzles. I believe the game achieved its goal of gradually introducing players to various mechanics and combining them into diverse puzzles of increasing difficulty. It serves as a tutorial for users, and I think several more levels would provide ample opportunity to explore different combinations of mechanics and challenge players in new ways.
+                             </p>
+                        </div>
+                        <div class="block-visuals">
+                            <div class="image-container">
+                                <img src="assets/img/portfolio/squirrelbros/designthinking.png">
+                                <p class="caption">Design thinking and documentation</p>
+                            </div>
+                            <div class="image-container">
+                                <!-- <img src="assets/img/portfolio/capstone/">
+                                <p class="caption">Progress slideshow</p> -->
+                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/squirrelbros/slideshow.mp4">
+                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
+                                        <source src="assets/img/portfolio/squirrelbros/slideshow.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <p class="caption">Progress slideshow</p>
+                                </div>
+                            </div>
+                            <div class="image-container">
+                                <img src="assets/img/portfolio/squirrelbros/end-screen.png">
+                                <p class="caption">Ending if you beat the game!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for expanded image -->
+            <div id="imageModal" class="modal">
+                <img class="modal-content" id="expandedImg">
+            </div>
+
+            <div id="videoModal" class="modal">
+                <div class="modal-content">
+                    <!-- <span class="close">&times;</span> -->
+                    <video id="modalVideo" loop muted autoplay>
+                        <source src="" type="video/mp4" id="modalVideoSource">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+    
+         <script>
+            var modal = document.getElementById("videoModal");
+            var modalVideo = document.getElementById("modalVideo");
+            var modalVideoSource = document.getElementById("modalVideoSource");
+            // var span = document.getElementsByClassName("close")[0];
+    
+            // Select all video containers
+            var videoContainers = document.querySelectorAll(".video-container");
+            var backgroundVideos = document.querySelectorAll("video");
+    
+            // Pause videos that are not in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const video = entry.target;
+                    if (entry.isIntersecting) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, {
+                threshold: 0.5 // Video is considered in view when at least 50% visible
+            });
+    
+            // Observe each video for visibility
+            backgroundVideos.forEach(video => {
+                observer.observe(video);
+            });
+    
+            // Add click event listeners to all video containers
+            videoContainers.forEach(function(container) {
+                container.onclick = function() {
+                    var videoSrc = container.getAttribute("data-video-src");
+                    modalVideoSource.src = videoSrc;
+                    // modalVideo.load();
+    
+                    var backgroundVideoId = container.querySelector("video").id;
+                    var backgroundVideo = document.getElementById(backgroundVideoId);
+    
+                    modalVideo.currentTime = backgroundVideo.currentTime;
+    
+                    // Pause all background videos when modal opens
+                    // backgroundVideos.forEach(function(video) {
+                    //     video.pause();
+                    // });
+    
+                    // Load and play the modal video
+                    modal.style.display = "flex";
+                    modalVideo.load();
+                    
+                    setTimeout(function() {
+                        modalVideo.play().catch(function(error) {
+                            console.log("Error playing the video:", error);
+                        });
+                    }, 200);
+                };
+            });
+    
+            // Helper function to check if an element is in the viewport
+            function isInViewport(element) {
+                var rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                modalVideo.pause(); // Pause the modal video when closing
+
+                // Resume background videos that are currently visible
+                backgroundVideos.forEach(function(video) {
+                    if (isInViewport(video)) {
+                        video.play();
+                    }
+                });
+            }
+        };
+        </script>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
