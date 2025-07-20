@@ -1,0 +1,225 @@
+using System.Collections;
+using Unity.Cinemachine;
+using UnityEngine;
+
+public class TriggerPoint : MonoBehaviour
+{
+    #region Serialized Fields
+    [Header("Trigger Type")]
+    [Tooltip("Is this a point where the player respawns?")]
+    [SerializeField] private bool isRespawnPoint;
+    [Tooltip("Is this a point that triggers a puzzle?")]
+    [SerializeField] private bool isPuzzlePoint;
+    [Tooltip("Is this a point that displays text/dialogue?")]
+    [SerializeField] private bool isTextPoint;
+
+    [Header("Trigger Settings")]
+    [Tooltip("A unique index to identify this trigger point.")]
+    [SerializeField] private int triggerIndex;
+    [Tooltip("Cinemachine Cameras to swap to for specific events.")]
+    [SerializeField] private CinemachineVirtualCamera[] cameras; // Changed to VirtualCamera for clarity
+    [Tooltip("The GameObject used to prompt messages (e.g., 'Checkpoint Reached').")]
+    [SerializeField] private GameObject messagePrompt;
+    #endregion
+
+    #region Private Variables
+    private bool hasBeenActivated;
+    private BoxCollider2D boxCollider; // Renamed for clarity
+    private Vector2 triggerLocation;
+    private Vector2 messagePromptPosition;
+    #endregion
+
+    #region Unity Lifecycle Methods
+    private void Awake() // Use Awake for initialization that doesn't depend on other objects' Start
+    {
+        boxCollider = GetComponent<BoxCollider2D>();
+        if (boxCollider == null)
+        {
+            Debug.LogError($"TriggerPoint on {gameObject.name} requires a BoxCollider2D component.", this);
+            enabled = false; // Disable script if collider is missing
+            return;
+        }
+
+        // Calculate trigger location
+        Bounds boxBounds = boxCollider.bounds;
+        triggerLocation = new Vector2(boxBounds.center.x, boxBounds.center.y - boxBounds.extents.y);
+
+        // Initialize message prompt state
+        if (messagePrompt != null)
+        {
+            messagePrompt.SetActive(false);
+            messagePromptPosition = new Vector2(triggerLocation.x, triggerLocation.y + 1.5f);
+        }
+        else
+        {
+            Debug.LogWarning($"Message Prompt not assigned on {gameObject.name}. Checkpoint messages will not display.", this);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return; // Use CompareTag for efficiency
+
+        // Handle Text Point logic
+        if (isTextPoint)
+        {
+            HandleTextTrigger(other);
+        }
+
+        // Handle Respawn Point logic (separate for clarity and potential multiple activations)
+        if (isRespawnPoint && !hasBeenActivated) // Only set respawn point once per activation cycle
+        {
+            TriggerPointManager.instance.SetRespawnPosition(triggerLocation);
+            hasBeenActivated = true; // Mark as activated for respawn point
+            StartCoroutine(DisplayCheckpointReachedMessage());
+        }
+
+        // Handle Puzzle Point logic
+        if (isPuzzlePoint)
+        {
+            HandlePuzzleTriggerEnter(other);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+
+        if (isPuzzlePoint && IsLeavingPuzzle(other.transform, triggerIndex))
+        {
+            HandlePuzzleTriggerExit(other);
+        }
+    }
+    #endregion
+
+    #region Trigger Logic Methods
+    private void HandleTextTrigger(Collider2D playerCollider)
+    {
+        // Text points might be activated multiple times if not set to be 'one-shot'
+        if (hasBeenActivated && !isRespawnPoint) return; // Prevent re-triggering text if not a respawn point and already activated
+
+        // Specific tutorial check
+        if (triggerIndex == 10)
+        {
+            Invoke(nameof(SwapCameraAfterTime), 2f); // Using nameof for safety
+        }
+
+        GameplayManager.instance.TurnOnDialogue();
+        GameplayManager.instance.DisplayCurrentDialogue();
+
+        // If it's a text point that also acts as a respawn point, set it
+        if (isRespawnPoint)
+        {
+            TriggerPointManager.instance.SetRespawnPosition(triggerLocation);
+            StartCoroutine(DisplayCheckpointReachedMessage());
+        }
+
+        hasBeenActivated = true; // Mark as activated for text point
+    }
+
+    private void HandlePuzzleTriggerEnter(Collider2D playerCollider)
+    {
+        PlayerController playerController = playerCollider.GetComponent<PlayerController>();
+        if (playerController != null)
+        {
+            playerController.SetLinkNPCStatus(true, TriggerPointManager.instance.GetSquirrel(triggerIndex));
+        }
+        else
+        {
+            Debug.LogWarning("PlayerController not found on player object.", playerCollider);
+        }
+
+        TriggerPointManager.instance.EnableNewSquirrel(triggerIndex, playerCollider.gameObject);
+
+        // Camera swap for specific puzzle indices
+        if (cameras != null && cameras.Length > 0)
+        {
+            if (triggerIndex == 2 && cameras.Length > 2 && cameras[2] != null) // Ensure index is valid
+            {
+                CameraManager.instance.SwapToNewCamera(cameras[2]);
+            }
+            else if (triggerIndex == 4 && cameras.Length > 3 && cameras[3] != null) // Ensure index is valid
+            {
+                CameraManager.instance.SwapToNewCamera(cameras[3]);
+            }
+        }
+    }
+
+    private void HandlePuzzleTriggerExit(Collider2D playerCollider)
+    {
+        PlayerController playerController = playerCollider.GetComponent<PlayerController>();
+        if (playerController != null)
+        {
+            playerController.SetLinkNPCStatus(false, null);
+        }
+
+        TriggerPointManager.instance.DisableNewSquirrel(triggerIndex);
+
+        // If puzzle is 2b or 2d, swap cameras back to default (assuming cameras[0] is default)
+        if (cameras != null && cameras.Length > 0 && cameras[0] != null)
+        {
+            if (triggerIndex == 2 || triggerIndex == 4)
+            {
+                CameraManager.instance.SwapToNewCamera(cameras[0]);
+            }
+        }
+    }
+    #endregion
+
+    #region Coroutines
+    private IEnumerator DisplayCheckpointReachedMessage()
+    {
+        if (messagePrompt != null)
+        {
+            messagePrompt.transform.position = messagePromptPosition;
+            messagePrompt.SetActive(true);
+
+            yield return new WaitForSeconds(1.5f);
+
+            messagePrompt.SetActive(false);
+        }
+    }
+    #endregion
+
+    #region Helper Methods
+    private bool IsLeavingPuzzle(Transform playerTransform, int triggerIndex)
+    {
+        // Consider making these comparison values (triggerIndex 2, 3) configurable or use an enum
+        // for better readability and maintainability.
+        if (triggerIndex != 2 && triggerIndex != 3)
+        {
+            return playerTransform.position.x >= triggerLocation.x;
+        }
+        else
+        {
+            return playerTransform.position.x <= triggerLocation.x;
+        }
+    }
+
+    private void SwapCameraAfterTime()
+    {
+        // Ensure camera exists and is assigned
+        if (cameras != null && cameras.Length > 1 && cameras[1] != null)
+        {
+            CameraManager.instance.SwapToNewCamera(cameras[1]);
+        }
+        else
+        {
+            Debug.LogWarning($"Cannot swap camera for triggerIndex {triggerIndex}. Camera at index 1 is null or not assigned.", this);
+        }
+    }
+    #endregion
+
+    #region Public Methods
+    public int GetPuzzleIndex()
+    {
+        return triggerIndex;
+    }
+
+    public void TurnOffPuzzlePoint()
+    {
+        isPuzzlePoint = false;
+        // Optionally, add logic here to clean up any active puzzle state if it's turned off mid-puzzle
+    }
+    #endregion
+}

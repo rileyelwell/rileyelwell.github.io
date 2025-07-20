@@ -11,42 +11,50 @@
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/styles copy.css" rel="stylesheet" />
     </head>
     <body id="page-top">
 
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">Riley Elwell | Game Designer</a>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="about.html">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="sandbox.html">Sandbox</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="resume.html">Resume</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="blog.html">Blog</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li>
-                    </ul>
-                </div>
+        <nav class="custom-navbar">
+          <div class="navbar-container">
+            <div class="navbar-brand">
+              <a class="navbar-logo" href="index.html">
+                  <img src="assets/favicon.ico" alt="Favicon" class="favicon">
+                  Riley Elwell
+              </a>
             </div>
-        </nav>
+              <ul class="navbar-menu">
+                  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
+                  <li class="nav-item"><a class="nav-link" href="resume.html">Resume / CV</a></li>
+                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+              </ul>
+              <div class="navbar-social">
+                  <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
+              </div>
+          </div>
+      </nav>
+
+        <section class="portfolio-title-section">
+            <h1 style="margin-top: 100px;">BLOG</h1>
+            <div class="title-separator"></div>
+            <!-- <p class="portfolio-subtitle">"The only way to do great work is to love what you do." - Steve Jobs</p> -->
+        </section>
+
 
         <!-- Section -->
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h3 class="page-section-heading text-uppercase">Blog</h3>
-
-                <div class="my-divider"></div>
 
                 <h2>10/18/2024</h2>
                 <p>
@@ -62,12 +70,12 @@
                     Even though I love video games and game design, I need a break from it at times. I found a football (soccer) team to play with each week, which is a lot of fun. They mainly speak in Swedish, which can be hard to understand while playing, but it gives me even more motivation to keep learning the language. All the guys are super friendly and can speak English with me when I have a question or need instructions. So essentially, living in Sweden has been pretty great so far! It was definitely something to get used to at first, and I don't know everything, but I think I'm progressing and am excited for the next couple of months. Our first big Game Project 1 is coming up, so stay tuned!
                 </p>
 
-                <div class="my-divider"></div>
+                <!-- <div class="my-divider"></div> -->
 
                 <h2>6/30/2024</h2>
                 <p>
                     Hello, everyone! The bad news is that I have missed several months of this blog, meaning I have failed that sub-goal I set at the beginning. However, 
-                    the good news is that I missed it because I have been very busy with other projects, graduation, and my next step in my career!
+                    the good news is that I missed it because I have been very busy with other projects, graduation, and the next step in my career!
                 </p>
                 <p>
                     Firstly, I recently graduated and finished my B.S. degree at Oregon State University! It was a great four years in Oregon, where I learned a lot 
@@ -85,7 +93,7 @@
                     Futuregames starting in Fall 2024 and hope to create some awesome new game projects!
                 </p>
 
-                <div class="my-divider"></div>
+                <!-- <div class="my-divider"></div> -->
 
                 <h2>3/8/2024</h2>
                 <p>
@@ -115,7 +123,7 @@
                     exciting for me. I hope to update this website with more information as soon as possible!
                 </p>
 
-                <div class="my-divider"></div>
+                <!-- <div class="my-divider"></div> -->
 
                 <h2>12/26/2023</h2>
                 <p>
@@ -143,7 +151,7 @@
                     the game we're working on will be released for WebGL and Mobile platforms!
                 </p>
 
-                <div class="my-divider"></div>
+                <!-- <div class="my-divider"></div> -->
 
                 <h2>11/13/2023</h2>
                 <p>
@@ -176,5 +184,19 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
+                <p>Website designed and developed by Riley Elwell.</p>
+                <p>
+                    <a href="mailto:your-email@example.com" class="footer-link">Contact</a>
+                </p>
+                <div class="footer-social">
+                    <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/rileyelwell/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

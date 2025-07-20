@@ -1,0 +1,431 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PlayerController : MonoBehaviour {
+
+    #region DECLARATIONS
+
+    // Components & References
+    private Rigidbody2D rb;
+    private Animator animator;
+
+    [Header("References")]
+    [SerializeField] private LayerMask groundLayer;
+	[SerializeField] private PlayerData playerData;
+
+    // Timer Checks
+    private float timeLastPressedJump;
+    private float timeLastOnGround;
+
+    // Movement (Run)
+    [Header("Movement/Run")]
+    private Vector2 movementInput;
+    [HideInInspector] public bool isFacingRight;    
+    private float runAccelAmount;
+    private float runDeccelAmount;
+
+    // Gravity    
+    [Header("Gravity")]								  
+	[SerializeField] private float fallGravityMult; 
+	[SerializeField] private float maxFallSpeed; 
+	[SerializeField] private float fastFallGravityMult; 					  
+	[SerializeField] private float maxFastFallSpeed;
+	private float gravityStrength;
+	private float gravityScale; 	
+
+    // Jump
+    [Header("Jump")]
+    private bool isJumping;
+    private bool isJumpFalling;
+    private bool isJumpCancelled;
+    private float jumpForce;
+	private bool isJumpingFromVine;
+
+	// Health
+	[Header("Health")]
+	[SerializeField] private List<Image> playerHealthImages = new List<Image>();
+    private int maxPlayerHealth;
+	[SerializeField] private bool isNPCSquirrel;
+	
+	
+	public bool isLinkedToNPC;
+	public GameObject linkedNPC;
+
+
+	private int playerHealth;
+	private bool canMoveLeftRight;
+	[SerializeField] private bool invertedMovement;
+
+	private float fallSpeedDampingThreshold;
+
+    #endregion
+
+    private void Awake() {
+        rb = GetComponent<Rigidbody2D> ();
+        animator = GetComponent<Animator>();
+		InitializeVariables();
+    }
+
+    private void Start() {
+        SetGravityScale(gravityScale);
+		isFacingRight = true;
+		canMoveLeftRight = true;
+		maxPlayerHealth = playerHealthImages.Count;
+		playerHealth = maxPlayerHealth;
+		fallSpeedDampingThreshold = CameraManager.instance.fallDampingChangeThreshold;
+		isLinkedToNPC = false;
+    }
+
+    #region UPDATE
+    private void Update() 
+	{
+		UpdateTimers();
+		HandleMovementInput();
+		HandleJumpInput();
+		HandleCameraUpdates();
+    }
+
+	private void UpdateTimers() 
+	{
+		timeLastOnGround -= Time.deltaTime;
+		timeLastPressedJump -= Time.deltaTime;
+	}
+
+	private void HandleMovementInput() 
+	{
+		movementInput.x = Input.GetAxisRaw("Horizontal");
+		movementInput.y = Input.GetAxisRaw("Vertical");
+
+		if (invertedMovement)
+			movementInput.x = -movementInput.x;
+
+		if (movementInput.x != 0 && canMoveLeftRight) {
+			CheckDirectionToFace(movementInput.x > 0);
+			UpdateAnimatorStates(true);
+		} else if (canMoveLeftRight) {
+			UpdateAnimatorStates(false);
+		}
+	}
+
+	private void UpdateAnimatorStates(bool isRunning) 
+	{
+		animator.SetBool("isRunning", isRunning);
+		animator.SetBool("isIdle", !isRunning);
+	}
+
+	private void HandleCameraUpdates()
+	{
+		// If the player is falling fast enough, move the camera faster
+		if (rb.linearVelocity.y < fallSpeedDampingThreshold && 
+			!CameraManager.instance.isLerpingYDamping && 
+			!CameraManager.instance.LerpedFromPlayerFalling)
+		{
+			CameraManager.instance.LerpYDamping(true); // Player is falling
+		}
+
+		// If the player has stopped falling, reset the camera
+		if (rb.linearVelocity.y >= 0f && 
+			!CameraManager.instance.isLerpingYDamping && 
+			CameraManager.instance.LerpedFromPlayerFalling)
+		{
+			CameraManager.instance.LerpedFromPlayerFalling = false;
+			CameraManager.instance.LerpYDamping(false); // Player has stopped falling
+		}
+
+		// If the player is moving up quickly (bouncy mushroom)
+		if (rb.linearVelocity.y > CameraManager.instance.jumpDampingChangeThreshold && 
+			!CameraManager.instance.isLerpingYDamping)
+		{
+			CameraManager.instance.LerpYDamping(false, true);
+		}
+	}
+
+	private void HandleJumpInput()
+	{
+		if(Input.GetKeyDown(KeyCode.Space))
+				OnJumpInput();
+
+			if (Input.GetKeyUp(KeyCode.Space))
+				OnJumpUpInput();
+
+
+			if (!isJumping)
+			{
+				// check if grounded and sets coyote time if so
+				if (IsGrounded() && !isJumping)
+					timeLastOnGround = playerData.coyoteTime;	
+			}
+
+			if (isJumping && rb.linearVelocityY < 0)
+				isJumping = false;
+
+			if (timeLastOnGround > 0 && !isJumping)
+			{
+				isJumpCancelled = false;
+				if(!isJumping)
+					isJumpFalling = false;
+			}
+
+			//Jump
+			if (CanJump() && timeLastPressedJump > 0)
+			{
+				isJumping = true;
+				isJumpCancelled = false;
+				isJumpFalling = false;
+				Jump();
+			}
+			else if (rb.linearVelocityY < 0 && movementInput.y < 0)
+			{
+				//Much higher gravity if holding down
+				SetGravityScale(gravityScale * fastFallGravityMult);
+				
+				//Caps maximum fall speed, so when falling over large distances we don't accelerate to insanely high speeds
+				rb.linearVelocity = new Vector2(rb.linearVelocityX, Mathf.Max(rb.linearVelocityY, -maxFastFallSpeed));
+			}
+			else if (isJumpCancelled)
+			{
+				//Higher gravity if jump button released
+				SetGravityScale(gravityScale * playerData.jumpCutGravityMult);
+				rb.linearVelocity = new Vector2(rb.linearVelocityX, Mathf.Max(rb.linearVelocityY, -maxFallSpeed));
+			}
+			else if ((isJumping || isJumpFalling) && Mathf.Abs(rb.linearVelocityY) < playerData.jumpHangTimeThreshold)
+			{
+				SetGravityScale(gravityScale * playerData.jumpHangGravityMult);
+			}
+			else if (rb.linearVelocityY < 0)
+			{
+				//Higher gravity if falling
+				SetGravityScale(gravityScale * fallGravityMult);
+				//Caps maximum fall speed, so when falling over large distances we don't accelerate to insanely high speeds
+				rb.linearVelocity = new Vector2(rb.linearVelocityX, Mathf.Max(rb.linearVelocityY, -maxFallSpeed));
+			}
+			else
+			{
+				//Default gravity if standing on a platform or moving upwards
+				SetGravityScale(gravityScale);
+			}
+	}
+
+
+    private void FixedUpdate() {
+		Run(1);
+    }
+    #endregion
+
+    #region RUNNING
+    private void Run(float lerpAmount)
+	{
+		// calculate direction and target velocity
+		float targetSpeed = movementInput.x * playerData.runMaxSpeed;
+
+		// using lerp to smooth controls for direction and speed
+		targetSpeed = Mathf.Lerp(rb.linearVelocityX, targetSpeed, lerpAmount);
+
+        // calculate an acceleration rate based on several factors
+		float accelRate;
+		if (timeLastOnGround > 0)
+			accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? runAccelAmount : runDeccelAmount;
+		else
+			accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? runAccelAmount * playerData.accelInAir : runDeccelAmount * playerData.deccelInAir;
+
+        // add a bonus acceleration to the jump's apex (hopefully feels more responsive)
+		if ((isJumping || isJumpFalling) && Mathf.Abs(rb.linearVelocityY) < playerData.jumpHangTimeThreshold)
+		{
+			accelRate *= playerData.jumpHangAccelerationMult;
+			targetSpeed *= playerData.jumpHangMaxSpeedMult;
+		}
+
+		// conserve momentum of player as long as they are not over the max speed
+		if(playerData.doConserveMomentum && Mathf.Abs(rb.linearVelocityX) > Mathf.Abs(targetSpeed) && Mathf.Sign(rb.linearVelocityX) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f && timeLastOnGround < 0)
+			accelRate = 0; 
+
+		// calculate necessary force and apply to the rigidbody
+		float speedDif = targetSpeed - rb.linearVelocityX;
+		float movement = speedDif * accelRate;
+		rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
+	}
+
+    private void FlipSprite() {
+        // switch the toggle flag for direction the player is facing
+        isFacingRight = !isFacingRight;
+
+        // multiply the player's x local scale by -1
+        Vector3 tempScale = transform.localScale;
+        tempScale.x *= -1;
+        transform.localScale = tempScale;
+    }
+    #endregion
+
+    #region JUMP
+    private void OnJumpInput()
+	{
+		timeLastPressedJump = playerData.jumpInputBufferTime;
+	}
+
+	private void OnJumpUpInput()
+	{
+		if (CanJumpCut())
+			isJumpCancelled = true;
+	}
+
+    private void Jump()
+	{
+		// allow only one jump per press (with some grace)
+		timeLastPressedJump = 0;
+		timeLastOnGround = 0;
+
+        // apply the jump force to the player
+		float force = jumpForce;
+		if (rb.linearVelocityY < 0)
+			force -= rb.linearVelocityY;
+
+		rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+	}
+    #endregion
+
+    #region CHECKS & BOOLS
+    private void CheckDirectionToFace(bool isMovingRight)
+	{
+		if (isMovingRight != isFacingRight)
+			FlipSprite();
+	}
+
+	private bool IsGrounded()
+	{
+		if (isJumpingFromVine) isJumpingFromVine = false;
+		return Physics2D.Raycast(transform.position, Vector2.down, playerData.raycastDistance, groundLayer);
+	}
+
+    private bool CanJump()
+    {
+		return timeLastOnGround > 0 && !isJumping;
+    }
+
+	private bool CanJumpCut()
+    {
+		return isJumping && rb.linearVelocityY > 0;
+    }
+    #endregion
+
+    #region GET/SET
+
+    public Vector3 GetCurrentPosition()
+    {
+        return this.transform.position;
+    }
+
+    private void SetGravityScale(float scale)
+	{
+		if (!isJumpingFromVine)
+			rb.gravityScale = scale;
+		else
+			rb.gravityScale = 8f;
+	}
+
+	public void SetMovementBool(bool x)
+	{
+		canMoveLeftRight = x;
+	}
+
+	public void ResetJump()
+	{
+		timeLastOnGround = 1f;
+		isJumping = false;
+	}
+
+	public void SetIsJumpingFromVine(bool x)
+	{
+		isJumpingFromVine = x;
+	}
+
+	public bool GetIsNPCSquirrel()
+	{
+		return isNPCSquirrel;
+	}
+
+	public void SetLinkNPCStatus(bool x, GameObject _linkedNPC)
+	{
+		isLinkedToNPC = x;
+		linkedNPC = _linkedNPC;
+	}
+
+	public int GetCurrentHealth()
+	{
+		return playerHealth;
+	}
+
+	public int GetMaxHealth()
+	{
+		return maxPlayerHealth;
+	}
+
+    #endregion
+
+    private void OnValidate()
+    {
+		InitializeVariables();
+	}
+
+	private void InitializeVariables()
+	{
+		//Calculate gravity strength using the formula (gravity = 2 * jumpHeight / timeToJumpApex^2) 
+		gravityStrength = -(2 * playerData.jumpHeight) / (playerData.timeToJumpApex * playerData.timeToJumpApex);
+		
+		//Calculate the rigidbody's gravity scale (ie: gravity strength relative to unity's gravity value, see project settings/Physics2D)
+		gravityScale = gravityStrength / Physics2D.gravity.y;
+
+		//Calculate are run acceleration & deceleration forces using formula: amount = ((1 / Time.fixedDeltaTime) * acceleration) / runMaxSpeed
+		runAccelAmount = (50 * playerData.runAcceleration) / playerData.runMaxSpeed;
+		runDeccelAmount = (50 * playerData.runDecceleration) / playerData.runMaxSpeed;
+
+		//Calculate jumpForce using the formula (initialJumpVelocity = gravity * timeToJumpApex)
+		jumpForce = Mathf.Abs(gravityStrength) * playerData.timeToJumpApex;
+
+		playerData.runAcceleration = Mathf.Clamp(playerData.runAcceleration, 0.01f, playerData.runMaxSpeed);
+		playerData.runDecceleration = Mathf.Clamp(playerData.runDecceleration, 0.01f, playerData.runMaxSpeed);
+	}
+
+
+    #region HEALTH
+
+	public bool UpdatePlayerHealthAfterHit() 
+    {
+		if (!isNPCSquirrel)
+		{
+			if (playerHealth - 1 >= 0)
+			{
+				// turn off the image when hit by something
+				Image imageToRemove = playerHealthImages[playerHealth - 1];
+				imageToRemove.color = new Color(0, 0, 0);
+
+				// update the number value for playerHealth
+				playerHealth--;
+
+				if (playerHealth <= 0)
+					return true; // end game scenario
+			}
+			return false;  
+		}
+		// try removing health (from the actual player) if a puzzle NPC squirrel dies
+		StartCoroutine(TriggerPointManager.instance.RespawnPlayer(linkedNPC.GetComponent<PlayerController>()));
+		return false;
+    }
+
+    public void UpdatePlayerHealthAfterHeal()
+    {
+		if (!isNPCSquirrel)
+		{
+			if (playerHealth >= maxPlayerHealth)
+				return;
+
+			// turn on the image when healing
+			Image imageToAdd = playerHealthImages[playerHealth];
+			imageToAdd.color = new Color(255, 0, 0);
+
+			// update the number value for playerHealth
+			playerHealth++;
+		}
+    }
+    #endregion
+}

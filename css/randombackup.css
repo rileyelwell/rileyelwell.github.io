@@ -1,0 +1,237 @@
+.project-1-content {
+  position: relative; /* Ensure text is above the overlay */
+  z-index: 2; /* Ensure text is above the overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: inherit; /* Match the height of the parallax section */
+  color: white; /* Or your desired text color */
+  padding: 2em;
+  text-align: center;
+}
+
+.project-1-content .project-header {
+  margin-bottom: 1em;
+}
+
+.project-1-content .project-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.project-1-content .project-subtitle {
+  font-size: 1.1em;
+  color: #eee; /* Light text for subtitle */
+}
+
+/* Project 1 Specific Background Color (fallback) */
+#project1 {
+  background-color: #333; /* Or your desired fallback color */
+}
+
+
+
+/* General Parallax Background Styling */
+.parallax-bg {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.parallax-image {
+  position: absolute;
+  top: -0px;
+  left: 0;
+  width: 100%;
+  height: auto; /* Let height be determined by content */
+  min-height: 100%; /* Ensure it covers the full height initially */
+  background-size: cover;
+  background-position: center;
+  /* Parallax effect controlled by JavaScript */
+}
+
+.parallax-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Black fade, adjust opacity as needed */
+}
+
+/* Styling for Project 2 Content (Centered Text) */
+.project-2-content {
+  position: relative; /* Ensure text is above the overlay */
+  z-index: 2; /* Ensure text is above the overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: inherit; /* Match the height of the parallax section */
+  color: white; /* Or your desired text color */
+  padding: 2em;
+  text-align: center;
+}
+
+.project-2-content .project-header {
+  margin-bottom: 1em;
+}
+
+.project-2-content .project-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.project-2-content .project-subtitle {
+  font-size: 1.1em;
+  color: #eee; /* Light text for subtitle */
+}
+
+/* Styling for Horizontal Details Section */
+.project-details-horizontal {
+  display: flex; /* Arrange items horizontally */
+  justify-content: center; /* Center items horizontally */
+  gap: 2em; /* Space between detail items */
+  margin-top: 2em; /* Add some space above the details */
+}
+
+.detail-item-horizontal {
+  display: flex; /* Arrange icon and text horizontally */
+  align-items: center; /* Vertically align icon and text */
+  text-align: center; /* Center text within each item */
+}
+
+.detail-icon-horizontal {
+  width: 32px; /* Adjust icon size for this section */
+  height: auto;
+  margin-right: 0.5em; /* Space between icon and text */
+}
+
+/* Project 2 Specific Background Color (fallback if parallax fails) */
+#project2 {
+  background-color: #333; /* Dark fallback color */
+}
+
+
+
+
+
+/* ... Previous CSS for Parallax Background ... */
+
+/* Styling for Project 3 Content (Centered Text with Logo) */
+.project-3-content {
+  position: relative; /* Ensure text and logo are above the overlay */
+  z-index: 2; /* Ensure text and logo are above the overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: inherit; /* Match the height of the parallax section */
+  color: white; /* Or your desired text color */
+  padding: 2em;
+  text-align: center;
+}
+
+/* Styling for the Project Logo */
+.project-logo {
+  position: absolute;
+  top: 20px; /* Adjust top position if needed */
+  left: 20px; /* Adjust left position if needed */
+  width: 8vw; /* Increased logo size */
+  height: auto;
+  z-index: 3; /* Ensure logo is above other content */
+  /* background-color: rgba(0, 0, 0, 0.6); */
+}
+
+.project-3-content .project-header {
+  margin-bottom: 1em;
+}
+
+.project-3-content .project-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.project-3-content .project-subtitle {
+  font-size: 1.1em;
+  color: #eee; /* Light text for subtitle */
+}
+
+/* Project 3 Specific Background Color (fallback) */
+#project3 {
+  background-color: #444; /* Dark fallback color */
+}
+
+.project-content {
+  text-align: center;
+}
+
+
+
+/* VIDEO PLAYBACK FOR MAIN PROJECTS */
+
+.project-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.project-link:hover {
+  transform: scaleY(1.05);
+  z-index: 2;
+}
+
+.project-with-video .project-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* Keep video at z-index 1 */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-with-video:hover .project-video {
+  opacity: 1;
+}
+
+/* Ensure text and logo are above the video */
+.project-with-video .project-content {
+  position: relative;
+  z-index: 2; /* Make sure content is above the video */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: inherit;
+  color: white;
+  padding: 2em;
+  text-align: center;
+}
+
+/* Ensure individual text elements are also within the stacking context */
+.project-with-video .project-header,
+.project-with-video .project-details {
+  position: relative; /* Important for z-index on children */
+  z-index: 3; /* Ensure text is on top of the video */
+}
+
+/* Style the logo to ensure it's also above */
+.project-with-video .project-logo {
+  position: absolute;
+  /* top: 20px;
+  left: 20px;
+  width: 80px; */
+  height: auto;
+  z-index: 3; /* Ensure logo is on top of the video */
+}

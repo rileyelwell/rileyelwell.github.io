@@ -5,93 +5,131 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Riley Elwell | A Day in the Life of a Delivery Robot</title>
+        <title>A Day in the Life of a Delivery Robot | Riley Elwell</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/styles copy.css" rel="stylesheet" />
+        <script src="https://unpkg.com/@rive-app/webgl@1.0.0-beta.11/rive.min.js"></script>
     </head>
-    <body id="page-top">
+    <body id="page-top" class="project-details-page">
 
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">Riley Elwell | Game Designer</a>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="about.html">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="sandbox.html">Sandbox</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="resume.html">Resume</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="blog.html">Blog</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li>
-                    </ul>
+        <nav class="custom-navbar">
+            <div class="navbar-container">
+              <div class="navbar-brand">
+                <a class="navbar-logo" href="index.html">
+                    <img src="assets/favicon.ico" alt="Favicon" class="favicon">
+                    Riley Elwell
+                </a>
+              </div>
+                <ul class="navbar-menu">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume / CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+                <div class="navbar-social">
+                    <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                        target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                        target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                        target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
                 </div>
             </div>
         </nav>
 
-        <!-- Masthead-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h3 class="page-section-heading text-uppercase">A Day in the Life of a Delivery Robot</h3>
+        <section class="hero-section">
+            <img src="assets/img/portfolio/capstone/final_dixon_road.png" alt="Capstone Banner Image" class="hero-image">
+            <div class="hero-content">
+              <h1 class="project-title">A Day in the Life of a Delivery Robot</h1>
+              <div class="project-links">
+                <a href="https://github.com/rileyelwell/CS-GameDesignCompetition-23-24" target="_blank" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://khuynh2002.itch.io/university-delivery-drone" target="_blank" aria-label="Itch.io"><i class="fab fa-itch-io fa-2x"></i></a>
+                <a href="https://www.youtube.com/embed/wRAzDWgXAmA" target="_blank" aria-label="YouTube"><i class="fab fa-youtube fa-2x"></i></a>
+              </div>
+            </div>
+          </section>
+        
+          <section class="portfolio-title-section">
+            <h1>ABOUT</h1>
+            <p class="project-tagline">Tagline</p>
+            <!-- <p>
+                "A Day in the Life of a Delivery Robot" was created as my senior capstone project at Oregon State University. Our team of four was tasked with developing a driving simulator, and we chose to let players control a robot delivering food orders on campus while navigating AI traffic and obstacles. The goal is to reach the delivery location on time while avoiding collisions. The project was directly inspired by the actual food delivery robots we had on the OSU campus during our time there. If you'd like to try a build of the game, check the links below.
+            </p> -->
+          </section>
 
-                <!-- Game Details Section -->
-                <div class="game-details">
-                    <div class="detail-item">
-                        <img src="assets/icons/calendar.svg" class="detail-icon">
-                        <span>October 2023 - June 2024</span>
-                    </div>
-                    <div class="detail-item">
-                        <img src="assets/icons/type.svg" class="detail-icon">
-                        <span>Undergraduate Capstone Project</span>
-                    </div>
-                    <div class="detail-item">
-                        <img src="assets/icons/role.svg" class="detail-icon">
-                        <span>Level Design, 3D Art, UI/UX</span>
-                    </div>
-                    <div class="detail-item">
-                        <img src="assets/icons/software.svg" class="detail-icon">
-                        <span>Unity, Blender, Quixel Mixer, C#</span>
-                    
-                    </div>
-                </div>
+          <section class="project-info-bar">
+            <div class="info-item">
+              <img src="assets/icons/calendar.svg" alt="Calendar Icon">
+              <span>2023-24 (8 Months)</span>
+            </div>
+            <div class="info-item">
+              <img src="assets/icons/type.svg" alt="Type Icon">
+              <span>Level Design, 3D Art, UI/UX</span>
+            </div>
+            <div class="info-item">
+              <img src="assets/icons/role.svg" alt="Role Icon">
+              <span>Group of 4</span>
+            </div>
+            <div class="info-item">
+              <img src="assets/icons/software.svg" alt="Software Icon">
+              <span>Unity, Blender, Quixel Mixer, C#, GitHub</span>
+            </div>
+            </section>
 
-                <div class="video-and-details">
-                    <!-- Demo Video Embed -->
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/wRAzDWgXAmA" frameborder="0" allowfullscreen></iframe>
-                    
-                    <!-- Project Description -->
-                    <div class="project-description">
-                        <h2>Description</h2>
-                        <p>
-                            "A Day in the Life of a Delivery Robot" was created as my senior capstone project at Oregon State University. Our team of four was tasked with developing a driving simulator, and we chose to let players control a robot delivering food orders on campus while navigating AI traffic and obstacles. The goal is to reach the delivery location on time while avoiding collisions. The project was directly inspired by the actual food delivery robots we had on the OSU campus during our time there. If you'd like to try a build of the game, check the links below.
-                        </p>
-                        <h2>Links</h2>
-                        <div class="icon">
-                            <a class="rounded btn btn-social mx-1" 
-                                target="_blank" rel="noopener noreferrer" 
-                                href="https://github.com/rileyelwell/CS-GameDesignCompetition-23-24">
-                                <i class="fab fa-fw fa-github fa-2x"></i>
-                            </a>
-                            <a class="rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" 
-                            href="https://khuynh2002.itch.io/university-delivery-drone">
-                            <i class="fab fa-fw fa-itch-io fa-2x"></i>
-                            </a>
-                        </div>
+            <main class="project-details-content">
+                <section class="feature-section video-right-text-centered-left">
+                    <div class="feature-media">
+                        <video src="assets/img/portfolio/squirrelbros/puzzle_design_clips.mp4" autoplay loop muted playsinline alt="Puzzle Design Clips"></video>
                     </div>
-                </div>
+                    <div class="feature-text">
+                    <h3>Level Design</h3>
+                    <p>
+                        My focus was creating an authentic representation of part of the Oregon State University campus, while making adjustments to fit and positively impact
+                        the gameplay.
+                    </p>
+                    <p>
+                        Since the map was based on a real-world location, I had a great reference but struggled with exact scaling. I utilized Google Earth and Google Maps a lot,
+                        often using screenshots to trace rough outlines of buildings in Blender before adjusting the scale with notes I found online.
+                    </p>
+                    <p>
+                        There were many obstacles, such as trash cans and signs, that made it difficult for the robot to maneuver, so I had to add these sparingly. Balancing these
+                        with a reduced number of pedestrians was crucial to afford the player space and performance.
+                    </p>
+                </section>
+
+                <section class="feature-section video-left-text-centered-right">
+                    <div class="feature-media">
+                        <video src="assets/img/portfolio/squirrelbros/platforming_clips.mp4" autoplay loop muted playsinline alt="Platforming Clips"></video>
+                    </div>
+                    <div class="feature-text">
+                      <h3>Challenges</h3>
+                      <p>
+                        Working on the map alone, I quickly realized that only a section of the campus would be completed by our deadline, and I needed a solution for the bounds
+                        of the area. I had ideas for using fog and invisible walls, or flat buildings to block the player, but went with surrounding fences and dirt fields as if
+                        under construction.
+                      </p>
+                      <p>
+                        As I was learning modeling, texturing, and 3D art in general for the first time, a lot of my models and textures were not optimal for performance. I tried to 
+                        combat this with the use of static batching and less geometry in Blender, but my textures, compression, and collision generation skills need practice.
+                      </p>
+                    </div>
+                </section>
+
+
+            </main>
+
+
+
+                
 
                 <div class="block-section">
                     <h2>Level Design</h2>
@@ -116,12 +154,6 @@
                                 </li>
                             </ul>
                         </div>
-
-                        <!-- <div class="block-text">
-                            <p>
-                                My primary responsibility in this project was to design and build a map environment for our player-controlled robot to drive in and deliver orders. I focused on creating an authentic representation of part of the Oregon State University campus, while making adjustments to fit the gameplay. Fortunately, since I was basing the map on a real-world location, I always had a reference for where I wanted to add various detailed objects, such as foliage, buildings, walls, street lamps, etc. This made the level design process a bit different, as much of the layout was already planned for me. My objective, however, was to determine which objects to omit from the reference. For example, there were many trash cans, signs, and other objects along several paths that left little room for the robot to maneuver. To provide the player with more space to drive and avoid pedestrians, I decided to add these types of objects sparingly.
-                            </p>
-                        </div> -->
                         <div class="block-visuals">
                             <div class="image-container">
                                 <img src="assets/img/portfolio/capstone/objects_ignore.png">
@@ -365,93 +397,25 @@
             </div>
         </section>
 
-        <script>
-            var modal = document.getElementById("videoModal");
-            var modalVideo = document.getElementById("modalVideo");
-            var modalVideoSource = document.getElementById("modalVideoSource");
-            // var span = document.getElementsByClassName("close")[0];
-    
-            // Select all video containers
-            var videoContainers = document.querySelectorAll(".video-container");
-            var backgroundVideos = document.querySelectorAll("video");
-    
-            // Pause videos that are not in view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const video = entry.target;
-                    if (entry.isIntersecting) {
-                        video.play();
-                    } else {
-                        video.pause();
-                    }
-                });
-            }, {
-                threshold: 0.5 // Video is considered in view when at least 50% visible
-            });
-    
-            // Observe each video for visibility
-            backgroundVideos.forEach(video => {
-                observer.observe(video);
-            });
-    
-            // Add click event listeners to all video containers
-            videoContainers.forEach(function(container) {
-                container.onclick = function() {
-                    var videoSrc = container.getAttribute("data-video-src");
-                    modalVideoSource.src = videoSrc;
-                    // modalVideo.load();
-    
-                    var backgroundVideoId = container.querySelector("video").id;
-                    var backgroundVideo = document.getElementById(backgroundVideoId);
-    
-                    modalVideo.currentTime = backgroundVideo.currentTime;
-    
-                    // Pause all background videos when modal opens
-                    // backgroundVideos.forEach(function(video) {
-                    //     video.pause();
-                    // });
-    
-                    // Load and play the modal video
-                    modal.style.display = "flex";
-                    modalVideo.load();
-                    
-                    setTimeout(function() {
-                        modalVideo.play().catch(function(error) {
-                            console.log("Error playing the video:", error);
-                        });
-                    }, 200);
-                };
-            });
-    
-            // Helper function to check if an element is in the viewport
-            function isInViewport(element) {
-                var rect = element.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
-
-            window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-                modalVideo.pause(); // Pause the modal video when closing
-
-                // Resume background videos that are currently visible
-                backgroundVideos.forEach(function(video) {
-                    if (isInViewport(video)) {
-                        video.play();
-                    }
-                });
-            }
-        };
-        </script>
+        
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
+                <p>Website designed and developed by Riley Elwell.</p>
+                <p>
+                    <a href="mailto:your-email@example.com" class="footer-link">Contact</a>
+                </p>
+                <div class="footer-social">
+                    <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/rileyelwell/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

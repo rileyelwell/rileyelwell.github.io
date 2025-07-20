@@ -11,118 +11,246 @@
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/styles copy.css" rel="stylesheet" />
     </head>
     <body id="page-top">
 
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">Riley Elwell | Game Designer</a>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="about.html">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="sandbox.html">Sandbox</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="resume.html">Resume</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="blog.html">Blog</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li>
-                    </ul>
-                </div>
+        <nav class="custom-navbar">
+          <div class="navbar-container">
+            <div class="navbar-brand">
+              <a class="navbar-logo" href="index.html">
+                  <img src="assets/favicon.ico" alt="Favicon" class="favicon">
+                  Riley Elwell
+              </a>
             </div>
-        </nav>
+              <ul class="navbar-menu">
+                  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
+                  <li class="nav-item"><a class="nav-link" href="resume.html">Resume / CV</a></li>
+                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+              </ul>
+              <div class="navbar-social">
+                  <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
+              </div>
+          </div>
+      </nav>
 
-        <!-- Masthead-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h3 class="page-section-heading text-uppercase">Portfolio</h3>
-                
-                <div class="my-divider"></div>
-                
-                <div class="game-section">
-                    <div class="text-section">
-                      <h2>Winter Cabin</h2>
-                      <p class="project-info">Individual | Futuregames | 3 Weeks</p>
-                      <p class="project-info">Level Design</p>
-                        <p>
-                            Frolic through a snowy wonderland and explore a cave in this festive 3D platformer level! Collect coins to unlock your cozy 
-                            cabin and celebrate the holidays in style! 
-                        </p>
-                        <a href="winter-cabin.html" class="read-more-btn">Read More</a>
-                    </div>
-                    <div class="image-section">
-                        <img src="assets/img/portfolio/winter-cabin/cabin.png">
-                        <img src="assets/img/portfolio/winter-cabin/snowman.png">
-                    </div>
+        <!-- Video Loop Section -->
+        <section class="hero-video-section">
+            <video autoplay muted loop playsinline>
+                <source src="assets/img/portfolio/squirrelbros/puzzle_design_clips.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-text-overlay">
+                <h1>RILEY ELWELL</h1>
+                <p>TECHNICAL DESIGNER</p>
+                <div class="navbar-social" id="special-links">
+                  <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li>
                 </div>
-
-                <div class="game-section">
-                    <div class="text-section">
-                      <h2>Meandro</h2>
-                      <p class="project-info">Group (of 4) | Futuregames | 3 Weeks</p>
-                      <p class="project-info">Board Game Design, Technical Writing</p>
-                        <p>
-                            Be the first boat to sail onto an ocean tile at the board's edge—by any 'stream' necessary! Use your cards to carve your path or throw obstacles at your rivals.
-                        </p>
-                        <a href="meandro.html" class="read-more-btn">Read More</a>
-                    </div>
-                    <div class="image-section">
-                        <img src="assets/img/portfolio/meandro/meandro6.jpg">
-                        <img src="assets/img/portfolio/meandro/meandro5.jpg">
-                    </div>
-                </div>
-                
-                <div class="game-section">
-                    <div class="text-section">
-                      <h2>Squirrel Bros</h2>
-                      <p class="project-info">Individual | Futuregames | 3 Weeks</p>
-                      <p class="project-info">Level & Systems Design, Programming, Pixel-Art</p>
-                        <p>
-                            Take on the role of a brave squirrel as you platform through towering trees and solve puzzles alongside your brothers!
-                        </p>
-                        <a href="squirrel-bros.html" class="read-more-btn">Read More</a>
-                    </div>
-                    <div class="image-section">
-                        <img src="assets/img/portfolio/squirrelbros/itch1.png">
-                        <img src="assets/img/portfolio/squirrelbros/itch4.png">
-                    </div>
-                </div>
-
-                <div class="game-section">
-                    <div class="text-section">
-                      <h2>A Day in the Life of a Delivery Robot</h2>
-                      <p class="project-info">Group (of 4) | Oregon State University | 9 Months</p>
-                      <p class="project-info">Level Design, 3D Art, UI/UX</p>
-                        <p>
-                            An Oregon State University affiliated simulation game: A Day in the Life of a Delivery Robot encapsulates what it truly feels like to be a campus delivery drone, where its living purpose is to fuel hungry students. 
-                        </p>
-                        <a href="capstone.html" class="read-more-btn">Read More</a>
-                    </div>
-                    <div class="image-section">
-                        <img src="assets/img/portfolio/capstone/final_dixon_road.png">
-                        <img src="assets/img/portfolio/capstone/gameplay_ui.png">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal for expanded image -->
-            <div id="imageModal" class="modal">
-                <img class="modal-content" id="expandedImg">
             </div>
         </section>
+
+        <!-- Main Portfolio Project Section -->
+        <main>
+            <section class="portfolio-title-section">
+                <h1>PORTFOLIO</h1>
+                <div class="title-separator"></div>
+            </section>
+            
+            <section class="project-showcase-section">
+                <div class="project-entry" data-project-url="neila.html">
+                    <div class="project-hero-media">
+                        <img src="assets/img/portfolio/neila/NeilaPoster_1440.png" alt="NEILA">
+                    </div>
+                    <div class="project-info-panel">
+                        <h3 style="text-align: left;" class="project-name">NEILA</h3>
+                        <div class="project-thumbnail-grid">
+                            <img class="thumbnail-item" src="assets/img/portfolio/neila/moon_cinematic.png" alt="NEILA Thumbnail 1" data-main-src="assets/img/portfolio/neila/moon_cinematic.png" data-main-type="image">
+                            <img class="thumbnail-item" src="assets/img/portfolio/neila/neila_cinematic_library.png" alt="NEILA Thumbnail 2" data-main-src="assets/img/portfolio/neila/neila_cinematic_library.png" data-main-type="image">
+                            <img class="thumbnail-item" src="assets/img/portfolio/neila/sewer_room_cinematic.png" alt="NEILA Thumbnail 3" data-main-src="assets/img/portfolio/neila/sewer_room_cinematic.png" data-main-type="image">
+                            <img class="thumbnail-item" src="assets/img/portfolio/neila/Resistance_screenshot.png" alt="NEILA Thumbnail 4" data-main-src="assets/img/portfolio/neila/Resistance_screenshot.png" data-main-type="image">
+                        </div>
+
+                        <div class="hover-info-tags">
+                            <span class="hover-tag">Action</span>
+                            <span class="hover-tag">Supernatural</span>
+                            <span class="hover-tag">Singleplayer</span>
+                            <span class="hover-tag">Physics</span>
+                        </div>
+                        
+                        <div class="platform-icon">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                    </div>
+                    <div class="project-hover-info">
+                        
+                        <div class="hover-info-image">
+                            <video src="assets/img/portfolio/neila/NeilaInitialTrailer_compressed.mp4" autoplay loop muted playsinline alt="NEILA Trailer"></video>
+                        </div>
+
+                        <ul class="project-info-list2">
+                            <li>
+                                <img src="assets/icons/type.svg" alt="Briefcase Icon" class="project-info-icon2">
+                                <p>Technical Designer</p>
+                            </li>
+                            <li>
+                                <img src="assets/icons/software.svg" alt="Gear Icon" class="project-info-icon2">
+                                <p>Unreal Engine 5, Perforce, Miro, Jira</p>
+                            </li>
+                            <li>
+                                <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="project-info-icon2">
+                                <p>7 Weeks</p>
+                            </li>
+                            <li>
+                                <img src="assets/icons/role.svg" alt="Person Icon" class="project-info-icon2">
+                                <p>Team of 17</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-entry-separator"></div>
+                
+                <div class="project-entry" data-project-url="squirrel-bros.html">
+                    <div class="project-hero-media">
+                        <img src="assets/img/portfolio/squirrelbros/poster.png" alt="Squirrel Bros">
+                    </div>
+                    <div class="project-info-panel">
+                        <h3 class="project-name">Squirrel Bros</h3>
+                        <div class="project-thumbnail-grid">
+                            <img class="thumbnail-item" src="assets/img/portfolio/squirrelbros/about_img1.png" alt="Project 2 Thumbnail 1" data-main-src="assets/img/portfolio/squirrelbros/about_img1.png" data-main-type="image">
+                            <img class="thumbnail-item" src="assets/img/portfolio/squirrelbros/about_img2.png" alt="Project 2 Thumbnail 2" data-main-src="assets/img/portfolio/squirrelbros/about_img2.png" data-main-type="image">
+                            <img class="thumbnail-item" src="assets/img/portfolio/squirrelbros/about_img3.png" alt="Project 2 Thumbnail 3" data-main-src="assets/img/portfolio/squirrelbros/about_img3.png" data-main-type="image">
+                            <img class="thumbnail-item" src="assets/img/portfolio/squirrelbros/about_img4.png" alt="Project 2 Thumbnail 4" data-main-src="assets/img/portfolio/squirrelbros/about_img4.png" data-main-type="image">
+                        </div>
+                        <div class="hover-info-tags">
+                            <span class="hover-tag">Puzzle</span>
+                            <span class="hover-tag">Platformer</span>
+                            <span class="hover-tag">Side-Scroller</span>
+                            <span class="hover-tag">Pixel-Art</span>
+                        </div>
+                        
+                        <div class="platform-icon">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                    </div>
+                    <div class="project-hover-info">
+                        <div class="hover-info-image">
+                            <video src="assets/img/portfolio/squirrelbros/puzzle_design_clips.mp4" autoplay loop muted playsinline alt="Squirrel Bros Video"></video>
+                        </div>
+                        <ul class="project-info-list2">
+                            <li>
+                                <img src="assets/icons/type.svg" alt="Briefcase Icon" class="project-info-icon2">
+                                <p>Level & Systems Design, UI/UX, Pixel-Art</p>
+                            </li>
+                            <li>
+                                <img src="assets/icons/software.svg" alt="Gear Icon" class="project-info-icon2">
+                                <p>Unity, C#, Aseprite</p>
+                            </li>
+                            <li>
+                                <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="project-info-icon2">
+                                <p>3 Weeks</p>
+                            </li>
+                            <li>
+                                <img src="assets/icons/role.svg" alt="Person Icon" class="project-info-icon2">
+                                <p>Individual</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="portfolio-title-section">
+                <h1>SKILLS</h1>
+                <div class="title-separator"></div>
+            </section>
+
+            <section class="full-width-homepage">
+                <div class="skills-section">
+                    <ul class="skills-list">
+                        <li><img src="assets/icons/jira-logo.svg" alt="Jira"><span>Jira</span></li>
+                        <li><img src="assets/icons/unreal-engine-logo.svg" alt="Unreal Engine"><span>UE5</span></li>
+                        <li><img src="assets/icons/unity-logo.svg" alt="Unity"><span>Unity</span></li>
+                        <li><img src="assets/icons/code-icon.svg" alt="C#"><span>C, C#, C++, Python</span></li>
+                        <li><img src="assets/icons/perfroce.png" alt="Perforce"><span>Perforce</span></li>
+                        </ul>
+                </div>
+            </section>
+
+
+
+            <section class="portfolio-title-section">
+                <h1>ABOUT</h1>
+                <div class="title-separator"></div>
+            </section>
+
+            <div class="about-container">
+                
+                <div style="display: flex; align-items: flex-start;">
+                    <img class="about-image" src="assets/img/portfolio/riley_profile_square.JPG" alt="AboutPicture">
+                    <div class="about-text">
+                        <h2>Origin Story</h2>
+                        <p>
+                            Alright, let's do this one last time. My name is Riley Elwell. I was bitten by the game dev bug, and for the last couple years, 
+                            I've been on a mission to becoming a technical designer. 
+                        </p>
+                
+                        <p>
+                            Growing up in California, I discovered my passion for tech through coding, robotics, and cybersecurity in high school. 
+                            I then built a strong technical foundation at Oregon State University, 
+                            earning a B.S. in Applied Computer Science (Simulation & Game Programming) and exploring tools like Unity. To further specialize in game design, 
+                            I am currently studying at Futuregames Stockholm, aiming to refine my skills and build a compelling portfolio.
+                        </p>
+                
+                        <h2>Fun Facts</h2>
+                        <ul>
+                        <li>The Spiderverse movies are my favorite movies</li>
+                        <li>My top hobbies include soccer/football, basketball, and 100%-ing games</li>
+                        <li>I played Rocket League Esports at Oregon State for two years and peaked at GC1 (I'm washed now)</li>
+                        <li>In high school, I competed in VEX robotics and made it to the World Championships in 2019</li>
+                        <li>My takes: Fallout: New Vegas is the best Fallout game, the original BioShock is the best BioShock game, and
+                            Pokemon Heart Gold is the best Pokemon game.
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
         
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
+                <p>Website designed and developed by Riley Elwell.</p>
+                <p>
+                    <a href="mailto:your-email@example.com" class="footer-link">Contact</a>
+                </p>
+                <div class="footer-social">
+                    <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/rileyelwell/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

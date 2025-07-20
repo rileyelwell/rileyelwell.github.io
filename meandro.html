@@ -11,233 +11,197 @@
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/styles copy.css" rel="stylesheet" />
     </head>
-    <body id="page-top">
+    <body id="page-top" class="project-details-page">
 
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">Riley Elwell | Game Designer</a>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="about.html">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="sandbox.html">Sandbox</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="resume.html">Resume</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="blog.html">Blog</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                            target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li>
-                    </ul>
+        <nav class="custom-navbar">
+            <div class="navbar-container">
+              <div class="navbar-brand">
+                <a class="navbar-logo" href="index.html">
+                    <img src="assets/favicon.ico" alt="Favicon" class="favicon">
+                    Riley Elwell
+                </a>
+              </div>
+                <ul class="navbar-menu">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume / CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+                <div class="navbar-social">
+                    <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                        target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                        target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                        target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
                 </div>
             </div>
         </nav>
 
+        <section class="hero-section">
+            <img src="assets/img/portfolio/meandro/meandro7.jpg" alt="Squirrel Bros Banner Image" class="hero-image">
+            <div class="hero-content">
+              <h1 class="project-title">Meandro</h1>
+            </div>
+          </section>
+        
+          <section class="portfolio-title-section">
+            <h1>ABOUT</h1>
+            <p class="project-tagline">Be the first boat to sail onto an ocean tile at the board's edge—by any 'stream' necessary!</p> 
+          </section>
+
+          <section class="project-info-bar">
+            <div class="info-item">
+              <img src="assets/icons/calendar.svg" alt="Calendar Icon">
+              <span>2024 (3 Weeks)</span>
+            </div>
+            <div class="info-item">
+              <img src="assets/icons/type.svg" alt="Type Icon">
+              <span>Systems Design, Technical Writing</span>
+            </div>
+            <div class="info-item">
+              <img src="assets/icons/role.svg" alt="Role Icon">
+              <span>Group of 4</span>
+            </div>
+            <div class="info-item">
+              <img src="assets/icons/software.svg" alt="Software Icon">
+              <span>Paper Prototyping, Powerpoint</span>
+            </div>
+            </section>
+
         <!-- Masthead-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h3 class="page-section-heading text-uppercase">Meandro</h3>
+        <main class="project-details-content">
+            <section class="feature-section video-left-text-centered-right">
+                <div class="feature-media">
+                    <img src="assets/img/portfolio/meandro/dmeandro1.jpg">
+                </div>
+                <div class="feature-text">
+                  <h3>Rapid Prototyping</h3>
+                    <p>
+                    On the second day of development, our team decided to immediately test the game to see if it worked. We created a simple board with a grid of squares and used sticky notes as tiles to build a line. We quickly saw potential but realized the game needed more, such as sabotage abilities, to stay engaging. Here's why our process of rapid prototyping worked for us:
+                    </p>
+                    <ul>
+                        <li>Short length of the game allowed us to modify small parts and quickly play to test it</li>
+                        <li>Played 10-15 variations in the first week, taking brief notes after each round</li>
+                        <li>Hands-on approach helped us make decisions based on gameplay not theory</li>
+                        <li>Quick evolution then allowed more time for external playtesting and building a real board later on</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="feature-section video-right-text-centered-left">
+              <div class="feature-media">
+                <video src="assets/img/portfolio/squirrelbros/puzzle_design_clips.mp4" autoplay loop muted playsinline alt="Puzzle Design Clips"></video>
+              </div>
+              <div class="feature-text">
+                <h3>Iterative Design</h3>
+                <p>
+                    Many of our iterations were to try and solve our one main problem of players hoarding Rotate cards, effectively making each game too predictable. Eventually we settled on each player having four cards in their hand that they must play before getting a new set. But, before this we experimented with various tweaks, such as:
+                </p>
+                <ul>
+                    <li>Adding bridges for crossing obstacles</li>
+                    <li>Allowing the player to discard cards each turn to play the one on top</li>
+                    <li>Forcing the player to discard one card each turn</li>
+                    <li>Switching the objective from the middle of the board to the edge of it</li>
+                    <li>Adding a new Action Card to allow players to swap hands when played</li>
+                </ul> 
+              </div>
+            </section> 
 
-                <!-- Game Details Section -->
-                <div class="game-details">
-                    <div class="detail-item">
-                        <img src="assets/icons/calendar.svg" class="detail-icon">
-                        <span>September 2024 - October 2024</span>
-                    </div>
-                    <div class="detail-item">
-                        <img src="assets/icons/type.svg" class="detail-icon">
-                        <span>Futuregames Board Game Design Project</span>
-                    </div>
-                    <div class="detail-item">
-                        <img src="assets/icons/role.svg" class="detail-icon">
-                        <span>Board Game Design, Prototyping, Technical Writing</span>
-                    </div>
-                    <div class="detail-item">
-                        <img src="assets/icons/software.svg" class="detail-icon">
-                        <span>Powerpoint</span>
+            <section class="feature-section video-left-text-centered-right">
+                <div class="feature-media">
+                    <div class="pdf-viewer-container-2">
+                        <object
+                          data='assets/MeandroRulebook.pdf'
+                          class="pdf-viewer"
+                          type="application/pdf"
+                          width="1000"
+                          height="500"
+                        >
+                  
+                          <iframe
+                            class="pdf-viewer-2"
+                            src='assets/MeandroRulebook.pdf'
+                            width="1000"
+                            height="500"
+                          >
+                          <p>This browser does not support PDF!</p>
+                          </iframe>
+                        </object>
                     </div>
                 </div>
+                <div class="feature-text">
+                  <h3>The Rulebook</h3>
+                  <p>
+                    Writing the rulebook was a major part of my workload. This was challenging, as I hadn't done much technical writing before, and the iterative design process made the game seem simple in my head. Here's a breakdown of the main issues I encountered:
+                </p>
+                <ul>
+                    <li><strong>Over-assumptions about player knowledge:</strong> My first draft assumed too much about what players should already know, leaving out critical information. Playtesting highlighted this issue.</li>
+                    <li><strong>Too much information:</strong> After revising, I overcompensated by adding too much text. This made the rulebook overwhelming and discouraged players from reading it.</li>
+                    <li><strong>Playtesting and feedback:</strong> A second round of playtesting with second-year students and feedback from Adam, our lecturer, revealed that the lengthy rulebook was still confusing.</li>
+                </ul>
 
-                <div class="video-and-details">
-                    <!-- Demo Video Embed -->
-                    <img class="video-embed" src="assets/img/portfolio/meandro/meandro6.jpg">
-                    <!-- <div class="image-container">
-                        <img src="assets/img/portfolio/meandro/meandro6.jpg" style="width: 1080px; height: 1920px;">
-                    </div> -->
-                    
-                    <!-- Project Description -->
-                    <div class="project-description">
-                        <h2>Description</h2>
-                        <p>
-                            This project was created with three others in my Futuregames Game Design class for our Board Game Design course. We decided to make a game focused on being social, simple, and incorporating sabotage. The game involves building a stream for your boat to reach the ocean, while giving players the option to mess with others' streams using action cards. It is a simple and fun game, aiming to encourage player interaction.
-                        </p>
-                    </div>
+                <p>
+                    To solve these issues, I:
+                </p>
+                <ul>
+                    <li>Focused on clear, concise lists (bullet points or numbered sections) for rules</li>
+                    <li>Added diagrams with captions next to corresponding text for better clarity</li>
+                    <li>Organized sections clearly, making each part easy to understand</li>
+                </ul>
                 </div>
-
-                <div class="block-section">
-                    <h2>Rapid Prototyping & Iterative Design</h2>
-                    <div class="block-inner">
-                        <div class="block-text">
-                            <p>
-                                On the second day of development, our team decided to immediately test the game to see if it worked. We created a simple board with a grid of squares and used sticky notes as tiles to build a line. We quickly saw potential but realized the game needed more, such as sabotage abilities, to stay engaging. Here's why our process of rapid prototyping worked for us:
-                            </p>
-                            <ul>
-                                <li>Short length of the game allowed us to modify small parts and quickly play to test it</li>
-                                <li>Played 10-15 variations in the first week, taking brief notes after each round</li>
-                                <li>Hands-on approach helped us make decisions based on gameplay not theory</li>
-                                <li>Quick evolution then allowed more time for external playtesting and building a real board later on</li>
-                            </ul>
+            </section>
 
 
+            <section class="portfolio-title-section">
+                <h1>REFLECTION</h1>
+            </section>
 
-                            <p>
-                                Many of our iterations were to try and solve our one main problem of players hoarding Rotate cards, effectively making each game too predictable. Eventually we settled on each player having four cards in their hand that they must play before getting a new set. But, before this we experimented with various tweaks, such as:
-                            </p>
-                            <ul>
-                                <li>Adding bridges for crossing obstacles</li>
-                                <li>Allowing the player to discard cards each turn to play the one on top</li>
-                                <li>Forcing the player to discard one card each turn</li>
-                                <li>Switching the objective from the middle of the board to the edge of it</li>
-                                <li>Adding a new Action Card to allow players to swap hands when played</li>
-                            </ul> 
-                        </div>
-                    </div>
-                    <div class="block-visuals">
-                        <div class="image-container-vert">
-                            <img src="assets/img/portfolio/meandro/dmeandro1.jpg">
-                            <p class="caption">First prototype with sticky notes and playing cards</p>
-                        </div>
-                        <div class="image-container-vert">
-                            <img src="assets/img/portfolio/meandro/dmeandro6.jpg">
-                            <p class="caption">Testing obstacles and misdirection tiles</p>
-                        </div>
-                        
-                        <div class="image-container-vert">
-                            <img src="assets/img/portfolio/meandro/dmeandro7.jpg">
-                            <p class="caption">Discussing how placing tiles should work</p>
-                        </div>
-                    </div>
-                    <div class="block-visuals">
-                        <div class="image-container-vert">
-                            <img src="assets/img/portfolio/meandro/dmeandro4.jpg">
-                            <p class="caption">Full test with grid, sticky notes, and going to center</p>
-                        </div>
-                        <div class="image-container-vert">
-                            <img src="assets/img/portfolio/meandro/dmeandro5.jpg">
-                            <p class="caption">Testing mini boats and player interaction</p>
-                        </div>
-                        <div class="image-container-vert">
-                            <img src="assets/img/portfolio/meandro/dmeandro2.jpg">
-                            <p class="caption">Full test with direction arrows and ending at edge of board</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="block-section">
-                    <h2>The Rulebook</h2>
-                    <div class="block-inner">
-                        <div class="block-text">
-                            <p>
-                                Writing the rulebook was a major part of my workload. This was challenging, as I hadn't done much technical writing before, and the iterative design process made the game seem simple in my head. Here's a breakdown of the main issues I encountered:
-                            </p>
-                            <ul>
-                                <li><strong>Over-assumptions about player knowledge:</strong> My first draft assumed too much about what players should already know, leaving out critical information. Playtesting highlighted this issue.</li>
-                                <li><strong>Too much information:</strong> After revising, I overcompensated by adding too much text. This made the rulebook overwhelming and discouraged players from reading it.</li>
-                                <li><strong>Playtesting and feedback:</strong> A second round of playtesting with second-year students and feedback from Adam, our lecturer, revealed that the lengthy rulebook was still confusing.</li>
-                            </ul>
-
-                            <p>
-                                To solve these issues, I:
-                            </p>
-                            <ul>
-                                <li>Focused on clear, concise lists (bullet points or numbered sections) for rules</li>
-                                <li>Added diagrams with captions next to corresponding text for better clarity</li>
-                                <li>Organized sections clearly, making each part easy to understand</li>
-                            </ul>
-
-                            <p>
-                                While I didn't work on the art, I noticed how much it helped with clarity. It made it easier for players to see their stream, understand the game's objective, and properly place tiles on the board. Please see the PDF below of the rulebook if you would like!
-                            </p>
-                        </div>
-
-                        <div class="pdf-viewer-container-2">
-                            <object
-                              data='assets/MeandroRulebook.pdf'
-                              class="pdf-viewer"
-                              type="application/pdf"
-                              width="1000"
-                              height="500"
-                            >
-                      
-                              <iframe
-                                class="pdf-viewer-2"
-                                src='assets/MeandroRulebook.pdf'
-                                width="1000"
-                                height="500"
-                              >
-                              <p>This browser does not support PDF!</p>
-                              </iframe>
-                            </object>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="block-section">
-                    <h2>Reflection</h2>
-                    <div class="block-inner">
-                        <div class="block-text">
-                            <p>
-                                I had a great time in this course! Before this, I had never made a physical board game or considered the process behind it. There's something special about having tangible components to interact with, rather than using a keyboard, mouse, or controller. Here's what I learned:
-                            </p>
-                            <ul>
-                                <li>Rapid prototyping is key, especially when your project can be quickly tested.</li>
-                                <li>Establishing strong pillars early makes later design decisions much easier.</li>
-                                <li>Open conversations and testing out ideas helped us resolve challenges quickly.</li>
-                                <li>Playtesting with peers revealed issues we hadn't noticed with gameplay or rules.</li>
-                                <li>No matter how good your game is, unclear rules ruin the experience.</li>
-                                <li>Game development often doesn't go smoothly, but we got lucky this time.</li>
-                                <li>Working in a group helped me refine ideas and clarify the project's scope.</li>
-                            </ul>
-                            <p>
-                                Going forward, I'd only make minor tweaks for clarity, particularly with tile placement. Overall, we met all our goals, and I wouldn't change our process of ideation, rapid prototyping, iteration, and playtesting.
-                            </p>
-                        </div>
-                        <div class="block-visuals">
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/meandro/meandro1.jpg">
-                                <p class="caption">Final version board game setup</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/meandro/meandro2.jpg">
-                                <p class="caption">Each player gets a toy boat!</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/meandro/meandro7.jpg">
-                                <p class="caption">Middle of a game being played</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal for expanded image -->
-            <div id="imageModal" class="modal">
-                <img class="modal-content" id="expandedImg">
-            </div>
-        </section>
+            <section class="centered-text-with-carousel-section">
+              <div class="centered-text-container">
+                <p>
+                    I had a great time in this course! Before this, I had never made a physical board game or considered the process behind it. There's something special about having tangible components to interact with, rather than using a keyboard, mouse, or controller. Here's what I learned:
+                </p>
+                <ul>
+                    <li>Rapid prototyping is key, especially when your project can be quickly tested.</li>
+                    <li>Establishing strong pillars early makes later design decisions much easier.</li>
+                    <li>Open conversations and testing out ideas helped us resolve challenges quickly.</li>
+                    <li>Playtesting with peers revealed issues we hadn't noticed with gameplay or rules.</li>
+                    <li>No matter how good your game is, unclear rules ruin the experience.</li>
+                    <li>Game development often doesn't go smoothly, but we got lucky this time.</li>
+                    <li>Working in a group helped me refine ideas and clarify the project's scope.</li>
+                </ul>
+                <p>
+                    Going forward, I'd only make minor tweaks for clarity, particularly with tile placement. Overall, we met all our goals, and I wouldn't change our process of ideation, rapid prototyping, iteration, and playtesting.
+                </p>
+              </div>
+            </section>
+          </main>
         
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
+                <p>Website designed and developed by Riley Elwell.</p>
+                <p>
+                    <a href="mailto:your-email@example.com" class="footer-link">Contact</a>
+                </p>
+                <div class="footer-social">
+                    <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/rileyelwell/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
