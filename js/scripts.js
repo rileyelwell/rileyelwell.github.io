@@ -1,160 +1,112 @@
-/*!
-* Start Bootstrap - Freelancer v7.0.7 (https://startbootstrap.com/theme/freelancer)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
-*/
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const projectLinks = document.querySelectorAll('.project-link');
-
-    projectLinks.forEach(link => {
-        const video = link.querySelector('.project-video');
-
-        if (video) {
-            link.addEventListener('mouseenter', () => {
-                video.play();
-            });
-
-            link.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0; // Optionally reset video to start
-            });
-        }
-    });
-});
-
-// -- ABOUT PAGE MEDIA CAROUSEL -- //
 document.addEventListener('DOMContentLoaded', function() {
-
-    // Select carousel elements.
+    // ABOUT PAGE MEDIA CAROUSEL
     const mediaItems = document.querySelectorAll('.media-display img');
     const thumbnailsContainer = document.querySelector('.thumbnail-nav');
     const dotsContainer = document.querySelector('.pagination-dots');
     const prevArrow = document.querySelector('.prev-arrow');
     const nextArrow = document.querySelector('.next-arrow');
 
-    let currentIndex = 0; // Current slide index
-    let autoSlideInterval; // Variable to hold the auto-slide timer
-    const slideDuration = 5000; // 5 seconds per slide
+    let currentIndex = 0;
+    let autoSlideInterval;
+    const slideDuration = 5000;
 
-    let generatedThumbnails = []; // Will store references to dynamically created thumbnail elements
-    let generatedDots = []; // Will store references to dynamically created dot elements
+    let generatedThumbnails = [];
+    let generatedDots = [];
 
-    // Function to set up carousel elements (thumbnails and dots)
     function setupCarouselElements() {
-        // Only proceed if all necessary containers and media items are found
         if (!thumbnailsContainer || !dotsContainer || mediaItems.length === 0) {
             console.warn("Carousel elements not found (thumbnail container, dots container, or no media items). Skipping carousel setup.");
-            return; // Exit function if elements are missing
+            return;
         }
 
-        // Clear any existing static/old dynamic elements from containers
         thumbnailsContainer.innerHTML = '';
         dotsContainer.innerHTML = '';
 
-        // Reset arrays before populating
         generatedThumbnails = [];
         generatedDots = [];
 
-        // Loop through each main media item to create corresponding thumbnails and dots
         mediaItems.forEach((item, index) => {
-            // Create and append thumbnail
             const thumbDiv = document.createElement('div');
             thumbDiv.classList.add('thumbnail');
             thumbDiv.dataset.index = index;
             const img = document.createElement('img');
-            img.src = item.src; // Use the main image's source for thumbnail (adjust if using separate thumb images)
+            img.src = item.src;
             img.alt = `Thumbnail ${index + 1}`;
             thumbDiv.appendChild(img);
             thumbnailsContainer.appendChild(thumbDiv);
             generatedThumbnails.push(thumbDiv);
 
-            // Create and append dot
             const dotSpan = document.createElement('span');
             dotSpan.classList.add('dot');
             dotSpan.dataset.index = index;
             dotsContainer.appendChild(dotSpan);
             generatedDots.push(dotSpan);
 
-            // Attach click listeners to the *newly created* elements
             thumbDiv.addEventListener('click', () => {
                 showMedia(index);
-                startAutoSlide(); // Restart auto-slide on manual navigation
+                startAutoSlide();
             });
             dotSpan.addEventListener('click', () => {
                 showMedia(index);
-                startAutoSlide(); // Restart auto-slide on manual navigation
+                startAutoSlide();
             });
         });
     }
 
-    // Function to display a specific media item and update active states
     function showMedia(index) {
-        // Validate index and loop if out of bounds
         if (index < 0) {
             index = mediaItems.length - 1;
         } else if (index >= mediaItems.length) {
             index = 0;
         }
 
-        // Critical Check: Ensure generated arrays are populated before accessing
         if (generatedThumbnails.length === 0 || generatedDots.length === 0) {
-             console.error("Carousel elements (thumbnails/dots) not generated. Cannot update active states.");
-             return;
+            console.error("Carousel elements (thumbnails/dots) not generated. Cannot update active states.");
+            return;
         }
 
-        // Remove 'active' class from all elements
         mediaItems.forEach(item => item.classList.remove('active-media'));
         generatedThumbnails.forEach(thumb => thumb.classList.remove('active-thumbnail'));
         generatedDots.forEach(dot => dot.classList.remove('active-dot'));
 
-        // Add 'active' class to the current elements
         mediaItems[index].classList.add('active-media');
         generatedThumbnails[index].classList.add('active-thumbnail');
         generatedDots[index].classList.add('active-dot');
 
-        currentIndex = index; // Update current index
+        currentIndex = index;
 
-        // Optional: Scroll thumbnail nav to center the active thumbnail
         const activeThumbnail = generatedThumbnails[index];
         if (activeThumbnail && activeThumbnail.parentElement && activeThumbnail.parentElement.scrollLeft !== undefined) {
             activeThumbnail.parentElement.scrollLeft = activeThumbnail.offsetLeft - (activeThumbnail.parentElement.offsetWidth / 2) + (activeThumbnail.offsetWidth / 2);
         }
     }
 
-    // Function to start or restart the automatic slide timer
     function startAutoSlide() {
-        clearInterval(autoSlideInterval); // Clear any existing interval
+        clearInterval(autoSlideInterval);
         autoSlideInterval = setInterval(() => {
             currentIndex = (currentIndex + 1) % mediaItems.length;
             showMedia(currentIndex);
         }, slideDuration);
     }
 
-    // Attach event listeners for navigation arrows (check if they exist)
     if (prevArrow) {
         prevArrow.addEventListener('click', () => {
             showMedia(currentIndex - 1);
-            startAutoSlide(); // Restart auto-slide on manual navigation
+            startAutoSlide();
         });
     }
     if (nextArrow) {
         nextArrow.addEventListener('click', () => {
             showMedia(currentIndex + 1);
-            startAutoSlide(); // Restart auto-slide on manual navigation
+            startAutoSlide();
         });
     }
 
     setupCarouselElements();
     showMedia(0);
     startAutoSlide();
-});
 
-
-// -- LOADING CODE SNIPPETS SECTION -- //
-document.addEventListener('DOMContentLoaded', function() {
-    
+    // LOADING CODE SNIPPETS SECTION
     function loadCodeSnippet(elementId, filePath) {
         const codeElement = document.getElementById(elementId);
         if (codeElement) {
@@ -167,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .then(code => {
                     codeElement.textContent = code;
-                    
                     if (typeof Prism !== 'undefined') {
                         Prism.highlightElement(codeElement);
                     }
@@ -181,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const playerControllerDetails = document.querySelector('details:has(#playerControllerCode)');
     if (playerControllerDetails) {
-        const playerCodePreElement = playerControllerDetails.querySelector('pre'); // Use specific variable name
+        const playerCodePreElement = playerControllerDetails.querySelector('pre');
         playerControllerDetails.addEventListener('toggle', function() {
             if (this.open) {
                 playerCodePreElement.classList.add('code-scrollable');
@@ -192,9 +143,9 @@ document.addEventListener('DOMContentLoaded', function() {
         loadCodeSnippet('playerControllerCode', 'assets/code/PlayerController.cs.txt');
     }
 
-    const triggerPointDetails = document.querySelector('details:has(#triggerPointCode)'); // Select the new details element
+    const triggerPointDetails = document.querySelector('details:has(#triggerPointCode)');
     if (triggerPointDetails) {
-        const triggerPointCodePreElement = triggerPointDetails.querySelector('pre'); // Get its corresponding pre element
+        const triggerPointCodePreElement = triggerPointDetails.querySelector('pre');
         triggerPointDetails.addEventListener('toggle', function() {
             if (this.open) {
                 triggerPointCodePreElement.classList.add('code-scrollable');
@@ -202,13 +153,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 triggerPointCodePreElement.classList.remove('code-scrollable');
             }
         });
-        loadCodeSnippet('triggerPointCode', 'assets/code/TriggerPoint.cs.txt'); // Load the new script
+        loadCodeSnippet('triggerPointCode', 'assets/code/TriggerPoint.cs.txt');
     }
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    // --- Carousel Class/Function ---
+    // CAROUSEL CLASS/FUNCTION
     function Carousel(containerId) {
         const carouselContainer = document.getElementById(containerId);
         if (!carouselContainer) {
@@ -223,22 +171,53 @@ document.addEventListener('DOMContentLoaded', () => {
         let slideIndex = 0;
         let slideWidth = carouselSlides.length > 0 ? carouselSlides[0].getBoundingClientRect().width : 0;
 
-        // Function to update the carousel position
         const updateCarousel = () => {
-            // Recalculate slideWidth in case of resize
             if (carouselSlides.length > 0) {
                 slideWidth = carouselSlides[0].getBoundingClientRect().width;
             } else {
-                slideWidth = 0; // Handle case with no slides
+                slideWidth = 0;
             }
 
             carouselTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
             updateDots();
+
+            carouselSlides.forEach((slide, index) => {
+                const videoElement = slide;
+
+                slide.classList.remove('active');
+                if (index === slideIndex) {
+                    slide.classList.add('active');
+                }
+
+                if (videoElement && videoElement.tagName === 'VIDEO') {
+                    if (index === slideIndex) {
+                        if (!videoElement.dataset.loaded) {
+                            const sources = videoElement.querySelectorAll('source[data-src]');
+                            sources.forEach(source => {
+                                source.src = source.dataset.src;
+                                source.removeAttribute('data-src');
+                            });
+                            videoElement.load();
+                            videoElement.dataset.loaded = 'true';
+                        }
+
+                        const playPromise = videoElement.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(error => {
+                                console.warn('Carousel video autoplay prevented:', error);
+                            });
+                        }
+                    } else {
+                        videoElement.pause();
+                        videoElement.currentTime = 0;
+                    }
+                }
+            });
         };
 
-        // Function to update the active dot
         const updateDots = () => {
-            carouselDotsContainer.innerHTML = ''; // Clear existing dots
+            if (!carouselDotsContainer) return;
+            carouselDotsContainer.innerHTML = '';
             carouselSlides.forEach((_, index) => {
                 const dot = document.createElement('span');
                 dot.classList.add('dot');
@@ -253,29 +232,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        // Initialize carousel
-        updateCarousel(); // Initial render
-
-        // Event listener for window resize
+        updateCarousel();
         window.addEventListener('resize', updateCarousel);
     }
 
-
     const currentPage = window.location.pathname;
-
-    // Example 1: Run on a specific page (e.g., your project detail page)
     if (currentPage.includes('/neila.html')) {
         Carousel('neilaAnimationCarousel');
         Carousel('neilaScientistCarousel');
         Carousel('enemyAnimationCarousel');
     }
 
-    // Carousel('neilaAnimationCarousel');
-    // Carousel('neilaScientistCarousel');
-    // Carousel('enemyAnimationCarousel');
-});
-
-document.addEventListener('DOMContentLoaded', function() {
+    // PROJECT ENTRIES HOVER/CLICK LOGIC
     const projectEntries = document.querySelectorAll('.project-entry');
 
     projectEntries.forEach(entry => {
@@ -284,24 +252,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const hoverVideo = mainMediaContainer.querySelector('.hover-video');
         const thumbnails = entry.querySelectorAll('.thumbnail-item');
 
-        let currentMainMediaElement = mainImage; // Keep track of what's currently displayed
-        const originalMainSrc = mainImage.src; // Original image for fallback
-        const originalMainTag = 'IMG';
+        let currentMainMediaElement = mainImage;
+        const originalMainSrc = mainImage.src;
 
-        // --- Thumbnail Hover Functionality ---
         thumbnails.forEach(thumbnail => {
             thumbnail.addEventListener('mouseenter', function() {
                 const newMainSrc = this.dataset.mainSrc;
-                const newMainType = this.dataset.mainType || 'image'; // Default to image if not specified
+                const newMainType = this.dataset.mainType || 'image';
 
-                // Pause and hide the general hover video if it's playing
                 if (hoverVideo) {
                     hoverVideo.pause();
                     hoverVideo.style.opacity = '0';
                 }
 
                 if (newMainSrc) {
-                    // Check what's currently in the main media container
                     const mediaToReplace = mainMediaContainer.querySelector('img, video');
 
                     if (newMainType === 'video') {
@@ -314,25 +278,24 @@ document.addEventListener('DOMContentLoaded', function() {
                             newVideo.playsInline = true;
                             mediaToReplace.classList.forEach(cls => newVideo.classList.add(cls));
                             mainMediaContainer.replaceChild(newVideo, mediaToReplace);
-                            currentMainMediaElement = newVideo; // Update current element
+                            currentMainMediaElement = newVideo;
                         } else {
                             mediaToReplace.src = newMainSrc;
-                            mediaToReplace.play(); // Ensure it plays if just source changed
+                            mediaToReplace.play();
                             currentMainMediaElement = mediaToReplace;
                         }
-                    } else { // newMainType === 'image'
+                    } else {
                         if (mediaToReplace.tagName !== 'IMG') {
                             const newImage = document.createElement('img');
                             newImage.src = newMainSrc;
                             mediaToReplace.classList.forEach(cls => newImage.classList.add(cls));
                             mainMediaContainer.replaceChild(newImage, mediaToReplace);
-                            currentMainMediaElement = newImage; // Update current element
+                            currentMainMediaElement = newImage;
                         } else {
                             mediaToReplace.src = newMainSrc;
                             currentMainMediaElement = mediaToReplace;
                         }
                     }
-                    // Ensure the swapped thumbnail media is visible
                     currentMainMediaElement.style.opacity = '1';
                 }
             });
@@ -341,7 +304,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const thumbnailGrid = entry.querySelector('.project-thumbnail-grid');
         if (thumbnailGrid) {
             thumbnailGrid.addEventListener('mouseleave', function() {
-                // Revert to the original main image and hide the general hover video
                 const mediaToReplace = mainMediaContainer.querySelector('img, video');
 
                 if (mediaToReplace.tagName !== 'IMG') {
@@ -358,14 +320,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 if (hoverVideo) {
                     hoverVideo.pause();
-                    hoverVideo.currentTime = 0; // Reset video to beginning
+                    hoverVideo.currentTime = 0;
                     hoverVideo.style.opacity = '0';
                 }
             });
         }
 
-        // --- NEW: Project Entry Hover for Video/GIF Playback ---
-        let isThumbnailHovered = false; // Flag to track if a thumbnail is currently hovered
+        let isThumbnailHovered = false;
 
         thumbnails.forEach(thumbnail => {
             thumbnail.addEventListener('mouseenter', () => isThumbnailHovered = true);
@@ -373,29 +334,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         entry.addEventListener('mouseenter', function() {
-            // Only play the video if no thumbnail is currently hovered
-            // And if the current main media is the *original* image (not a thumbnail-swapped one)
-            // This prevents video from playing when a thumbnail image is already active
             if (hoverVideo && !isThumbnailHovered && currentMainMediaElement === mainImage) {
-                hoverVideo.currentTime = 0; // Reset to start
+                hoverVideo.currentTime = 0;
                 hoverVideo.play();
-                mainImage.style.opacity = '0'; // Hide the image
-                hoverVideo.style.opacity = '1'; // Show the video
+                mainImage.style.opacity = '0';
+                hoverVideo.style.opacity = '1';
             }
         });
 
         entry.addEventListener('mouseleave', function() {
-            // Only pause/hide the video if a thumbnail is NOT currently hovered
-            // (The thumbnail leave event handles reverting its own state)
             if (hoverVideo && !isThumbnailHovered) {
                 hoverVideo.pause();
-                hoverVideo.currentTime = 0; // Reset for next time
-                hoverVideo.style.opacity = '0'; // Hide the video
-                mainImage.style.opacity = '1'; // Show the image again
+                hoverVideo.currentTime = 0;
+                hoverVideo.style.opacity = '0';
+                mainImage.style.opacity = '1';
             }
         });
 
-        // --- Click functionality for the whole project entry (Keep this) ---
         entry.addEventListener('click', function(event) {
             if (event.target.closest('.thumbnail-item')) {
                 return;
@@ -405,14 +360,45 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.location.href = projectUrl;
             }
         });
-        entry.style.cursor = 'pointer'; // Ensure cursor is still pointer
+        entry.style.cursor = 'pointer';
     });
-});
 
-// update current year for footer
-document.addEventListener('DOMContentLoaded', function() {
+    // FOOTER YEAR UPDATE
     const currentYearSpan = document.getElementById('current-year');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
+
+    // VIDEO DROPDOWN LAZY LOADING
+    const detailElements = document.querySelectorAll('details.text-image-dropdown');
+
+    detailElements.forEach(detail => {
+        detail.addEventListener('toggle', () => {
+            const videoElement = detail.querySelector('video.lazy-video');
+
+            if (videoElement) {
+                if (detail.open) {
+                    if (!videoElement.dataset.loaded) {
+                        const sources = videoElement.querySelectorAll('source[data-src]');
+                        sources.forEach(source => {
+                            source.src = source.dataset.src;
+                            source.removeAttribute('data-src');
+                        });
+                        videoElement.load();
+                        videoElement.dataset.loaded = 'true';
+                    }
+
+                    const playPromise = videoElement.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            console.warn('Video autoplay prevented:', error);
+                        });
+                    }
+                } else {
+                    videoElement.pause();
+                    videoElement.currentTime = 0;
+                }
+            }
+        });
+    });
 });

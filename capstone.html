@@ -6,17 +6,20 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>A Day in the Life of a Delivery Robot | Riley Elwell</title>
+        
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+        
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        
         <!-- Google fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+        
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles copy.css" rel="stylesheet" />
-        <script src="https://unpkg.com/@rive-app/webgl@1.0.0-beta.11/rive.min.js"></script>
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top" class="project-details-page">
 
@@ -25,7 +28,7 @@
             <div class="navbar-container">
               <div class="navbar-brand">
                 <a class="navbar-logo" href="index.html">
-                    <img src="assets/favicon.ico" alt="Favicon" class="favicon">
+                    <img src="assets/favicon/favicon.ico" alt="Favicon" class="favicon">
                     Riley Elwell
                 </a>
               </div>
@@ -47,7 +50,7 @@
         </nav>
 
         <section class="hero-section">
-            <img src="assets/img/portfolio/capstone/final_dixon_road.png" alt="Capstone Banner Image" class="hero-image">
+            <img src="assets/projects/capstone/images/final_dixon_road.png" alt="Capstone Banner Image" class="hero-image">
             <div class="hero-content">
               <h1 class="project-title">A Day in the Life of a Delivery Robot</h1>
               <div class="project-links">
@@ -57,348 +60,107 @@
               </div>
             </div>
           </section>
-        
-          <section class="portfolio-title-section">
-            <h1>ABOUT</h1>
-            <p class="project-tagline">Tagline</p>
-            <!-- <p>
-                "A Day in the Life of a Delivery Robot" was created as my senior capstone project at Oregon State University. Our team of four was tasked with developing a driving simulator, and we chose to let players control a robot delivering food orders on campus while navigating AI traffic and obstacles. The goal is to reach the delivery location on time while avoiding collisions. The project was directly inspired by the actual food delivery robots we had on the OSU campus during our time there. If you'd like to try a build of the game, check the links below.
-            </p> -->
-          </section>
 
-          <section class="project-info-bar">
-            <div class="info-item">
-              <img src="assets/icons/calendar.svg" alt="Calendar Icon">
-              <span>2023-24 (8 Months)</span>
+        <main>
+            <!-- About Section -->
+            <section id="about-content" class="portfolio-title-section">
+              <h1 class="section-title">ABOUT</h1>
+              <div class="about-top-section">
+                <div class="media-carousel" id="aboutMediaCarousel">
+                    <div class="media-display">
+                        <img src="assets/projects/capstone/images/final_weatherford.png" alt="Game Screenshot 1" class="active-media">
+                        <img src="assets/projects/capstone/images/gameplay_ui.png" alt="Game Screenshot 2">
+                        <img src="assets/projects/capstone/images/win_game_screen.png" alt="Game Screenshot 3">
+                        <img src="assets/projects/capstone/images/final_full_map.png" alt="Game Screenshot 3">
+                    </div>
+                    <div class="media-controls-wrapper">
+                        <button class="arrow prev-arrow">&#9664;</button>
+                        <div class="thumbnail-nav">
+                            <div class="thumbnail active-thumbnail" data-index="0">
+                                <img src="" alt="Thumbnail 1">
+                            </div>
+                            <div class="thumbnail" data-index="1">
+                                <img src="" alt="Thumbnail 2">
+                            </div>
+                            <div class="thumbnail" data-index="2">
+                                <img src="" alt="Thumbnail 3">
+                            </div>
+                            <div class="thumbnail" data-index="3">
+                                <img src="" alt="Thumbnail 4">
+                            </div>
+                        </div>
+                        <button class="arrow next-arrow">&#9654;</button>
+                    </div>
+
+                    <div class="pagination-dots"></div>
+                </div>
+
+                <div class="about-description-panel">
+                    <div class="about-description-image-container">
+                      <img src="assets/projects/capstone/images/capstone1.png" alt="Capstone Cinematic">
+                    </div>
+                    <h2>Deliver food as your favorite robot as fast as you can!</h2>
+                    <ul class="project-info-list">
+                      <li>
+                          <img src="assets/icons/type.svg" alt="Briefcase Icon" class="project-info-icon">
+                          <p>Level Design, 3D Art, UI/UX</p>
+                      </li>
+                      <li>
+                          <img src="assets/icons/software.svg" alt="Gear Icon" class="project-info-icon">
+                          <p>Unity, Blender, Quixel Mixer, C#, GitHub</p>
+                      </li>
+                      <li>
+                          <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="project-info-icon">
+                          <p>8 Months</p>
+                      </li>
+                      <li>
+                          <img src="assets/icons/role.svg" alt="Person Icon" class="project-info-icon">
+                          <p>Team of 4</p>
+                      </li>
+                  </ul>
+                    <div class="tags">
+                        <span class="tag">Simulator</span>
+                        <span class="tag">Robot</span>
+                        <span class="tag">Vehicles</span>
+                        <span class="tag">Delivery</span>
+                    </div>
+                </div>
             </div>
-            <div class="info-item">
-              <img src="assets/icons/type.svg" alt="Type Icon">
-              <span>Level Design, 3D Art, UI/UX</span>
-            </div>
-            <div class="info-item">
-              <img src="assets/icons/role.svg" alt="Role Icon">
-              <span>Group of 4</span>
-            </div>
-            <div class="info-item">
-              <img src="assets/icons/software.svg" alt="Software Icon">
-              <span>Unity, Blender, Quixel Mixer, C#, GitHub</span>
-            </div>
+
+            <section id="reflectionSection" class="portfolio-title-section"> <h1 class="section-title">REFLECTION</h1>
+                <div class="project-area-normal">
+                    <div class="project-content-normal">
+                        <div class="project-description-normal">
+                            <p>
+                                This game project was very involved, but it was very rewarding in the end, especially when showing it to 
+                                family and peers. Working as a group of four students with other classes and jobs, we had little time to 
+                                communicate and work effectively as a team. This was easily the hardest part for me, but I think our goal 
+                                of developing a fun and short game was successful in the end.
+                            </p>
+                            <p>
+                                In terms of technical knowledge, I significantly improved my skills with Blender, particularly in modeling, 
+                                texturing, UV editing, and exporting. I now understand how to synthesize textures in different applications 
+                                and edit them in Quixel Mixer. Also, learning about seamless textures, tiling, and techniques like adding 
+                                noise and random rotations has helped minimize repetitive patterns on my created surfaces. In Unity, I learned 
+                                about using mesh colliders on imported objects and their interactions with rigid bodies based on topology. I 
+                                improved my programming skills in C#, became better at testing features that need to be balanced (partly through 
+                                conducting playtests), and learned how to do lighting.
+                            </p>
+                            <p>
+                                Overall, I think there are a lot of necessary improvements for this 
+                                project if it were to be revisited in the future. With our time crunch and poor communication 
+                                habits, the final version of the game has several large bugs and poor performance. Features added towards 
+                                the end did not have enough time to be properly tested, the map has a couple of collision issues, and the 
+                                difficulty was harder than intended. With more time, better planning, and an in-sync team, I would love to 
+                                implement a larger map, a better physics system, fix bugs, balance more appropriately, and adjust scenes for 
+                                better performance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </section>
-
-            <main class="project-details-content">
-                <section class="feature-section video-right-text-centered-left">
-                    <div class="feature-media">
-                        <video src="assets/img/portfolio/squirrelbros/puzzle_design_clips.mp4" autoplay loop muted playsinline alt="Puzzle Design Clips"></video>
-                    </div>
-                    <div class="feature-text">
-                    <h3>Level Design</h3>
-                    <p>
-                        My focus was creating an authentic representation of part of the Oregon State University campus, while making adjustments to fit and positively impact
-                        the gameplay.
-                    </p>
-                    <p>
-                        Since the map was based on a real-world location, I had a great reference but struggled with exact scaling. I utilized Google Earth and Google Maps a lot,
-                        often using screenshots to trace rough outlines of buildings in Blender before adjusting the scale with notes I found online.
-                    </p>
-                    <p>
-                        There were many obstacles, such as trash cans and signs, that made it difficult for the robot to maneuver, so I had to add these sparingly. Balancing these
-                        with a reduced number of pedestrians was crucial to afford the player space and performance.
-                    </p>
-                </section>
-
-                <section class="feature-section video-left-text-centered-right">
-                    <div class="feature-media">
-                        <video src="assets/img/portfolio/squirrelbros/platforming_clips.mp4" autoplay loop muted playsinline alt="Platforming Clips"></video>
-                    </div>
-                    <div class="feature-text">
-                      <h3>Challenges</h3>
-                      <p>
-                        Working on the map alone, I quickly realized that only a section of the campus would be completed by our deadline, and I needed a solution for the bounds
-                        of the area. I had ideas for using fog and invisible walls, or flat buildings to block the player, but went with surrounding fences and dirt fields as if
-                        under construction.
-                      </p>
-                      <p>
-                        As I was learning modeling, texturing, and 3D art in general for the first time, a lot of my models and textures were not optimal for performance. I tried to 
-                        combat this with the use of static batching and less geometry in Blender, but my textures, compression, and collision generation skills need practice.
-                      </p>
-                    </div>
-                </section>
-
-
-            </main>
-
-
-
-                
-
-                <div class="block-section">
-                    <h2>Level Design</h2>
-                    <div class="block-inner">
-                        <div class="block-text">
-                            <!-- <h3>Level Design Responsibilities</h3> -->
-                            <p>My primary responsibility in this project was to design and build a map environment for our player-controlled robot to drive in and deliver orders. I focused on creating an authentic representation of part of the Oregon State University campus, while making adjustments to fit the gameplay.</p>
-                            <ul>
-                                <li>
-                                    <strong>Reference-Based Design:</strong>
-                                    <ul>
-                                        <li>Since the map was based on a real-world location, I always had a reference for placing various detailed objects such as foliage, buildings, walls, and street lamps.</li>
-                                        <li>This made the level design process different from typical projects, as much of the layout was already planned based on the existing campus environment.</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <strong>Object Omission for Gameplay:</strong>
-                                    <ul>
-                                        <li>There were many obstacles, such as trash cans and signs, that made it difficult for the robot to maneuver. I needed to determine which objects to omit to enhance gameplay. </li>
-                                        <li>To provide the player with more space to drive and avoid pedestrians, I added these types of objects sparingly, as well as reducing the amount of pedestrians.</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="block-visuals">
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/objects_ignore.png">
-                                <p class="caption">Examples of objects from real-world map to ignore</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/final_dixon_gym.png">
-                                <p class="caption">Our map with less people to allow for more space</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/final_full_map.png">
-                                <p class="caption">Final full map from birds-eye view</p>
-                            </div>
-                        </div>
-                        <div class="block-text">
-                            <!-- <h4>Challenge: Map Boundaries</h4> -->
-                            <!-- <strong>Challenge: Map Boundaries</strong> -->
-                            <p>One challenge I encountered while designing the level was determining how to handle the boundaries of the map. I tried several approaches:</p>
-                        
-                            <ul>
-                                <li>
-                                    <strong>Fog (Inspired by Silent Hill):</strong>
-                                    <ul>
-                                        <li><strong>Approach:</strong> I initially tried adding fog around the edges of the map.</li>
-                                        <li><strong>Result:</strong> While it somewhat worked, it negatively impacted performance and didn't make sense within the narrative.</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <strong>Buildings with Walls and Doors:</strong>
-                                    <ul>
-                                        <li><strong>Approach:</strong> I placed buildings with walls and doors at the boundaries.</li>
-                                        <li><strong>Result:</strong> This compromised the goal of creating a realistic campus and looked unappealing, with flat buildings acting as barriers.</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <strong>Dirt Land Perimeter with Fence:</strong>
-                                    <ul>
-                                        <li><strong>Approach:</strong> I added a large perimeter of dirt land around the map with a fence to block the player.</li>
-                                        <li><strong>Result:</strong> This solution effectively stopped the player while maintaining a realistic appearance, as if that part of the campus was under construction or yet to be built. Performance was also unaffected due to static batching in Unity.</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        
-                            <p>You can see the overall finished map design above, with the implemented approach I went with (dirt and fence perimeter).</p>
-                        </div>
-                        
-
-                        <!-- <div class="block-text">
-                            <p>
-                                One challenge I encountered while designing the level was determining how to handle the boundaries of the map. Initially, I tried adding fog around the edges, similar to the Silent Hill series. While this somewhat worked, it negatively impacted performance and didn’t make much sense within the narrative. Next, I tried placing buildings with walls and doors at the boundaries, but this compromised the original goal of creating a realistic campus and looked unappealing with flat buildings acting as barriers. Eventually, I decided to add a large perimeter of dirt land around the entire map, with a fence blocking the player. This solution effectively stopped the player while also appearing somewhat realistic, as if that part of campus had yet to be built or was under construction. Additionally, performance was unaffected by this choice due to the use of static batching in Unity. You can see the overall finished map design above.
-                            </p>
-                        </div> -->
-                    </div>
-                </div>
-
-                <div class="block-section">
-                    <h2>3D Art</h2>
-                    <div class="block-inner">
-                        <div class="block-text">
-                            <p>
-                                I am not primarily an artist and this was my first time 3D modeling on a larger scale, so I had to start by researching lots of tips and techniques. I found that artists often taken reference photos and since my goal was to recreate parts of our university campus, I started by capturing over a hundred images with my phone. Not only were these helpful for modeling, but they ended up being useful as textures later on (after modifications). I used Blender to model streets, buildings, and sidewalks, before applying seamless textures I created from my images inside Quixel Mixer and an online synthesis tool.
-                            </p>
-                        </div>
-                        <div class="block-visuals">
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/robot_dimensions.png">
-                                <p class="caption">Actual robot dimensions to base the model on</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/modeled_robot2.png">
-                                <p class="caption">First model of robot in Blender</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/cpastoned4.png">
-                                <p class="caption">Final model of robot with cosmetic items</p>
-                            </div>
-                        </div>
-                        <div class="block-visuals">
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/capstone_d1.png">
-                                <p class="caption">The Beaver Store in Blender</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/capstoned2.png">
-                                <p class="caption">Dixon Gym sign</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/capstoned3.png">
-                                <p class="caption">Dixon Gym and parking lot in Blender</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="block-section">
-                    <h2>User Interface | User Experience</h2>
-                    <div class="block-inner">
-                        <div class="block-text">
-                            <p>The first thing I did for the UI was creating a mockup on paper for what I thought it should look like. Then after some thought, the challenge was to design a user interface that remained simple yet informative for the expo audience, many of whom had little gaming experience.</p>
-                            
-                            <ul>
-                                <li>
-                                    <strong>Considerations:</strong>
-                                    <ul>
-                                        <li>Some players may want to drive around without paying attention to objectives.</li>
-                                        <li>Some players may want to speedrun to get the best time and need ample information to do so.</li>
-                                        <li>Some players may be unfamiliar with gaming and confused with too much pop-ups on the screen.</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <strong>Takeaways:</strong>
-                                    <ul>
-                                        <li>Base my design on the Rule of Three, and keep information on the edges and corners of the screen.</li>
-                                        <li>Avoid using the middle of the screen, using the tutorial for any information not needed at all times (ex: reset robot button).</li>
-                                        <li>Remove unnecessary elements, like the speedometer, which don't contribute to decision-making for players.</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="block-visuals">
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/capstone_ui_mockup.jpg">
-                                <p class="caption">Original UI paper mockup</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/gameplay_ui.png">
-                                <p class="caption">Final gameplay UI (in engine)</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/instruction_panel.png">
-                                <p class="caption">Tutorial displayed to user at start of game</p>
-                            </div>
-                        </div>
-
-                        <div class="block-text">
-                            <p>The next step in iterating on my designs was to invite playtesters to find any problems with the game, especially if related to clarity.</p>
-                            <ul>
-                                <li>
-                                    <strong>Feedback Received:</strong>
-                                    <ul>
-                                        <li>The game felt too slow and it took too long to get anywhere.</li>
-                                        <li>The objective was sometimes unclear to the user.</li>
-                                        <li>It was very difficult to see where cars and sometimes pedestrians were coming from, especially from certain directions (ex: directly behind the player).</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <strong>Changes Made:</strong>
-                                    <ul>
-                                        <li>Added a boost ability to increase game speed.</li>
-                                        <li>Modified the compass to instead display a direct arrow pointing to the objective.</li>
-                                        <li>Introduced buttons to change camera views quickly and allow the player to see hazards easily.</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="block-visuals">
-                            <div class="image-container-2">
-                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/capstone/capstone_boost.mp4">
-                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
-                                        <source src="assets/img/portfolio/capstone/capstone_boost.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <p class="caption">Robot boost ability & sensor UI functionality</p>
-                                </div>
-                            </div>
-                            <div class="image-container-2">
-                                <img src="assets/img/portfolio/capstone/win_game_screen.png">
-                                <p class="caption">Screen displayed upon completing a delivery (win)</p>
-                            </div>
-                            <div class="image-container-2">
-                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/capstone/capstone_camera.mp4">
-                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
-                                        <source src="assets/img/portfolio/capstone/capstone_camera.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <p class="caption">Changing camera angles for viewing hazards</p>
-                                </div>
-                            </div>
-                            <div class="image-container-2">
-                                <!-- <img src="assets/img/portfolio/capstone/customizer_screen.png">
-                                <p class="caption">Robot customizer screen at beginning of game</p> -->
-                                <div class="video-container" id="smallVideoContainer" data-video-src="assets/img/portfolio/capstone/capstone_custom.mp4">
-                                    <video id="smallVideo" loop muted autoplay preload="auto" playsinline>
-                                        <source src="assets/img/portfolio/capstone/capstone_custom.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <p class="caption">Robot customizer screen</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="block-section">
-                    <h2>Reflection</h2>
-                    <div class="block-inner">
-                        <div class="block-text">
-                            <p>
-                                This game project was very involved, but it was very rewarding in the end, especially when showing it to family and peers. Working as a group of four students with other classes and jobs, we had little time to communicate and work effectively as a team. This was easily the hardest part for me, but I think our goal of developing a fun and short game was successful in the end.
-                            </p>
-                            <p>
-                                In terms of technical knowledge, I significantly improved my skills with Blender, particularly in modeling, texturing, UV editing, and exporting. I now understand how to synthesize textures in different applications and edit them in Quixel Mixer. Also, learning about seamless textures, tiling, and techniques like adding noise and random rotations has helped minimize repetitive patterns on my created surfaces. In Unity, I learned about using mesh colliders on imported objects and their interactions with rigid bodies based on topology. I improved my programming skills in C#, became better at testing features that need to be balanced (partly through conducting playtests), and learned how to do lighting. 
-                            </p>
-                            <p>
-                                Overall, I think there are a lot of necessary improvements for this project if it were to be revisited in the future. With our time crunch and poor communication habits, the final version of the game has several large bugs and poor performance. Features added towards the end did not have enough time to be properly tested, the map has a couple of collision issues, and the difficulty was harder than intended. With more time, better planning, and an in-sync team, I would love to implement a larger map, a better physics system, fix bugs, balance more appropriately, and adjust scenes for better performance. 
-                            </p>
-                        </div>
-                        <div class="block-visuals">
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/capstone_expo.jpg">
-                                <p class="caption">Our team & TA at the OSU Engineering Expo (2024)</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/expo_poster.JPG">
-                                <p class="caption">Our poster and booth at the OSU Engineering Expo (2024)</p>
-                            </div>
-                            <div class="image-container">
-                                <img src="assets/img/portfolio/capstone/game_design_comp.png">
-                                <p class="caption">The project we were assigned for our capstone at OSU</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal for expanded image -->
-            <div id="imageModal" class="modal">
-                <img class="modal-content" id="expandedImg">
-            </div>
-
-            <div id="videoModal" class="modal">
-                <div class="modal-content">
-                    <!-- <span class="close">&times;</span> -->
-                    <video id="modalVideo" loop muted autoplay>
-                        <source src="" type="video/mp4" id="modalVideoSource">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-        </section>
-
+        </main>
         
-
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
@@ -409,7 +171,7 @@
                 <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
                 <p>Website designed and developed by Riley Elwell.</p>
                 <p>
-                    <a href="mailto:your-email@example.com" class="footer-link">Contact</a>
+                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">Contact</a>
                 </p>
                 <div class="footer-social">
                     <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
