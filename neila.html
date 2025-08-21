@@ -23,28 +23,56 @@
 
         <!-- Navigation-->
         <nav class="custom-navbar">
-            <div class="navbar-container">
-              <div class="navbar-brand">
-                <a class="navbar-logo" href="index.html">
-                    <img src="assets/favicon/favicon.ico" alt="Favicon" class="favicon">
-                    Riley Elwell
-                </a>
-              </div>
-                <ul class="navbar-menu">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume / CV</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                </ul>
-                <div class="navbar-social">
-                    <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
-                </div>
+          <div class="navbar-container">
+            <div class="navbar-brand">
+              <a class="navbar-logo" href="index.html">
+                  <img src="assets/favicon/favicon.ico" alt="Favicon" class="favicon">
+                  Riley Elwell
+              </a>
             </div>
+              <ul class="navbar-menu">
+                    <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
+                     <li class="dropdown-toggle">
+                        <!-- <a href="#" id="games-link">Portfolio <img src="assets/icons/caret-down-white.svg" class="arrow-icon-drop"></span></a> -->
+                        <a href="#" id="games-link">Portfolio<span class="arrow-icon-drop">&#9660;</span></a>
+                        <div class="dropdown-full-width" id="games-dropdown">
+                            <div class="games-gallery">
+                                <a href="neila.html" class="game-card">
+                                    <img src="assets/projects/neila/images/NeilaPosterVertical.png" alt="NEILA">
+                                    <!-- <div class="game-title-overlay">
+                                        <h3>NEILA</h3>
+                                    </div> -->
+                                </a>
+                                
+                                <a href="the-last-flame.html" class="game-card">
+                                    <img src="assets/projects/last-flame/images/TheLastFlamePosterVertical.JPEG" alt="The Last Flame">
+                                    <div class="game-title-overlay">
+                                        <h3>The Last Flame</h3>
+                                    </div>
+                                </a>
+                                
+                                <a href="crazy-robot.html" class="game-card">
+                                    <img src="assets/projects/crazy-robot/thumbnail_robot.png" alt="Crazy Robot">
+                                    <div class="game-title-overlay">
+                                        <h3>Crazy Robot Prototype</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="other-projects.html">Other Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+              </ul>
+              <div class="navbar-social">
+                  <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
+              </div>
+          </div>
         </nav>
 
         <!-- Banner Image Hero Section -->
@@ -68,12 +96,13 @@
 
             <!-- About Section -->
             <section id="about-content" class="portfolio-title-section">
-              <h1 class="section-title">ABOUT</h1>
+              <h1 class="section-title">OVERVIEW</h1>
               <div class="about-top-section">
                 <div class="media-carousel" id="aboutMediaCarousel">
                     <div class="media-display">
-                        <!-- <video src="assets/img/portfolio/neila/NeilaInitialTrailer.mp4" autoplay loop muted playsinline class="active-media" alt="NEILA Trailer"></video> -->
-                        <img src="assets/projects/neila/images/LabCinematic.png" class="active-media" alt="Game Screenshot 1">
+                        <video src="assets/projects/neila/videos/NeilaInitialTrailerCompressed.mp4" autoplay loop muted playsinline controls 
+                        class="active-media" alt="NEILA Trailer" poster="assets/projects/neila/images/NeilaPoster1440.png"></video>
+                        <img src="assets/projects/neila/images/LabCinematic.png" alt="Game Screenshot 1">
                         <img src="assets/projects/neila/images/ExhibitionHallCinematic.png" alt="Game Screenshot 2">
                         <img src="assets/projects/neila/images/ResistanceCinematic.png" alt="Game Screenshot 3">
                         <img src="assets/projects/neila/images/MoonCinematic.png" alt="Game Screenshot 3">
@@ -81,19 +110,19 @@
                     <div class="media-controls-wrapper">
                         <button class="arrow prev-arrow">&#9664;</button>
                         <div class="thumbnail-nav">
-                            <!-- <div class="thumbnail active-thumbnail" data-index="0">
-                                <video src="assets/img/portfolio/neila/NeilaInitialTrailer.mp4" class="development-media-item" alt="NEILA Trailer Thumbnail"></video>
-                            </div> -->
                             <div class="thumbnail active-thumbnail" data-index="0">
-                                <img src="assets/projects/neila/images/LabCinematic.png" alt="Thumbnail 2">
+                                <img src="assets/projects/neila/images/NeilaPoster1440.png" alt="NEILA Trailer Thumbnail">
                             </div>
                             <div class="thumbnail" data-index="1">
-                                <img src="assets/projects/neila/images/ExhibitionHallCinematic.png" alt="Thumbnail 3">
+                                <img src="assets/projects/neila/images/LabCinematic.png" alt="Thumbnail 2">
                             </div>
                             <div class="thumbnail" data-index="2">
-                                <img src="assets/projects/neila/images/ResistanceCinematic.png" alt="Thumbnail 4">
+                                <img src="assets/projects/neila/images/ExhibitionHallCinematic.png" alt="Thumbnail 3">
                             </div>
                             <div class="thumbnail" data-index="3">
+                                <img src="assets/projects/neila/images/ResistanceCinematic.png" alt="Thumbnail 4">
+                            </div>
+                            <div class="thumbnail" data-index="4">
                                 <img src="assets/projects/neila/images/MoonCinematic.png" alt="Thumbnail 5">
                             </div>
                         </div>
@@ -108,60 +137,56 @@
                       <img src="assets/projects/neila/images/NeilaPoster1440.png" alt="NEILA Promo Image">
                     </div>
                     <h2>Woken. Modified. Telekinetic. Your escape starts now.</h2>
-                    <ul class="project-info-list">
-                      <li>
-                          <img src="assets/icons/type.svg" alt="Briefcase Icon" class="project-info-icon">
-                          <p>Technical Designer</p>
-                      </li>
-                      <li>
-                          <img src="assets/icons/software.svg" alt="Gear Icon" class="project-info-icon">
-                          <p>Unreal Engine 5, Perforce, Miro, Jira</p>
-                      </li>
-                      <li>
-                          <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="project-info-icon">
-                          <p>7 Weeks</p>
-                      </li>
-                      <li>
-                          <img src="assets/icons/role.svg" alt="Person Icon" class="project-info-icon">
-                          <p>Team of 17</p>
-                      </li>
-                  </ul>
-                    <div class="tags">
-                        <span class="tag">Action</span>
-                        <span class="tag">Supernatural</span>
-                        <span class="tag">Sci-fi</span>
-                        <span class="tag">Sandbox</span>
-                        <span class="tag">Physics-Based</span>
+                    <div class="project-details-container">
+                        <ul class="project-info-list2">
+                            <li id="about-info-list-item">
+                                <img src="assets/icons/briefcase_icon_white.svg" alt="Designer Icon" class="project-info-icon2">
+                                <p>Technical Designer</p>
+                            </li>
+                            <li id="about-info-list-item">
+                                <img src="assets/icons/clock_icon_white.svg" alt="Prototype Icon" class="project-info-icon2">
+                                <p>7 Weeks (2025)</p>
+                            </li>
+                            <li id="about-info-list-item">
+                                <img src="assets/icons/team_icon_white.svg" alt="Person Icon" class="project-info-icon2">
+                                <p>17</p>
+                            </li>
+                            </ul>
+                        <div class="software-icons-grid">
+                            <img src="assets/icons/unreal_icon_white.svg" alt="Unreal" class="software-icon">
+                            <img src="assets/icons/miro_icon_white.svg" alt="Unreal" class="software-icon">
+                            <img src="assets/icons/jira_icon_white.svg" alt="Unreal" class="software-icon">
+                            <img src="assets/icons/perforce-icon_nobg.png" alt="Unreal" class="software-icon">
+                        </div>
+                    </div>
+                    <div class="tags-and-platform">
+                        <div class="tags">
+                            <span class="tag">Action</span>
+                            <span class="tag">Supernatural</span>
+                            <span class="tag">Singleplayer</span>
+                            <span class="tag">Sandbox</span>
+                            <span class="tag">Physics</span>
+                            <span class="tag">Third-Person</span>
+                        </div>
+                        <div class="platform-icon">
+                            <i class="fab fa-windows"></i>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- About Bottom Section -->
-            <div class="about-bottom-section">
-                <div class="content-wrapper-about">
-                    <div class="main-text-content">
-                        <div class="bottom-project-summary">
-                            <h3>A Chaotic Playground</h3>
-                            <p>With a wacky set of supernatural powers and physics objects lying around, the space station is at your experimentative mercy!</p>
-                            <h3>Battle Several Foes</h3>
-                            <p>With three diverse enemies, use a combination of powers, strategy, and the environment to defeat even the strongest of aliens.</p>
-                            <h3>Explore for Upgrades & Exits</h3>
-                            <p>Navigate an expansive, dangerous space station, where vital upgrades are hidden and multiple escape routes await your discovery.</p>
-                        </div>
-                    </div>
-
-                    <div class="contribution-panel">
-                        <h3>My Contribution</h3>
-                        <ul>
-                            <li><span class="keyword">Designed and prototyped gameplay features and mechanics.</span></li>
-                            <li><span class="keyword">Developed custom blueprints/interactions</span> for level designers.</li>
-                            <li>Collaborated with programmers on optimizing my prototypes.</li>
-                            <li>Designed and developed <span class="keyword">enemy AI,</span> including behavior trees.</li>
-                            <li><span class="keyword">Integrated player and enemy animations</span> through blend spaces, animation blueprints, and montages.</li>
+                <div class="contribution-container">
+                    <h3 style="text-align: center; font-size: 2em;">My Contributions</h3>
+                    <div class="contribution-section">
+                        <ul class="contribution-list">
+                            <li><img src="assets/icons/pencil_icon_white.svg"></i><span>Designed and <span class="keyword">prototyped</span> gameplay features and mechanics.</span></li>
+                            <li><img src="assets/icons/blueprint_icon_white.svg"></i><span>Developed <span class="keyword">custom blueprints/interactions</span> for level designers.</span></li>
+                            <li><img src="assets/icons/tool_icon_white.svg"></i><span>Collaborated with programmers on optimizing my prototypes.</span></li>
+                            <li><img src="assets/icons/ai_icon_white.svg"><span>Designed and developed <span class="keyword">enemy AI,</span> including behavior trees.</span></li> 
+                            <li><img src="assets/icons/anim_icon_white.svg"></i><span><span class="keyword">Implemented animations</span> through blend spaces, animation blueprints, and montages</span></li>
                         </ul>
                     </div>
                 </div>
-            </div>
             </section>
 
             <!-- Development Section -->
@@ -178,56 +203,56 @@
                                     <div class="vertical-timeline-item">
                                         <div class="vertical-timeline-dot"></div>
                                         <div class="vertical-timeline-content">
-                                            <h3>Week 1</h3>
-                                            <p>Ideation, prototyping, pitch evaluation</p>
+                                            <h3>Week 1 | Ideation</h3>
+                                            <p>Prototyping, pitch, feedback, iteration</p>
                                         </div>
                                     </div>
 
                                     <div class="vertical-timeline-item">
                                         <div class="vertical-timeline-dot"></div>
                                         <div class="vertical-timeline-content">
-                                            <h3>Week 2 / Sprint 1</h3>
-                                            <p>Development of essential gameplay systems and frameworks, Pre-Alpha delivery</p>
+                                            <h3>Week 2 | Pre-Alpha</h3>
+                                            <p>Development of essential gameplay systems and frameworks</p>
                                         </div>
                                     </div>
 
                                     <div class="vertical-timeline-item">
                                         <div class="vertical-timeline-dot"></div>
                                         <div class="vertical-timeline-content">
-                                            <h3>Week 3 / Sprint 2</h3>
-                                            <p>Alpha delivery, most core mechanics involved, level blockouts</p>
+                                            <h3>Week 3 | Alpha</h3>
+                                            <p>Core mechanics implementation, level blockouts</p>
                                         </div>
                                     </div>
 
                                     <div class="vertical-timeline-item">
                                         <div class="vertical-timeline-dot"></div>
                                         <div class="vertical-timeline-content">
-                                            <h3>Week 4 / Sprint 3</h3>
-                                            <p>Plyatesting, refining art direction and mechanics, adding 'juice'</p>
+                                            <h3>Week 4 | Iterations</h3>
+                                            <p>Playtesting, refining art direction and mechanics, adding 'juice'</p>
                                         </div>
                                     </div>
 
                                     <div class="vertical-timeline-item">
                                         <div class="vertical-timeline-dot"></div>
                                         <div class="vertical-timeline-content">
-                                            <h3>Week 5 / Sprint 4</h3>
-                                            <p>Beta delivery, level dressing, finish mechanics</p>
+                                            <h3>Week 5 | Beta</h3>
+                                            <p>Level dressing, finalize mechanics / features</p>
                                         </div>
                                     </div>
 
                                     <div class="vertical-timeline-item">
                                         <div class="vertical-timeline-dot"></div>
                                         <div class="vertical-timeline-content">
-                                            <h3>Week 6 / Sprint 5</h3>
-                                            <p>Bug fixing, performance optimization, playtesting</p>
+                                            <h3>Week 6 | Polishing</h3>
+                                            <p>Bug fixing, performance optimization, more playtesting</p>
                                         </div>
                                     </div>
 
                                     <div class="vertical-timeline-item">
                                         <div class="vertical-timeline-dot"></div>
                                         <div class="vertical-timeline-content">
-                                            <h3>Week 7 / Sprint 6</h3>
-                                            <p>Final polishing touches, marketing materials, Candidate Master delivery</p>
+                                            <h3>Week 7 | Candidate Master</h3>
+                                            <p>Final polishing touches, marketing materials, feedback</p>
                                         </div>
                                     </div>
 
@@ -239,14 +264,14 @@
                             <div class="right-column-section">
                                 <h2>How Did We Decide On An Idea?</h2>
                                 <div class="description-content">
-                                    <p>A week before our full team assembled, the designers were tasked with combining two genres and rapid prototyping. Given <span class="keyword">combat and sandbox</span> as our genres, we established a few core goals to guide our decisions:</p>
+                                    <p>Given <span class="keyword">combat and sandbox</span> as our genres, we established a few core goals to guide our decisions:</p>
                                     <ul style="text-align: left;">
                                         <li><span class="keyword">One core mechanic</span> complemented by 1-2 additional player abilities, all designed for interaction.</li>
                                         <li>All mechanics would feature <span class="keyword">multiple uses,</span> both in and out of combat</li>
                                         <li>A <span class="keyword">dynamic environment</span> that encouraged players to experiment with the tools provided</li>
                                     </ul>
                                     <p>
-                                        On day one, with our full team assembled, we immediately <span class="keyword">collaboratively brainstormed and documented 
+                                        With our full team assembled, we immediately <span class="keyword">collaboratively brainstormed and documented 
                                         ideas,</span> keeping our past prototypes and chosen genres in mind. The designers then <span class="keyword">combined 
                                         these ideas into three different packages,</span> each with a concise pitch. Following a team vote, 
                                         a pitch was selected.
@@ -261,9 +286,7 @@
                                 <h2>Target Audience & Experience</h2>
                                 <div class="description-content">
                                     <p>
-                                        Once our main goals and theme were established, we defined a <span class="keyword">target audience</span> and 
-                                        <span class="keyword">desired player experience</span> to unify our design decisions. Drawing from our gameplay 
-                                        inspirations, we analyzed their common audiences, noting their likes and dislikes:
+                                        Drawing from our gameplay inspirations, we analyzed their common audiences, noting their likes and dislikes:
                                     </p>
                                     <ul style="text-align: left;">
                                         <li><span class="keyword">Single-player, online-social</span> experience for ages 15-40</li>
@@ -275,7 +298,6 @@
                                     <img id="neila-special-image" style="max-width: 50%;" src="assets/projects/neila/images/Inspiration.png" alt="Platforming Clips">
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -725,9 +747,9 @@
         <footer class="site-footer">
             <div class="footer-container">
                 <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
-                <p>Website designed and developed by Riley Elwell.</p>
+                <p>Website designed and developed by Riley Elwell using HTML, CSS, and JS.</p>
                 <p>
-                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">Contact</a>
+                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">rileyelwell2@gmail.com</a>
                 </p>
                 <div class="footer-social">
                     <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>

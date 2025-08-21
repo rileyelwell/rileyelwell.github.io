@@ -12,6 +12,7 @@
         
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
         
         <!-- Google fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +20,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
         
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet"/>
+
     </head>
     <body id="page-top">
 
@@ -33,10 +35,38 @@
               </a>
             </div>
               <ul class="navbar-menu">
-                  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
-                  <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
+                     <li class="dropdown-toggle">
+                        <!-- <a href="#" id="games-link">Portfolio <img src="assets/icons/caret-down-white.svg" class="arrow-icon-drop"></span></a> -->
+                        <a href="#" id="games-link">Portfolio<span class="arrow-icon-drop">&#9660;</span></a>
+                        <div class="dropdown-full-width" id="games-dropdown">
+                            <div class="games-gallery">
+                                <a href="neila.html" class="game-card">
+                                    <img src="assets/projects/neila/images/NeilaPosterVertical.png" alt="NEILA">
+                                    <!-- <div class="game-title-overlay">
+                                        <h3>NEILA</h3>
+                                    </div> -->
+                                </a>
+                                
+                                <a href="the-last-flame.html" class="game-card">
+                                    <img src="assets/projects/last-flame/images/TheLastFlamePosterVertical.JPEG" alt="The Last Flame">
+                                    <div class="game-title-overlay">
+                                        <h3>The Last Flame</h3>
+                                    </div>
+                                </a>
+                                
+                                <a href="crazy-robot.html" class="game-card">
+                                    <img src="assets/projects/crazy-robot/thumbnail_robot.png" alt="Crazy Robot">
+                                    <div class="game-title-overlay">
+                                        <h3>Crazy Robot Prototype</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="other-projects.html">Other Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
               </ul>
               <div class="navbar-social">
                   <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
@@ -56,8 +86,8 @@
                 Your browser does not support the video tag.
             </video>
             <div class="hero-text-overlay">
-                <h1>RILEY ELWELL</h1>
-                <p>TECHNICAL DESIGNER</p>
+                <h1 class="headline">RILEY ELWELL</h1>
+                <p class="headline">TECHNICAL DESIGNER</p>
                 <div class="navbar-social" id="special-links">
                   <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
                       target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
@@ -72,109 +102,126 @@
         <!-- Main Portfolio Project Section -->
         <main>
             <section class="portfolio-title-section">
-                <h1>PORTFOLIO</h1>
+                <h1 class="headline">PORTFOLIO</h1>
                 <div class="title-separator"></div>
             </section>
             
             <section class="project-showcase-section">
-                <div class="project-entry" data-project-url="neila.html">
-                    <div class="project-hero-media">
-                        <img src="assets/projects/neila/images/NeilaPoster1440.png" alt="NEILA">
-                    </div>
-                    <div class="project-info-panel">
-                        <h3 style="text-align: left;" class="project-name">NEILA</h3>
-                        <div class="project-thumbnail-grid">
-                            <img class="thumbnail-item" src="assets/projects/neila/images/MoonCinematic.png" alt="NEILA Thumbnail 1" data-main-src="assets/projects/neila/images/MoonCinematic.png" data-main-type="image">
-                            <img class="thumbnail-item" src="assets/projects/neila/images/LibraryCinematic.png" alt="NEILA Thumbnail 2" data-main-src="assets/projects/neila/images/LibraryCinematic.png" data-main-type="image">
-                            <img class="thumbnail-item" src="assets/projects/neila/images/SewerRoomCinematic.png" alt="NEILA Thumbnail 3" data-main-src="assets/projects/neila/images/SewerRoomCinematic.png" data-main-type="image">
-                            <img class="thumbnail-item" src="assets/projects/neila/images/ResistanceCinematic.png" alt="NEILA Thumbnail 4" data-main-src="assets/projects/neila/images/ResistanceCinematic.png" data-main-type="image">
+                <!-- <a href="neila.html" class="project-link1"> -->
+                    <div class="project-entry" data-project-url="neila.html">
+                        <div class="project-hero-media">
+                            <img src="assets/projects/neila/images/NeilaPoster1440.png" alt="NEILA">
+                            <video class="hover-video" src="assets/projects/neila/videos/NeilaInitialTrailerCompressed.mp4" loop muted playsinline preload="none"></video>
                         </div>
+                        <div class="project-info-panel">
+                            <h3 class="project-name">NEILA</h3>
+                            <div class="project-thumbnail-grid">
+                                <img class="thumbnail-item" src="assets/projects/neila/images/MoonCinematic.png" alt="NEILA Thumbnail 1" data-main-src="assets/projects/neila/images/MoonCinematic.png" data-main-type="image">
+                                <img class="thumbnail-item" src="assets/projects/neila/images/LibraryCinematic.png" alt="NEILA Thumbnail 2" data-main-src="assets/projects/neila/images/LibraryCinematic.png" data-main-type="image">
+                                <img class="thumbnail-item" src="assets/projects/neila/images/SewerRoomCinematic.png" alt="NEILA Thumbnail 3" data-main-src="assets/projects/neila/images/SewerRoomCinematic.png" data-main-type="image">
+                                <img class="thumbnail-item" src="assets/projects/neila/images/ResistanceCinematic.png" alt="NEILA Thumbnail 4" data-main-src="assets/projects/neila/images/ResistanceCinematic.png" data-main-type="image">
+                            </div>
+                            
+                            <div class="project-details-container">
+                                <ul class="project-info-list2">
+                                    <li>
+                                        <p style="color: #65B2FF; font-size: 1.3em;">Technical Designer</p></li>
+                                    <li>
+                                        <img src="assets/icons/anim_icon_white.svg" alt="Animation Icon" class="project-info-icon2">
+                                        <p>Animation Implementation</p></li>
+                                    <li>
+                                        <img src="assets/icons/pencil_icon_white.svg" alt="Prototype Icon" class="project-info-icon2">
+                                        <p>Rapid Prototyping</p></li>
+                                    <li>
+                                        <img src="assets/icons/ai_icon_white.svg" alt="AI Icon" class="project-info-icon2">
+                                        <p>AI Enemy Development</p></li>
+                                    <li>
+                                        <img src="assets/icons/clock_icon_white.svg" alt="Calendar Icon" class="project-info-icon2">
+                                        <p>7 Weeks (2025)</p>
+                                    </li>
+                                    <li>
+                                        <img src="assets/icons/team_icon_white.svg" alt="Person Icon" class="project-info-icon2">
+                                        <p>17</p>
+                                    </li>
+                                </ul>
+                                    <div class="software-icons-grid">
+                                        <img src="assets/icons/unreal_icon_white.svg" alt="Unreal Engine" class="software-icon">
+                                        <img src="assets/icons/jira_icon_white.svg" alt="Jira" class="software-icon">
+                                        <img src="assets/icons/miro_icon_white.svg" alt="Jira" class="software-icon">
+                                        <img src="assets/icons/perforce-icon_nobg.png" alt="Jira" class="software-icon"> 
+                                    </div>
+                            </div>
+                        <!-- </a> -->
 
-                        <div class="hover-info-tags">
-                            <span class="hover-tag">Action</span>
-                            <span class="hover-tag">Supernatural</span>
-                            <span class="hover-tag">Singleplayer</span>
-                            <span class="hover-tag">Physics</span>
+                        <div class="bottom-panel-container">
+                            <div class="hover-info-tags">
+                                <span class="hover-tag">Action</span>
+                                <span class="hover-tag">Supernatural</span>
+                                <span class="hover-tag">Singleplayer</span>
+                                <span class="hover-tag">Physics</span>
+                            </div>
+                            <div class="platform-icon">
+                                <i class="fab fa-windows"></i>
+                            </div>
                         </div>
-                        
-                        <div class="platform-icon">
-                            <i class="fab fa-windows"></i>
-                        </div>
-                    </div>
-                    <div class="project-hover-info">
-                        
-                        <div class="hover-info-image">
-                            <video src="assets/projects/neila/videos/NeilaInitialTrailerCompressed.mp4" autoplay loop muted playsinline loading="lazy" alt="NEILA Trailer"></video>
-                        </div>
-
-                        <ul class="project-info-list2">
-                            <li>
-                                <img src="assets/icons/type.svg" alt="Briefcase Icon" class="project-info-icon2">
-                                <p>Technical Designer</p>
-                            </li>
-                            <li>
-                                <img src="assets/icons/software.svg" alt="Gear Icon" class="project-info-icon2">
-                                <p>Unreal Engine 5, Perforce, Miro, Jira</p>
-                            </li>
-                            <li>
-                                <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="project-info-icon2">
-                                <p>7 Weeks</p>
-                            </li>
-                            <li>
-                                <img src="assets/icons/role.svg" alt="Person Icon" class="project-info-icon2">
-                                <p>Team of 17</p>
-                            </li>
-                        </ul>
                     </div>
                 </div>
-                
+
                 <div class="project-entry-separator"></div>
-                
-                <div class="project-entry" data-project-url="squirrel-bros.html">
+
+                <div class="project-entry" data-project-url="the-last-flame.html">
                     <div class="project-hero-media">
-                        <img src="assets/projects/squirrel-bros/images/squirrelbros_poster.png" alt="Squirrel Bros Poster">
+                        <img src="assets/projects/last-flame/images/TheLastFlameBanner.png" alt="The Last Flame Poster">
+                        <video class="hover-video" src="assets/projects/last-flame/videos/leading_villagers.mp4" loop muted playsinline preload="none"></video>
                     </div>
                     <div class="project-info-panel">
-                        <h3 class="project-name">Squirrel Bros</h3>
+                        <h3 class="project-name">The Last Flame</h3>
                         <div class="project-thumbnail-grid">
-                            <img class="thumbnail-item" src="assets/projects/squirrel-bros/images/about_img1.png" alt="Project 2 Thumbnail 1" data-main-src="assets/projects/squirrel-bros/images/about_img1.png" data-main-type="image">
-                            <img class="thumbnail-item" src="assets/projects/squirrel-bros/images/about_img2.png" alt="Project 2 Thumbnail 2" data-main-src="assets/projects/squirrel-bros/images/about_img2.png" data-main-type="image">
-                            <img class="thumbnail-item" src="assets/projects/squirrel-bros/images/about_img3.png" alt="Project 2 Thumbnail 3" data-main-src="assets/projects/squirrel-bros/images/about_img3.png" data-main-type="image">
-                            <img class="thumbnail-item" src="assets/projects/squirrel-bros/images/about_img4.png" alt="Project 2 Thumbnail 4" data-main-src="assets/projects/squirrel-bros/images/about_img4.png" data-main-type="image">
+                            <img class="thumbnail-item" src="assets/projects/last-flame/images/ruin_unlit.jpg" alt="Thumbnail 1" data-main-src="assets/projects/last-flame/images/ruin_unlit.jpg" data-main-type="image">
+                            <img class="thumbnail-item" src="assets/projects/last-flame/images/subtitle_img.jpg" alt="Thumbnail 2" data-main-src="assets/projects/last-flame/images/subtitle_img.jpg" data-main-type="image">
+                            <img class="thumbnail-item" src="assets/projects/last-flame/images/thelastflame.png" alt="Thumbnail 3" data-main-src="assets/projects/last-flame/images/thelastflame.png" data-main-type="image">
+                            <img class="thumbnail-item" src="assets/projects/last-flame/images/pause_menu.jpg" alt="Thumbnail 4" data-main-src="assets/projects/last-flame/images/pause_menu.jpg" data-main-type="image">
                         </div>
-                        <div class="hover-info-tags">
-                            <span class="hover-tag">Puzzle</span>
-                            <span class="hover-tag">Platformer</span>
-                            <span class="hover-tag">Side-Scroller</span>
-                            <span class="hover-tag">Pixel-Art</span>
+                        <div class="project-details-container">
+                            <ul class="project-info-list2">
+                                <li>
+                                    <p style="color: #65B2FF; font-size: 1.3em;">Technical & UX Designer</p>
+                                </li>
+                                <li>
+                                    <img src="assets/icons/pencil_icon_white.svg" alt="Prototype Icon" class="project-info-icon2">
+                                    <p>UX Designs & Implementation</p>
+                                </li>
+                                <li>
+                                    <img src="assets/icons/gear_icon_white.svg" alt="AI Icon" class="project-info-icon2">
+                                    <p>Settings & Controls</p>
+                                </li>
+                                <li>
+                                    <img src="assets/icons/clock_icon_white.svg" alt="Calendar Icon" class="project-info-icon2">
+                                    <p>4 Weeks (2025)</p>
+                                </li>
+                                <li>
+                                    <img src="assets/icons/team_icon_white.svg" alt="Person Icon" class="project-info-icon2">
+                                    <p>20</p>
+                                </li>
+                            </ul>
+                                <div class="software-icons-grid">
+                                    <img src="assets/icons/unity_icon_white.svg" alt="Unity" class="software-icon">
+                                    <img src="assets/icons/jira_icon_white.svg" alt="Jira" class="software-icon">
+                                    <img src="assets/icons/miro_icon_white.svg" alt="Miro" class="software-icon">
+                                    <img src="assets/icons/perforce-icon_nobg.png" alt="Perforce" class="software-icon"> 
+                                </div>
                         </div>
-                        
-                        <div class="platform-icon">
-                            <i class="fab fa-windows"></i>
+                        <div class="bottom-panel-container">
+                            <div class="hover-info-tags">
+                                <span class="hover-tag">Narrative</span>
+                                <span class="hover-tag">Adventure</span>
+                                <span class="hover-tag">Singleplayer</span>
+                                <span class="hover-tag">Third-Person</span>
+                            </div>
+                            <div class="platform-icon">
+                                <i class="fab fa-windows"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-hover-info">
-                        <div class="hover-info-image">
-                            <video src="assets/projects/squirrel-bros/videos/SquirrelBrosPuzzleDesign.mp4" autoplay loop muted playsinline loading="lazy" alt="Squirrel Bros Video"></video>
-                        </div>
-                        <ul class="project-info-list2">
-                            <li>
-                                <img src="assets/icons/type.svg" alt="Briefcase Icon" class="project-info-icon2">
-                                <p>Level & Systems Design, UI/UX, Pixel-Art</p>
-                            </li>
-                            <li>
-                                <img src="assets/icons/software.svg" alt="Gear Icon" class="project-info-icon2">
-                                <p>Unity, C#, Aseprite</p>
-                            </li>
-                            <li>
-                                <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="project-info-icon2">
-                                <p>3 Weeks</p>
-                            </li>
-                            <li>
-                                <img src="assets/icons/role.svg" alt="Person Icon" class="project-info-icon2">
-                                <p>Individual</p>
-                            </li>
-                        </ul>
                     </div>
                 </div>
 
@@ -183,6 +230,7 @@
                 <div class="project-entry" data-project-url="crazy-robot.html">
                     <div class="project-hero-media">
                         <img src="assets/projects/crazy-robot/thumbnail_robot.png" alt="Crazy Robot Prototype">
+                        <video class="hover-video" src="assets/projects/crazy-robot/CrazyRobotExample.mp4" loop muted playsinline preload="none"></video>
                     </div>
                     <div class="project-info-panel">
                         <h3 style="text-align: left;" class="project-name">Crazy Robot Prototype</h3>
@@ -197,43 +245,44 @@
                             data-main-src="assets/projects/crazy-robot/robot-about4.png" data-main-type="image">
                         </div>
 
-                        <div class="hover-info-tags">
-                            <span class="hover-tag">Driving</span>
-                            <span class="hover-tag">Level Editor</span>
-                            <span class="hover-tag">Delivery</span>
-                            <span class="hover-tag">Arcade</span>
-                            <span class="hover-tag">Tricks</span>
+                        <div class="project-details-container">
+                            <ul class="project-info-list2">
+                                <li>
+                                    <p style="color: #65B2FF; font-size: 1.3em;">Technical & UX Designer</p>
+                                </li>
+                                <li>
+                                    <img src="assets/icons/pencil_icon_white.svg" alt="Prototype Icon" class="project-info-icon2">
+                                    <p>Rapid Prototyping</p>
+                                </li>
+                                <li>
+                                    <img src="assets/icons/tool_icon_white.svg" alt="AI Icon" class="project-info-icon2">
+                                    <p>Core & Modular Systems</p>
+                                </li>
+                                <li>
+                                    <img src="assets/icons/clock_icon_white.svg" alt="Calendar Icon" class="project-info-icon2">
+                                    <p>4 Weeks (2025)</p>
+                                </li>
+                                <li>
+                                    <img src="assets/icons/person_icon_white.svg" alt="Person Icon" class="project-info-icon2">
+                                    <p>Individual</p>
+                                </li>
+                            </ul>
+                                <div class="software-icons-grid">
+                                    <img src="assets/icons/unreal_icon_white.svg" alt="Unity" class="software-icon">
+                                </div>
                         </div>
-                        
-                        <div class="platform-icon">
-                            <i class="fab fa-windows"></i>
+                        <div class="bottom-panel-container">
+                            <div class="hover-info-tags">
+                                <span class="hover-tag">Arcadey</span>
+                                <span class="hover-tag">Physics</span>
+                                <span class="hover-tag">Level Editor</span>
+                                <span class="hover-tag">Third-Person</span>
+                                <span class="hover-tag">Tutorial</span>
+                            </div>
+                            <div class="platform-icon">
+                                <i class="fab fa-windows"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-hover-info">
-                        
-                        <div class="hover-info-image">
-                            <video src="assets/projects/crazy-robot/CrazyRobotExample.mp4" autoplay loop muted playsinline loading="lazy" 
-                            alt="Crazy Robot Video"></video>
-                        </div>
-
-                        <ul class="project-info-list2">
-                            <li>
-                                <img src="assets/icons/type.svg" alt="Briefcase Icon" class="project-info-icon2">
-                                <p>Prototyping, Custom Physics, Systems</p>
-                            </li>
-                            <li>
-                                <img src="assets/icons/software.svg" alt="Gear Icon" class="project-info-icon2">
-                                <p>Unreal Engine 5, Diversion, Blender</p>
-                            </li>
-                            <li>
-                                <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="project-info-icon2">
-                                <p>4 Weeks</p>
-                            </li>
-                            <li>
-                                <img src="assets/icons/role.svg" alt="Person Icon" class="project-info-icon2">
-                                <p>Individual</p>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </section>
@@ -254,7 +303,7 @@
                         <li><img src="assets/icons/unreal-engine-logo.svg"><span>UE5</span></li> 
                         <li><i class="fas fa-code" style="font-size: 3em; margin-bottom: 10px;"></i><span>C/C#/C++/Python</span></li>
                         <li><i class="fas fa-globe" style="font-size: 3em; margin-bottom: 10px;"></i><span>HTML/CSS/JS</span></li>
-                        </ul>
+                    </ul>
                 </div>
             </section>
 
@@ -279,19 +328,18 @@
                         <p>
                             Growing up in California, I discovered my passion for tech through coding, robotics, and cybersecurity in high school. 
                             I then built a strong technical foundation at Oregon State University, 
-                            earning a B.S. in Applied Computer Science (Simulation & Game Programming) and exploring tools like Unity. To further specialize in game design, 
-                            I am currently studying at Futuregames Stockholm, aiming to refine my skills and build a compelling portfolio.
+                            earning a B.S. in Applied Computer Science (Simulation & Game Programming) and exploring tools like Unity. Now finding a passion for game design, 
+                            I am currently studying at Futuregames in Stockholm, with the goal of expanding my knowledge and to build a strong portfolio.
                         </p>
                 
                         <h2>Fun Facts</h2>
                         <ul>
-                        <li>The Spiderverse movies are my favorite movies.</li>
-                        <li>My top hobbies include soccer/football, basketball, and 100%-ing games.</li>
-                        <li>I played Rocket League Esports at Oregon State for two years and peaked at GC1 (I'm washed now).</li>
+                        <li>I am a BIG fan of the Spiderverse movies!</li>
+                        <li>My top hobbies include soccer (fotboll), basketball, and 100%-ing games.</li>
+                        <li>I played Rocket League Esports at Oregon State for two years and peaked at GC1.</li>
                         <li>In high school, I competed in VEX robotics and made it to the World Championships in 2019.</li>
-                        <li>Fallout: New Vegas is my favorite Fallout game, the original BioShock is my favorite BioShock game,
-                            Pokemon Heart Gold is my favorite Pokemon game, and Wolfenstein: The New Order is my favorite Wolfenstein game.
-                        </li>
+                        <li>My favorite video games series are probably Fallout, BioShock, and Dishonored.</li>
+                        <li>I love indie games too, like Hollow Knight, CrossCode, Yuppie Psycho, and 1000xRESIST</li>
                         </ul>
                     </div>
                 </div>
@@ -303,12 +351,27 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
 
+        <script>
+            ScrollReveal({
+                distance: '60px',
+                duration: 2500,
+                delay: 400,
+                reset: true
+            });
+
+            // Now, you can add reveal effects to your elements
+            ScrollReveal().reveal('.headline', { origin: 'top', delay: 200});
+            // ScrollReveal().reveal('.project-info-panel', { delay: 500, origin: 'left' });
+            ScrollReveal().reveal('.navbar-social li', { delay: 300, interval: 300, origin: 'bottom' });
+            // ScrollReveal().reveal('.skills-list li', { delay: 300, interval: 300, origin: 'left' });
+        </script>
+
         <footer class="site-footer">
             <div class="footer-container">
                 <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
-                <p>Website designed and developed by Riley Elwell.</p>
+                <p>Website designed and developed by Riley Elwell using HTML, CSS, and JS.</p>
                 <p>
-                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">Contact</a>
+                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">rileyelwell2@gmail.com</a>
                 </p>
                 <div class="footer-social">
                     <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>

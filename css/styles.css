@@ -2,15 +2,20 @@
 
 body, html {
   margin: 0;
-  font-family: "Veto Sans Light", sans-serif; /* Or your preferred font */
-  height: 100%; /* Ensure full height for the video section */
+  font-family: "Veto Sans Light", sans-serif;
+  height: 100%;
   overflow-x: hidden;
   background-color: #0D1B2A;
   color: white;
+  scroll-behavior: smooth;
+}
+
+body a {
+  color: yellow;
 }
 
 body p, ul, li {
-  font-size: 0.95em;
+  font-size: 1em;
   line-height: 1.6;
 }
 
@@ -73,7 +78,8 @@ body p, ul, li {
 }
 
 .custom-navbar {
-  background-color: #21201E;
+  /* background-color: #21201E; */
+  background-color: #0D1B2A;
   color: #fff;
   padding: 1em 2rem;
   position: fixed;
@@ -123,20 +129,22 @@ body p, ul, li {
 }
 
 .nav-item {
-  margin: 0 1em; /* Spacing between menu items */
+  margin: 0 0.3em;
 }
 
 .custom-navbar .navbar-menu .nav-item .nav-link {
-  position: relative; /* Needed for the underline */
   color: white; /* Your default text color */
   text-decoration: none; /* Remove default underlines */
   transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  padding: 10px;
+  border-radius: 5px;
   font-size: 1em;
 }
 
-/* .custom-navbar .navbar-menu .nav-item .nav-link:hover {
-  color: #B71C1C;
-} */
+.custom-navbar .navbar-menu .nav-item .nav-link:hover {
+  /* color: #B71C1C; */
+  background-color: #1C334A;
+}
 
 
 .navbar-social {
@@ -195,6 +203,91 @@ body p, ul, li {
     width: 100%; /* Ensure it takes full width to allow centering */
 }
 
+/* Hide the full-width dropdown by default */
+.dropdown-full-width {
+    display: none; 
+    position: absolute;
+    top: 100%; /* Positions the dropdown directly below the navbar */
+    left: 0;
+    right: 0;
+    background-color: #0D1B2A;
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
+    z-index: 999; /* Ensure it's on top of other content */
+    padding: 20px;
+    /* display: flex;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out; */
+}
+
+/* Show the dropdown when the 'active' class is present */
+.dropdown-full-width.active {
+    display: block; /* or other properties to reveal it */
+    max-height: 500px; /* Set a value larger than the max height of your content */
+    overflow: visible; /* Allows content like shadows to show */
+}
+
+/* Use Flexbox for side-by-side layout within the dropdown */
+.games-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: auto;
+    /* max-width: 1200px;  */
+}
+
+/* Style the game cards as before */
+.game-card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+  scale: 1.02;
+}
+
+.game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.game-title-overlay {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    color: white;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
+}
+
+.game-title-overlay h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+#games-link {
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1; /* Ensure text is above the pseudo-element */
+    color: white; /* Or your desired text color */
+    text-decoration: none;
+}
+
+#games-link:hover {
+    background-color: #1C334A;
+}
+
 
 
 
@@ -202,11 +295,11 @@ body p, ul, li {
 /* MAIN PORTFOLIO PROJECTS */
 .portfolio-title-section {
   width: 100%;
-  padding: 10px 0; /* Adjust vertical padding as needed */
+  padding: 10px 0;
   text-align: center;
-  color: white; /* Adjust text color for visibility on the pattern */
-  position: relative; /* Needed for absolute positioning of the background */
-  overflow: hidden; /* Clip any potential overflow from the background */
+  color: white;
+  position: relative;
+  overflow: hidden; 
 }
 
 .portfolio-title-section::before {
@@ -239,16 +332,19 @@ body p, ul, li {
   margin: 0 auto 20px; /* Center the separator */
 }
 
-/* Optional: Style for the subtitle if you uncomment it */
-.portfolio-title-section .portfolio-subtitle {
-  font-style: italic;
-  color: #ccc;
+.contribution-container {
+    background-color: #1C334A; /* Your desired background color */
+    padding: 30px; /* Add some padding around the content */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    margin-top: 20px; /* Add some space above the container if needed */
 }
 
 
 .fade-in-section {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out; /* Add a smooth transition */
+  transition: opacity 0.5s ease-in-out;
 }
 
 .fade-in-section.visible {
@@ -334,7 +430,7 @@ body p, ul, li {
   box-sizing: border-box;
 }
 
-.project-link {
+.project-link1 {
   display: block;
   width: 100%;
   height: 100%;
@@ -487,26 +583,45 @@ body p, ul, li {
 
 .skills-section {
     display: flex;
-    justify-content: center; /* Keep items centered */
+    justify-content: center;
     align-items: center;
     padding-top: 30px;
     padding-bottom: 50px;
-    /* box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.5); */
 }
 
 .skills-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Ensure it's a flex container */
-    gap: 100px; /* Reduce this value to bring items closer */
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    justify-content: center; /* Centers the cards within the list container */
+    gap: 20px; /* Reduced gap for a tighter grid */
 }
 
 .skills-list li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Vertically centers the content */
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background-color: #2b3a4d; /* Add a background to make the cards visible */
+
+  /* Key properties for fixed size */
+  width: 150px; /* Adjust this value as needed */
+  height: 150px; /* Adjust this value as needed */
+  flex-shrink: 0; /* Prevents items from shrinking */
+  padding: 10px; /* Adjusted padding to better fit content */
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* New rule for the hover effect */
+.skills-list li:hover {
+    transform: translateY(-5px); /* Moves the card up by 5 pixels */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Makes the shadow more prominent */
 }
 
 .skills-list img {
@@ -515,18 +630,62 @@ body p, ul, li {
     margin-bottom: 10px;
 }
 
+.contribution-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.contribution-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    justify-content: center; /* Centers the cards within the list container */
+    gap: 20px; /* Reduced gap for a tighter grid */
+}
+
+.contribution-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Vertically centers the content */
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background-color: #2b3a4d; /* Add a background to make the cards visible */
+
+  /* Key properties for fixed size */
+  width: 250px; /* Adjust this value as needed */
+  height: 200px; /* Adjust this value as needed */
+  flex-shrink: 0; /* Prevents items from shrinking */
+  padding: 10px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* New rule for the hover effect */
+.contribution-list li:hover {
+    transform: translateY(-5px); /* Moves the card up by 5 pixels */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Makes the shadow more prominent */
+}
+
+.contribution-list img {
+    max-width: 50px;
+    height: auto;
+    margin-bottom: 20px;
+}
 
 
 
 
 
 
-/* Styles for the hero section on the project details pages */
 
 
-/* Styles for the hero section on the project details pages */
-/* Existing CSS for main page hero and project details hero */
-/* ... */
 
 /* Project Details Hero Section */
 .project-details-page .hero-section {
@@ -616,7 +775,7 @@ body p, ul, li {
 }
 
 .project-details-page .info-item span {
-  font-size: 0.9em; /* Adjust text size as needed */
+  /* font-size: 0.9em;  */
   color: white; /* Adjust text color as needed */
 }
 
@@ -860,7 +1019,7 @@ body p, ul, li {
 
 .project-description-normal p,
 .project-description-normal ul {
-  font-size: 0.95em;
+  /* font-size: 0.95em; */
   line-height: 1.6;
   margin-bottom: 15px;
   text-align: left;
@@ -868,7 +1027,7 @@ body p, ul, li {
 }
 
 main {
-  max-width: 1200px; /* Limit content width */
+  max-width: 1600px; /* Limit content width */
   margin: 40px auto; /* Center content with margin */
   padding: 20px;
 }
@@ -914,7 +1073,7 @@ main {
 }
 
 .puzzle-description p {
-  font-size: 0.95em;
+  /* font-size: 0.95em; */
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: left; /* Align text to left within description block */
@@ -922,7 +1081,7 @@ main {
 }
 
 .puzzle-description ul li {
-  font-size: 0.95em;
+  /* font-size: 0.95em; */
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: left; /* Align text to left within description block */
@@ -1000,7 +1159,7 @@ main {
   gap: 20px; /* Space between the media and description */
   margin-bottom: 15px; /* Margin below the entire combined section */
   flex-wrap: wrap; /* Allows wrapping on smaller screens */
-  align-items: flex-start; /* Aligns content to the top */
+  /* align-items: flex-start; */
 
   /* Styles for the "single box thing" */
   background-color: #1C334A;
@@ -1030,24 +1189,29 @@ main {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 8px 8px 0 0;
+  /* border-radius: 8px 8px 0 0; */
+  position: relative;
 }
 
-.media-display img {
+.media-display img,
+.media-display video {
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   object-fit: contain;
-  display: none;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  z-index: 1;
 }
 
-.media-display img.active-media {
-  display: block;
+.media-display img.active-media,
+.media-display video.active-media {
+  /* display: block; */
   opacity: 1;
+  z-index: 2;
 }
 
 .thumbnail {
@@ -1090,7 +1254,7 @@ main {
 
 .about-description-panel h2 {
   color: #65B2FF;
-  font-size: 1.2em;
+  font-size: 1.35em;
   margin-bottom: 15px;
   line-height: 1.4;
   text-align: left;
@@ -1108,7 +1272,7 @@ main {
   display: flex; /* Arrange icon and text side-by-side */
   align-items: center; /* Vertically center icon and text */
   margin-bottom: 15px;
-  font-size: 0.9em;
+  /* font-size: 0.9em; */
   line-height: 1.6;
 }
 
@@ -1131,7 +1295,7 @@ main {
 
 .project-info-list p {
   margin: 0;
-  font-size: 0.95em;
+  /* font-size: 0.95em; */
   color: white;
 }
 
@@ -1155,10 +1319,9 @@ main {
 /* Bottom Project Summaries */
 .about-bottom-section {
   display: flex;
-  gap: 15px; /* Space between the two summary blocks */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  margin-bottom: 40px; /* Space below this section */
-  /* width: 75%; */
+  gap: 15px; 
+  flex-wrap: wrap; 
+  margin-bottom: 40px;
 }
 
 .content-wrapper-about {
@@ -1236,8 +1399,8 @@ main {
 }
 
 .bottom-project-summary {
-  flex: 1; /* Each summary takes equal space */
-  min-width: 300px; /* Minimum width before wrapping */
+  /* flex: 1; */
+  /* min-width: 300px;  */
   background-color: #1C334A;
   padding: 30px;
   border-radius: 5px;
@@ -1254,10 +1417,23 @@ main {
 }
 
 .bottom-project-summary p {
-  font-size: 0.9em;
+  /* font-size: 0.9em; */
   line-height: 1.6;
   color: white;
   text-align: left;
+}
+
+.bottom-project-summary ul {
+    /* Use flexbox on the unordered list to center its contents */
+    display: flex;
+    flex-direction: column; /* Stacks the list items vertically */
+    align-items: center; /* Centers the list items and their content horizontally */
+    padding-left: 0; /* Remove default padding to allow full centering */
+    list-style-position: inside; /* Positions the bullet inside the list item's content box */
+}
+
+.bottom-project-summary ul li {
+    text-align: center;
 }
 
 /* Responsive adjustments for About section */
@@ -1434,7 +1610,7 @@ pre {
     border-radius: 8px;
     overflow-x: auto; /* Allow horizontal scrolling for long lines */
     font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 0.9em;
+    /* font-size: 0.9em; */
     line-height: 1.4;
     position: relative; /* Needed for the fade effect */
 
@@ -1499,7 +1675,7 @@ pre {
     top: 50%;
     transform: translateY(-50%) rotate(0deg); /* Initial position (closed) */
     transition: transform 0.2s ease; /* Smooth rotation */
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
     color: white;
 }
 
@@ -1516,7 +1692,7 @@ pre {
     margin: 0;
     overflow-x: auto;
     font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 0.9em;
+    /* font-size: 0.9em; */
     line-height: 1.4;
 }
 
@@ -1556,7 +1732,7 @@ pre {
 
 .concept-panel p {
     color: #ccc; /* Lighter text color */
-    font-size: 0.95em;
+    /* font-size: 0.95em; */
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: left;
@@ -1568,7 +1744,7 @@ pre {
     margin-left: 25px; /* Indent the bullets */
     text-align: left;
     margin-top: 10px;
-    font-size: 0.95em;
+    /* font-size: 0.95em; */
     line-height: 1.6;
 }
 
@@ -1659,7 +1835,7 @@ pre {
 
 .two-column-section .column p {
     color: #ccc;
-    font-size: 0.95em;
+    /* font-size: 0.95em; */
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: left;
@@ -1826,7 +2002,7 @@ pre {
 }
 
 .timeline-week-block p {
-    font-size: 0.95em;
+    /* font-size: 0.95em; */
     line-height: 1.5;
 }
 
@@ -1884,7 +2060,7 @@ pre {
     /* Remove any existing padding/margins from .project-content-normal that might conflict */
     padding: 0; /* Adjust if you need internal padding here */
     margin: 0 auto; /* Center the whole content block if it has a max-width */
-    max-width: 1000px;
+    max-width: 1400px;
 }
 
 /* Style for the description text container */
@@ -2095,7 +2271,7 @@ pre {
     display: flex; /* Make it a flex container */
     flex-direction: column; /* Stack sections vertically */
     gap: 40px; /* Space between each full/half-width section */
-    max-width: 1200px; /* Example max-width for content */
+    max-width: 1400px; /* Example max-width for content */
     /* margin: 40px auto; */
     padding: 0 20px; /* Some side padding */
     color: #ccc; /* Default text color */
@@ -2204,7 +2380,7 @@ pre {
     justify-content: center; /* Center content if less than full width */
     align-items: flex-start; /* Align content to the top */
     width: calc(100% - 40px); /* Adjust width to account for section padding */
-    max-width: 1200px; /* Limit max width for readability */
+    max-width: 1400px; /* Limit max width for readability */
     margin-bottom: 5px;
     padding: 10px; /* Padding inside the row */
     /* background-color: #3B4E64; */
@@ -2246,7 +2422,7 @@ pre {
     grid-template-columns: repeat(2, 1fr); /* Simplifies to 2 equal columns always */
     gap: 30px; /* Space between grid items (dropdowns) */
     width: calc(100% - 40px); /* Adjust width to account for section padding */
-    max-width: 1200px; /* Match fixed-content-row max-width */
+    max-width: 1400px; /* Match fixed-content-row max-width */
     align-items: start; /* Align items to the start of their grid cell */
 }
 
@@ -2308,7 +2484,7 @@ pre {
     padding: 20px;
     background-color: #3B4E64; /* Your specified background */
     color: #ccc; /* Your specified color */
-    font-size: 0.95em;
+    /* font-size: 0.95em; */
     line-height: 1.6;
     max-height: 400px; /* Adjust as needed */
     overflow-y: auto; /* Enable scrolling for long content */
@@ -2568,7 +2744,7 @@ pre {
 }
 
 .vertical-timeline-content p {
-    font-size: 0.9em;
+    /* font-size: 0.9em; */
     line-height: 1.5;
     margin-bottom: 0;
 }
@@ -2707,15 +2883,15 @@ pre {
 
 .image-caption {
     margin-top: 10px;
-    font-size: 0.9em;
+    /* font-size: 0.9em; */
     color: #65B2FF;
 }
 
 .image-caption-bullets {
-    font-size: 0.9em;
+    /* font-size: 0.9em; */
     color: #ccc;
     text-align: left;
-    margin-left: 150px;
+    margin-left: 250px;
 }
 
 
@@ -2733,13 +2909,34 @@ pre {
     color: #65B2FF; /* Color of the arrow */
 }
 
+.arrow-icon-drop {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Smooth rotation animation */
+    margin-left: 5px;
+    font-size: 10px;
+    /* width: 15px; */
+    /* height: 15px; */
+    color: #B71C1C;
+    /* align-items: center; */
+}
+
+/* This is the class that will be added by JavaScript */
+.dropdown-full-width.active + .arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* Corrected for the current HTML structure: */
+.dropdown-toggle.active .arrow-icon-drop {
+    transform: rotate(180deg);
+}
+
 
 
 
 
 /* --- Global Section Styling (similar to your existing project-area-normal) --- */
 .project-showcase-section {
-    max-width: 1000px;
+    max-width: 1800px;
     margin: 40px auto;
     padding: 20px;
     color: #eee;
@@ -2753,9 +2950,11 @@ pre {
 }
 
 .project-entry:hover {
-    transform: scale(1.01); /* Slightly enlarge the container */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Make the shadow deeper on hover */
-    z-index: 10; /* Bring it slightly forward to ensure it sits above others if overlapping */
+    /* transform: scale(1.01);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); */
+    transform: translateX(-15px); /* Moves the card up by 5 pixels */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    z-index: 10;
 }
 
 .project-entry {
@@ -2763,14 +2962,15 @@ pre {
     justify-content: center;
     align-items: stretch; /* Ensures children stretch to full height */
     width: 100%; /* Or a max-width for the entire entry */
-    max-width: 900px; /* Example: A suitable max-width for the entire project entry */
-    margin: 40px auto; /* Center the entry on the page */
+    max-width: 1500px; /* Example: A suitable max-width for the entire project entry */
+    /* margin: 40px auto; */
     background-color: #1a222c;
     border-radius: 12px;
     /* overflow: hidden; */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    height: 300px; /* Keep the fixed height for the entire entry for consistency */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 500px;
+    /* transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
 }
 
@@ -2782,10 +2982,18 @@ pre {
     position: relative;
 }
 
-.project-hero-media img {
+.project-hero-media img,
+.project-hero-media video.hover-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image covers the area without distortion */
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+}
+
+.project-hero-media video.hover-video {
+    opacity: 0; /* Initially hide the video */
+    z-index: 1; /* Make sure the video is above the image */
 }
 
 /* --- Right Panel: Info and Thumbnails --- */
@@ -2801,10 +3009,17 @@ pre {
     
 }
 
+.project-details-container {
+    display: flex;
+    justify-content: space-between; /* Pushes the list and software icons to opposite sides */
+    align-items: flex-start; /* Aligns them to the top */
+    flex-grow: 1; /* Allows this section to grow and fill available space */
+}
+
 /* --- Project Name/Title --- */
 .project-name {
     color: #fff;
-    font-size: 1.6em;
+    font-size: 2em;
     margin-top: 0;
     margin-bottom: 5px; /* Thumbnail closer to title */
     line-height: 1.2;
@@ -2821,7 +3036,7 @@ pre {
 
 .project-thumbnail-grid img {
     width: 100%;
-    height: 70px; /* Fixed height for consistent thumbnail size */
+    height: 80px; /* Fixed height for consistent thumbnail size */
     object-fit: cover; /* Ensures thumbnails fill their space */
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -2834,7 +3049,7 @@ pre {
 
 /* --- Project Description --- */
 .project-description {
-    font-size: 0.95em;
+    /* font-size: 0.95em; */
     line-height: 1.6;
     color: #ccc;
     /* flex-grow: 1; */
@@ -2851,43 +3066,72 @@ pre {
     list-style: none; /* Remove default list bullets */
     padding: 0; /* Remove default list padding */
     margin: 0; /* Remove default list margin */
-    margin-top: auto; /* Pushes the list to the bottom when using flex-direction: column and justify-content: space-between on parent */
+    flex-grow: 1;
 }
 
 .project-info-list2 li {
     display: flex; /* Use flexbox for icon and text alignment */
-    align-items: center; /* Vertically align icon and text */
-    margin-bottom: 8px; /* Space between list items */
-    color: #c9d6e4; /* Light grey text for details */
-    font-size: 0.95em;
+    align-items: center;
+    margin-bottom: 5px; /* Space between list items */
+    color: white;
+    font-size: 1em;
+}
+
+#about-info-list-item {
+  font-size: 1.05em;
+  margin-bottom: 15px;
+}
+
+#about-info-list-item img {
+  width: 30px; 
+  height: 30px;
 }
 
 .project-info-icon2 {
-    width: 18px; /* Set a fixed width for the SVG icons */
-    height: 18px; /* Set a fixed height for the SVG icons */
-    margin-right: 10px; /* Space between icon and text */
-    flex-shrink: 0; /* Prevent icon from shrinking */
-    /* If your SVGs are single-color, you can use filter to change their color: */
-    /* filter: invert(70%) sepia(10%) saturate(130%) hue-rotate(180deg) brightness(100%) contrast(90%); */
-    /* This filter roughly converts a black icon to a light grey. You might need to adjust based on your specific SVGs. */
+    width: 30px; 
+    height: 30px; 
+    margin-right: 15px; 
+    flex-shrink: 0;
 }
 
 .project-info-list2 p {
-    margin: 0; /* Remove default paragraph margin */
-    line-height: 1.2; /* Adjust line height for better spacing */
+    margin: 0;
+    line-height: 1.2;
 }
 
-.project-cta {
-    color: #65B2FF; /* Highlight color for "Learn More" */
-    font-weight: bold;
-    text-align: right;
-    margin-top: 15px; /* Space above CTA */
-    cursor: pointer;
-    transition: color 0.2s ease;
+.tags-and-platform {
+    margin-top: auto; /* Pushes this container and its contents to the bottom */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Aligns the tags and icon to the bottom of their container */
+    padding-top: 15px; /* Add some space between the info list and this container */
 }
 
-.project-cta:hover {
-    color: #9ECFFF;
+.software-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space between icons */
+    margin-left: 20px;
+}
+
+.software-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns of equal width */
+    gap: 12px; /* Adds spacing between the icons */
+    margin-top: 5px;
+}
+
+.software-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.bottom-panel-container {
+    display: flex;
+    justify-content: space-between; /* Pushes items to opposite ends */
+    align-items: center; /* Vertically aligns them */
+    margin-top: 5px; /* Spacing from the info list above */
 }
 
 /* --- Separator (optional, for multiple entries) --- */
@@ -3024,7 +3268,7 @@ pre {
 }
 
 .hover-info-date {
-    font-size: 0.85em;
+    /* font-size: 0.85em; */
     color: #aaa;
     margin-bottom: 10px;
 }
@@ -3052,7 +3296,7 @@ pre {
 }
 
 .hover-info-reviews {
-    font-size: 0.85em;
+    /* font-size: 0.85em; */
     color: #ccc;
     margin-bottom: 10px;
 }
@@ -3066,7 +3310,7 @@ pre {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 
 .hover-tag {
@@ -3074,7 +3318,7 @@ pre {
     color: #fff;
     padding: 4px 8px;
     border-radius: 4px;
-    font-size: 0.75em;
+    font-size: 0.85em;
     white-space: nowrap;
 }
 
@@ -3108,7 +3352,7 @@ pre {
 }
 
 .platform-icon {
-    position: absolute; /* Position it relative to .project-info-panel */
+    /* position: absolute; */
     bottom: 15px; /* Distance from the bottom edge */
     right: 15px; /* Distance from the right edge */
     z-index: 1; /* Ensure it stays above other content if overlapping */
@@ -3207,7 +3451,7 @@ pre {
 }
 
 .widget-info .widget-description {
-    font-size: 0.9em;
+    /* font-size: 0.9em; */
     color: #c9d6e4;
     margin-bottom: 15px;
     line-height: 1.4;
@@ -3223,7 +3467,7 @@ pre {
     display: inline-block;
     background-color: #3b4d66; /* Tag background color */
     color: #a7bedc; /* Tag text color */
-    font-size: 0.75em;
+    font-size: 0.85em;
     padding: 4px 8px;
     border-radius: 4px;
     margin-right: 5px;
@@ -3236,7 +3480,7 @@ pre {
     color: #a7bedc; /* Light text color */
     padding: 30px 20px; /* Vertical and horizontal padding */
     text-align: center; /* Center the text content */
-    font-size: 0.9em;
+    /* font-size: 0.9em; */
     border-top: 1px solid #3b4d66; /* Subtle top border */
     /* width: 1920px; */
 }
@@ -3331,7 +3575,7 @@ pre {
 }
 
 .blog-caption {
-    font-size: 0.9em;
+    /* font-size: 0.9em; */
     color: #A7BEDC; /* Lighter color for captions */
     margin-top: 10px;
     font-style: italic;
@@ -3374,4 +3618,35 @@ pre {
     .blog-post p {
         font-size: 0.95em;
     }
+}
+
+
+
+/* FADE ANIMS ON PAGE SWITCH */
+/*
+  This ensures a smooth transition on all elements.
+  The transition duration should match the JavaScript initialization below.
+*/
+#swup {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/*
+  This class is added by Swup to the HTML element
+  when a page is loading. It sets the starting opacity for the fade-out.
+*/
+html.is-animating #swup {
+  opacity: 0;
+}
+
+/*
+  This is an optional class for the fade-in effect on the new page.
+  The new page will start with this class, then Swup removes it.
+*/
+.transition-fade {
+  opacity: 0;
+}
+.transition-fade.is-active {
+  opacity: 1;
 }

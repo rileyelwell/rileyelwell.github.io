@@ -20,29 +20,57 @@
 
         <!-- Navigation-->
         <nav class="custom-navbar">
-            <div class="navbar-container">
-              <div class="navbar-brand">
-                <a class="navbar-logo" href="index.html">
-                    <img src="assets/favicon/favicon.ico" alt="Favicon" class="favicon">
-                    Riley Elwell
-                </a>
-              </div>
-                <ul class="navbar-menu">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
+          <div class="navbar-container">
+            <div class="navbar-brand">
+              <a class="navbar-logo" href="index.html">
+                  <img src="assets/favicon/favicon.ico" alt="Favicon" class="favicon">
+                  Riley Elwell
+              </a>
+            </div>
+              <ul class="navbar-menu">
+                    <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
+                     <li class="dropdown-toggle">
+                        <!-- <a href="#" id="games-link">Portfolio <img src="assets/icons/caret-down-white.svg" class="arrow-icon-drop"></span></a> -->
+                        <a href="#" id="games-link">Portfolio<span class="arrow-icon-drop">&#9660;</span></a>
+                        <div class="dropdown-full-width" id="games-dropdown">
+                            <div class="games-gallery">
+                                <a href="neila.html" class="game-card">
+                                    <img src="assets/projects/neila/images/NeilaPosterVertical.png" alt="NEILA">
+                                    <!-- <div class="game-title-overlay">
+                                        <h3>NEILA</h3>
+                                    </div> -->
+                                </a>
+                                
+                                <a href="the-last-flame.html" class="game-card">
+                                    <img src="assets/projects/last-flame/images/TheLastFlamePosterVertical.JPEG" alt="The Last Flame">
+                                    <div class="game-title-overlay">
+                                        <h3>The Last Flame</h3>
+                                    </div>
+                                </a>
+                                
+                                <a href="crazy-robot.html" class="game-card">
+                                    <img src="assets/projects/crazy-robot/thumbnail_robot.png" alt="Crazy Robot">
+                                    <div class="game-title-overlay">
+                                        <h3>Crazy Robot Prototype</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="other-projects.html">Other Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                </ul>
-                <div class="navbar-social">
-                    <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
-                </div>
-            </div>
-        </nav>
+              </ul>
+              <div class="navbar-social">
+                  <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
+              </div>
+          </div>
+      </nav>
 
         <!-- Banner Image Hero Section -->
         <section class="hero-section">
@@ -61,10 +89,12 @@
           <main>
             <!-- About Section -->
             <section id="about-content" class="portfolio-title-section">
-              <h1 class="section-title">ABOUT</h1>
+              <h1 class="section-title">OVERVIEW</h1>
               <div class="about-top-section">
                 <div class="media-carousel" id="aboutMediaCarousel">
                     <div class="media-display">
+                        <video src="assets/projects/squirrel-bros/videos/SquirrelBrosPuzzleDesign.mp4" autoplay loop muted playsinline controls 
+                        class="active-media" alt="NEILA Trailer" poster="assets/projects/squirrel-bros/images/squirrelbros_poster.png"></video>
                         <img src="assets/projects/squirrel-bros/images/about_img1.png" alt="Game Screenshot 1" class="active-media">
                         <img src="assets/projects/squirrel-bros/images/about_img2.png" alt="Game Screenshot 2">
                         <img src="assets/projects/squirrel-bros/images/about_img3.png" alt="Game Screenshot 3">
@@ -85,6 +115,9 @@
                             <div class="thumbnail" data-index="3">
                                 <img src="" alt="Thumbnail 4">
                             </div>
+                            <div class="thumbnail active-thumbnail" data-index="4">
+                                <img src="" alt="Thumbnail 1">
+                            </div>
                         </div>
                         <button class="arrow next-arrow">&#9654;</button>
                     </div>
@@ -97,42 +130,47 @@
                       <img src="assets/projects/squirrel-bros/images/squirrelbros_poster.png" alt="Poster">
                     </div>
                     <h2>Platform and puzzle your way to the Golden Acorn with your squirrel bros!</h2>
-                    <ul class="project-info-list">
-                      <li>
-                          <img src="assets/icons/type.svg" alt="Briefcase Icon" class="project-info-icon">
-                          <p>Level & Systems Design, UI/UX, Pixel-Art</p>
-                      </li>
-                      <li>
-                          <img src="assets/icons/software.svg" alt="Gear Icon" class="project-info-icon">
-                          <p>C#, Unity, Aseprite</p>
-                      </li>
-                      <li>
-                          <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="project-info-icon">
-                          <p>3 Weeks</p>
-                      </li>
-                      <li>
-                          <img src="assets/icons/role.svg" alt="Person Icon" class="project-info-icon">
-                          <p>Individual</p>
-                      </li>
-                  </ul>
-                    <div class="tags">
-                        <span class="tag">Pixel-Art</span>
-                        <span class="tag">Side-Scroller</span>
-                        <span class="tag">Puzzle</span>
-                        <span class="tag">Platformer</span>
+                    <div class="project-details-container">
+                        <ul class="project-info-list2">
+                            <li id="about-info-list-item">
+                                <img src="assets/icons/clock_icon_white.svg" alt="Prototype Icon" class="project-info-icon2">
+                                <p>3 Weeks (2024)</p>
+                            </li>
+                            <li id="about-info-list-item">
+                                <img src="assets/icons/person_icon_white.svg" alt="Person Icon" class="project-info-icon2">
+                                <p>Individual</p>
+                            </li>
+                            </ul>
+                        <div class="software-icons-grid">
+                            <img src="assets/icons/unity_icon_white.svg" alt="Unity" class="software-icon">
+                            <img src="assets/icons/csharp_icon.png" alt="C#" class="software-icon">
+                        </div>
+                    </div>
+                    <div class="tags-and-platform">
+                        <div class="tags">
+                            <span class="tag">Pixel-Art</span>
+                            <span class="tag">Puzzle</span>
+                            <span class="tag">Platformer</span>
+                            <span class="tag">Side-Scroller</span>
+                            <span class="tag">2D</span>
+                        </div>
+                        <div class="platform-icon">
+                            <i class="fab fa-windows"></i>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- About Bottom Section -->
-            <div class="about-bottom-section">
-                <div class="bottom-project-summary">
-                    <h3>Great Minds Think Alike</h3>
-                    <p>You need the help of your squirrel brothers to solve puzzles. To overcome these obstacles, you will control two characters at the same time, creating a new perpsective to this problem-solving.</p>
-                    <h3>Squirrel See, Squirrel Do</h3>
-                    <p>Precision platform from the ground up to tallest trees by jumping, climbing, and avoiding dangers along the way.</p>
-                  </div>
-            </div>
+                <div class="contribution-container">
+                    <h3 style="text-align: center; font-size: 2em;">Main Features</h3>
+                    <div class="contribution-section">
+                        <ul class="contribution-list">
+                            <li><img src="assets/icons/team_icon_white.svg"></i>Controlling two characters at once to solve puzzles.</span></li>
+                            <li><img src="assets/icons/gear_icon_white.svg"></i>Platforming essentials such as coyote time, variable jump height, and jump cut.</li>
+                            <li><img src="assets/icons/tool_icon_white.svg"></i>Reusable systems for trigger points</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
             <!-- Development Section -->
@@ -364,9 +402,9 @@
         <footer class="site-footer">
             <div class="footer-container">
                 <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
-                <p>Website designed and developed by Riley Elwell.</p>
+                <p>Website designed and developed by Riley Elwell using HTML, CSS, and JS.</p>
                 <p>
-                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">Contact</a>
+                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">rileyelwell2@gmail.com</a>
                 </p>
                 <div class="footer-social">
                     <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>

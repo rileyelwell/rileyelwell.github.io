@@ -21,32 +21,55 @@
 
         <!-- Navigation-->
         <nav class="custom-navbar">
-            <div class="navbar-container">
-              <div class="navbar-brand">
-                <a class="navbar-logo" href="index.html">
-                    <img src="assets/favicon/favicon.ico" alt="Favicon" class="favicon">
-                    Riley Elwell
-                </a>
-              </div>
-                <ul class="navbar-menu">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
+          <div class="navbar-container">
+            <div class="navbar-brand">
+              <a class="navbar-logo" href="index.html">
+                  <img src="assets/favicon/favicon.ico" alt="Favicon" class="favicon">
+                  Riley Elwell
+              </a>
+            </div>
+              <ul class="navbar-menu">
+                     <li class="dropdown-toggle">
+                        <a href="#" id="games-link">Portfolio<span class="arrow-icon-drop">&#9660;</span></a>
+                        <div class="dropdown-full-width" id="games-dropdown">
+                            <div class="games-gallery">
+                                <a href="neila.html" class="game-card">
+                                    <img src="assets/projects/neila/images/NeilaPosterVertical.png" alt="NEILA">
+                                </a>
+                                
+                                <a href="the-last-flame.html" class="game-card">
+                                    <img src="assets/projects/last-flame/images/TheLastFlamePosterVertical.JPEG" alt="The Last Flame">
+                                    <div class="game-title-overlay">
+                                        <h3>The Last Flame</h3>
+                                    </div>
+                                </a>
+                                
+                                <a href="crazy-robot.html" class="game-card">
+                                    <img src="assets/projects/crazy-robot/thumbnail_robot.png" alt="Crazy Robot">
+                                    <div class="game-title-overlay">
+                                        <h3>Crazy Robot Prototype</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="other-projects.html">Other Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                </ul>
-                <div class="navbar-social">
-                    <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
-                </div>
-            </div>
-        </nav>
+              </ul>
+              <div class="navbar-social">
+                  <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
+              </div>
+          </div>
+      </nav>
 
         <section class="hero-section">
-            <img src="assets/projects/last-flame/images/campfire_village.jpg" alt="The Last Flame Banner Image" class="hero-image">
+            <img src="assets/projects/last-flame/images/TheLastFlameHeroBanner.JPEG" alt="The Last Flame Banner Image" class="hero-image">
             <div class="hero-content">
               <h1 class="project-title">The Last Flame</h1>
               <div class="project-links">
@@ -59,11 +82,12 @@
         <main>
             <!-- About Section -->
             <section id="about-content" class="portfolio-title-section">
-              <h1 class="section-title">ABOUT</h1>
+              <h1 class="section-title">OVERVIEW</h1>
               <div class="about-top-section">
                 <div class="media-carousel" id="aboutMediaCarousel">
                     <div class="media-display">
-                        <img src="assets/projects/last-flame/images/thelastflame.png" alt="Game Screenshot 1" class="active-media">
+                        <video src="assets/projects/last-flame/videos/leading_villagers.mp4" autoplay loop muted playsinline controls 
+                        class="active-media" alt="The Last Flame Trailer" poster="assets/projects/last-flame/images/TheLastFlameBanner.png"></video>
                         <img src="assets/projects/last-flame/images/ruin_unlit.jpg" alt="Game Screenshot 2">
                         <img src="assets/projects/last-flame/images/pause_menu.jpg" alt="Game Screenshot 3">
                         <img src="assets/projects/last-flame/images/subtitle_img.jpg" alt="Game Screenshot 3">
@@ -75,13 +99,13 @@
                                 <img src="" alt="Thumbnail 1">
                             </div>
                             <div class="thumbnail" data-index="1">
-                                <img src="" alt="Thumbnail 2">
+                                <img src="" alt="Thumbnail 1">
                             </div>
                             <div class="thumbnail" data-index="2">
-                                <img src="" alt="Thumbnail 3">
+                                <img src="" alt="Thumbnail 2">
                             </div>
                             <div class="thumbnail" data-index="3">
-                                <img src="" alt="Thumbnail 4">
+                                <img src="" alt="Thumbnail 3">
                             </div>
                         </div>
                         <button class="arrow next-arrow">&#9654;</button>
@@ -92,34 +116,146 @@
 
                 <div class="about-description-panel">
                     <div class="about-description-image-container">
-                      <img src="assets/projects/last-flame/images/campfire_village.jpg" alt="The Last Flame Cinematic">
+                      <img src="assets/projects/last-flame/images/TheLastFlameBanner.png" alt="The Last Flame Cinematic">
                     </div>
                     <h2>Bring back the flame and hope, long after the sun abandoned the world.</h2>
-                    <ul class="project-info-list">
-                      <li>
-                          <img src="assets/icons/type.svg" alt="Briefcase Icon" class="project-info-icon">
-                          <p>UI / UX Design, Technical Design</p>
-                      </li>
-                      <li>
-                          <img src="assets/icons/software.svg" alt="Gear Icon" class="project-info-icon">
-                          <p>Unity, C#, Perforce, Jira</p>
-                      </li>
-                      <li>
-                          <img src="assets/icons/calendar.svg" alt="Calendar Icon" class="project-info-icon">
-                          <p>4 Weeks</p>
-                      </li>
-                      <li>
-                          <img src="assets/icons/role.svg" alt="Person Icon" class="project-info-icon">
-                          <p>Team of 20</p>
-                      </li>
-                  </ul>
-                    <div class="tags">
-                        <span class="tag">Narrative</span>
-                        <span class="tag">Adventure</span>
-                        <span class="tag">Exploration</span>
+                    <div class="project-details-container">
+                                <ul class="project-info-list2">
+                                    <li id="about-info-list-item">
+                                        <img src="assets/icons/briefcase_icon_white.svg" alt="Designer Icon" class="project-info-icon2">
+                                        <p>Technical & UX Designer</p>
+                                    </li>
+                                    <li id="about-info-list-item">
+                                        <img src="assets/icons/clock_icon_white.svg" alt="Prototype Icon" class="project-info-icon2">
+                                        <p>4 Weeks (2025)</p>
+                                    </li>
+                                    <li id="about-info-list-item">
+                                        <img src="assets/icons/team_icon_white.svg" alt="Person Icon" class="project-info-icon2">
+                                        <p>20</p>
+                                    </li>
+                                    </ul>
+                                <div class="software-icons-grid">
+                                    <img src="assets/icons/unity_icon_white.svg" alt="Unity" class="software-icon">
+                                    <img src="assets/icons/miro_icon_white.svg" alt="Miro" class="software-icon">
+                                    <img src="assets/icons/jira_icon_white.svg" alt="Jira" class="software-icon">
+                                    <img src="assets/icons/perforce-icon_nobg.png" alt="Perforce" class="software-icon">
+                                </div>
+                            </div>
+                            <div class="tags-and-platform">
+                                <div class="tags">
+                                    <span class="tag">Narrative</span>
+                                    <span class="tag">Adventure</span>
+                                    <span class="tag">Singleplayer</span>
+                                    <span class="tag">Exploration</span>
+                                    <span class="tag">Third-Person</span>
+                                </div>
+                                <div class="platform-icon">
+                                    <i class="fab fa-windows"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="contribution-container">
+                    <h3 style="text-align: center; font-size: 2em;">My Contributions</h3>
+                    <div class="contribution-section">
+                        <ul class="contribution-list">
+                            <li><img src="assets/icons/pencil_icon_white.svg"></i><span>Designed and implemented <span class="keyword">UI mockups</span> to fit the narrative.</span></li>
+                            <li><img src="assets/icons/gear_icon_white.svg"></i><span>Created <span class="keyword">adjustable settings</span> for players that saved on load.</span></li>
+                            <li><img src="assets/icons/tool_icon_white.svg"></i><span>Collaborated with programmers to implement UX & accessibility features.</span></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Development Section -->
+            <section class="portfolio-title-section" id="development-content">
+              <h1 class="section-title">DEVELOPMENT</h1>
+
+                <div class="development-content-item">
+                    <div class="two-column-section uneven-columns"> 
+                        <div class="column left-column">
+                            <section id="verticalTimelineSection">
+                                <h2>Project Timeline</h2>
+                                <div class="vertical-timeline-container">
+
+                                    <div class="vertical-timeline-item">
+                                        <div class="vertical-timeline-dot"></div>
+                                        <div class="vertical-timeline-content">
+                                            <h3>Week 1 | Ideation</h3>
+                                            <p>Prototyping, feedback, brainstorming</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="vertical-timeline-item">
+                                        <div class="vertical-timeline-dot"></div>
+                                        <div class="vertical-timeline-content">
+                                            <h3>Week 2 | Midway Review</h3>
+                                            <p>Level layouts, base gameplay systems & mechanics</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="vertical-timeline-item">
+                                        <div class="vertical-timeline-dot"></div>
+                                        <div class="vertical-timeline-content">
+                                            <h3>Week 3 | Implementation</h3>
+                                            <p>Assets, playtesting, iterations</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="vertical-timeline-item">
+                                        <div class="vertical-timeline-dot"></div>
+                                        <div class="vertical-timeline-content">
+                                            <h3>Week 4 | Candidate Master</h3>
+                                            <p>Bug fixing, polishing, quality of life features</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="column right-column">
+                            <div class="right-column-section">
+                                <h2>Coming Soon...</h2>
+                                <div class="description-content">
+                                    <!-- <p>Given <span class="keyword">combat and sandbox</span> as our genres, we established a few core goals to guide our decisions:</p>
+                                    <ul style="text-align: left;">
+                                        <li><span class="keyword">One core mechanic</span> complemented by 1-2 additional player abilities, all designed for interaction.</li>
+                                        <li>All mechanics would feature <span class="keyword">multiple uses,</span> both in and out of combat</li>
+                                        <li>A <span class="keyword">dynamic environment</span> that encouraged players to experiment with the tools provided</li>
+                                    </ul>
+                                    <p>
+                                        With our full team assembled, we immediately <span class="keyword">collaboratively brainstormed and documented 
+                                        ideas,</span> keeping our past prototypes and chosen genres in mind. The designers then <span class="keyword">combined 
+                                        these ideas into three different packages,</span> each with a concise pitch. Following a team vote, 
+                                        a pitch was selected.
+                                    </p> -->
+                                </div>
+                                <div class="image-content">
+                                    <!-- <img id="neila-special-image" src="assets/projects/neila/images/MiroDesigns.png" alt="Platforming Clips"> -->
+                                </div>
+                            </div>
+
+                            <div class="right-column-section">
+                                <!-- <h2>Target Audience & Experience</h2> -->
+                                <div class="description-content">
+                                    <!-- <p>
+                                        Drawing from our gameplay inspirations, we analyzed their common audiences, noting their likes and dislikes:
+                                    </p> -->
+                                    <!-- <ul style="text-align: left;">
+                                        <li><span class="keyword">Single-player, online-social</span> experience for ages 15-40</li>
+                                        <li>Create situations for players to <span class="keyword">experiment with enemies and the environment</span></li>
+                                        <li><span class="keyword">Avoid overwhelming players</span> with an overabundance of weapons or abilities</li>
+                                    </ul> -->
+                                </div>
+                                <div class="image-content">
+                                    <!-- <img id="neila-special-image" style="max-width: 50%;" src="assets/projects/neila/images/Inspiration.png" alt="Platforming Clips"> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </section>
 
             <section id="reflectionSection" class="portfolio-title-section"> <h1 class="section-title">REFLECTION</h1>
                 <div class="project-area-normal">
@@ -148,12 +284,9 @@
                                 alignment from the outset.
                             </p>
                         </div>
-                    </div>
-                    <div class="project-image-normal">
-                        <video src="assets/projects/last-flame/videos/interactions_checkpoints_clip.mp4" autoplay controls loop muted playsinline 
-                        loading="lazy" class="development-media-item">
-                        </video>
-                        
+                        <div class="project-image-normal">
+                            <img src="assets/projects/last-flame/images/thelastflame_logo.png" alt="Last Flame Logo">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -167,9 +300,9 @@
         <footer class="site-footer">
             <div class="footer-container">
                 <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
-                <p>Website designed and developed by Riley Elwell.</p>
+                <p>Website designed and developed by Riley Elwell using HTML, CSS, and JS.</p>
                 <p>
-                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">Contact</a>
+                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">rileyelwell2@gmail.com</a>
                 </p>
                 <div class="footer-social">
                     <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>

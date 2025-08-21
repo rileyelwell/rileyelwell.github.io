@@ -29,10 +29,38 @@
               </a>
             </div>
               <ul class="navbar-menu">
-                  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
-                  <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
+                     <li class="dropdown-toggle">
+                        <!-- <a href="#" id="games-link">Portfolio <img src="assets/icons/caret-down-white.svg" class="arrow-icon-drop"></span></a> -->
+                        <a href="#" id="games-link">Portfolio<span class="arrow-icon-drop">&#9660;</span></a>
+                        <div class="dropdown-full-width" id="games-dropdown">
+                            <div class="games-gallery">
+                                <a href="neila.html" class="game-card">
+                                    <img src="assets/projects/neila/images/NeilaPosterVertical.png" alt="NEILA">
+                                    <!-- <div class="game-title-overlay">
+                                        <h3>NEILA</h3>
+                                    </div> -->
+                                </a>
+                                
+                                <a href="the-last-flame.html" class="game-card">
+                                    <img src="assets/projects/last-flame/images/TheLastFlamePosterVertical.JPEG" alt="The Last Flame">
+                                    <div class="game-title-overlay">
+                                        <h3>The Last Flame</h3>
+                                    </div>
+                                </a>
+                                
+                                <a href="crazy-robot.html" class="game-card">
+                                    <img src="assets/projects/crazy-robot/thumbnail_robot.png" alt="Crazy Robot">
+                                    <div class="game-title-overlay">
+                                        <h3>Crazy Robot Prototype</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="other-projects.html">Other Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
               </ul>
               <div class="navbar-social">
                   <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
@@ -57,7 +85,28 @@
             <div class="container">
                 <div class="blog-post">
 
-                    <h2>6/30/2024</h2>
+                    <h2>8/11/2025</h2>
+                    <p>
+                        Today marks the first day of being accepted to the Beyon Skryim: Roscrea mod team! I went through the works samples from Arcane University
+                        over the past month or so, and was able to be brought on to the project as an implementer. I still have plenty to learn, but I am excited
+                        to work with others on an actual sizeable mod, with my tasks mainly being related to quest implementation and some light scripting.
+                    </p>
+                    <p>
+                        In other news, we started back up at Futuregames last week, beginning with narrative design. Then, we have some boss design classes and a group project
+                        afterwards. There is a lot of different projects going, as I want to continue my old robot project as well as update NEILA as much as possible in the near future.
+                        
+                    </p>
+                    <div class="blog-image-container">
+                        <img src="assets/projects/modding/skyrim-roscrea.png" alt="Skyrim Roscrea" class="blog-image">
+                    </div>
+                    <p>
+                        You can check the current status of Beyond Skyrim: Roscrea <a href="https://beyondskyrim.org/project/roscrea">here!</a>
+                    </p>
+                </div>
+
+                <div class="blog-post">
+
+                    <h2>6/30/2025</h2>
                     <p>
                         Wow, what a great first year at Futuregames! I learned so much technical knowledge, but also on working with large teams and
                         living in a new country. It was a great experience and I look forward to contiuning further into next year.
@@ -71,7 +120,6 @@
                     </p>
                     <div class="blog-image-container">
                         <img src="assets/projects/neila/images/NeilaPoster1440.png" alt="NEILA Logo" class="blog-image">
-                        <!-- <p class="blog-caption">Your image caption goes here (optional).</p> -->
                     </div>
                     <p>
                         We have a month or so off, which I plan to update my portfolio, dive back into skyrim modding (hopefully getting accepted to a mod
@@ -226,9 +274,9 @@
         <footer class="site-footer">
             <div class="footer-container">
                 <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
-                <p>Website designed and developed by Riley Elwell.</p>
+                <p>Website designed and developed by Riley Elwell using HTML, CSS, and JS.</p>
                 <p>
-                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">Contact</a>
+                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">rileyelwell2@gmail.com</a>
                 </p>
                 <div class="footer-social">
                     <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>

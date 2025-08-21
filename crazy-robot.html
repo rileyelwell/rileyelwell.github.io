@@ -29,10 +29,38 @@
               </a>
             </div>
               <ul class="navbar-menu">
-                  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
-                  <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
+                     <li class="dropdown-toggle">
+                        <!-- <a href="#" id="games-link">Portfolio <img src="assets/icons/caret-down-white.svg" class="arrow-icon-drop"></span></a> -->
+                        <a href="#" id="games-link">Portfolio<span class="arrow-icon-drop">&#9660;</span></a>
+                        <div class="dropdown-full-width" id="games-dropdown">
+                            <div class="games-gallery">
+                                <a href="neila.html" class="game-card">
+                                    <img src="assets/projects/neila/images/NeilaPosterVertical.png" alt="NEILA">
+                                    <!-- <div class="game-title-overlay">
+                                        <h3>NEILA</h3>
+                                    </div> -->
+                                </a>
+                                
+                                <a href="the-last-flame.html" class="game-card">
+                                    <img src="assets/projects/last-flame/images/TheLastFlamePosterVertical.JPEG" alt="The Last Flame">
+                                    <div class="game-title-overlay">
+                                        <h3>The Last Flame</h3>
+                                    </div>
+                                </a>
+                                
+                                <a href="crazy-robot.html" class="game-card">
+                                    <img src="assets/projects/crazy-robot/thumbnail_robot.png" alt="Crazy Robot">
+                                    <div class="game-title-overlay">
+                                        <h3>Crazy Robot Prototype</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="other-projects.html">Other Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
               </ul>
               <div class="navbar-social">
                   <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
@@ -58,10 +86,12 @@
         <main>
             <!-- About Section -->
             <section id="about-content" class="portfolio-title-section">
-              <h1 class="section-title">ABOUT</h1>
+              <h1 class="section-title">OVERVIEW</h1>
               <div class="about-top-section">
                 <div class="media-carousel" id="aboutMediaCarousel">
                     <div class="media-display">
+                        <video src="assets/projects/crazy-robot/CrazyRobotExample.mp4" autoplay loop muted playsinline controls 
+                        class="active-media" alt="Robot Trailer" poster="assets/projects/crazy-robot/thumbnail_robot.png"></video>
                         <img src="assets/projects/crazy-robot/robot-about1.png" alt="Game Screenshot 1" class="active-media">
                         <img src="assets/projects/crazy-robot/robot-about2.png" alt="Game Screenshot 2">
                         <img src="assets/projects/crazy-robot/robot-about3.png" alt="Game Screenshot 3">
@@ -82,6 +112,9 @@
                             <div class="thumbnail" data-index="3">
                                 <img src="" alt="Thumbnail 4">
                             </div>
+                            <div class="thumbnail" data-index="4">
+                                <img src="" alt="Thumbnail 4">
+                            </div>
                         </div>
                         <button class="arrow next-arrow">&#9654;</button>
                     </div>
@@ -94,7 +127,55 @@
                       <img src="assets/projects/crazy-robot/thumbnail_robot.png" alt="Crazy Robot Cinematic">
                     </div>
                     <h2>A custom arcade robot that can do tricks!</h2>
-                    <ul class="project-info-list">
+                    <div class="project-details-container">
+                        <ul class="project-info-list2">
+                            <!-- <li id="about-info-list-item">
+                                <img src="assets/icons/briefcase_icon_white.svg" alt="Designer Icon" class="project-info-icon2">
+                                <p>Technical Designer</p>
+                            </li> -->
+                            <li id="about-info-list-item">
+                                <img src="assets/icons/clock_icon_white.svg" alt="Prototype Icon" class="project-info-icon2">
+                                <p>4 Weeks (2025)</p>
+                            </li>
+                            <li id="about-info-list-item">
+                                <img src="assets/icons/person_icon_white.svg" alt="Person Icon" class="project-info-icon2">
+                                <p>Individual</p>
+                            </li>
+                            </ul>
+                        <div class="software-icons-grid">
+                            <img src="assets/icons/unreal_icon_white.svg" alt="Unreal" class="software-icon">
+                        </div>
+                    </div>
+                    <div class="tags-and-platform">
+                        <div class="tags">
+                            <span class="tag">Delivery</span>
+                            <span class="tag">Third-Person</span>
+                            <span class="tag">Driving</span>
+                            <span class="tag">Prototype</span>
+                            <span class="tag">Custom Physics</span>
+                            <span class="tag">Arcadey</span>
+                        </div>
+                        <div class="platform-icon">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="contribution-container">
+                    <h3 style="text-align: center; font-size: 2em;">Main Features</h3>
+                    <div class="contribution-section">
+                        <ul class="contribution-list">
+                            <li><img src="assets/icons/blueprint_icon_white.svg"></i>Building system for players to create their own levels.</span></li>
+                            <li><img src="assets/icons/physics_icon_white.svg"></i>Custom physics calculations for suspension, lateral slip, and acceleration.</li>
+                            <li><img src="assets/icons/tricks_icon_white.svg"></i>Air control to do epic tricks and flips!</li>
+                            <li><img src="assets/icons/gear_icon_white.svg">Delivery core to set up for quests later on.</li> 
+                            <!-- <li><img src="assets/icons/anim_icon_white.svg"></i><span><span class="keyword">Implemented animations</span> through blend spaces, animation blueprints, and montages</span></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+                    <!-- <ul class="project-info-list">
                       <li>
                           <img src="assets/icons/type.svg" alt="Briefcase Icon" class="project-info-icon">
                           <p>Blueprints, Prototyping, Modular Systems, Custom Physics</p>
@@ -120,7 +201,7 @@
                         <span class="tag">Level Builder</span>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <section id="reflectionSection" class="portfolio-title-section"> <h1 class="section-title">REFLECTION</h1>
                 <div class="project-area-normal">
@@ -144,11 +225,11 @@
                             </p>
                         </div>
                     </div>
-                    <div class="project-image-normal">
+                    <!-- <div class="project-image-normal">
                         <video src="assets/projects/crazy-robot/CrazyRobotExample.mp4" autoplay controls loop muted playsinline 
                         loading="lazy" class="development-media-item">
                         </video>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </main>
@@ -161,9 +242,9 @@
         <footer class="site-footer">
             <div class="footer-container">
                 <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
-                <p>Website designed and developed by Riley Elwell.</p>
+                <p>Website designed and developed by Riley Elwell using HTML, CSS, and JS.</p>
                 <p>
-                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">Contact</a>
+                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">rileyelwell2@gmail.com</a>
                 </p>
                 <div class="footer-social">
                     <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>

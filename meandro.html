@@ -21,29 +21,57 @@
 
         <!-- Navigation-->
         <nav class="custom-navbar">
-            <div class="navbar-container">
-              <div class="navbar-brand">
-                <a class="navbar-logo" href="index.html">
-                    <img src="assets/favicon/favicon.ico" alt="Favicon" class="favicon">
-                    Riley Elwell
-                </a>
-              </div>
-                <ul class="navbar-menu">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sandbox.html">Sandbox</a></li>
+          <div class="navbar-container">
+            <div class="navbar-brand">
+              <a class="navbar-logo" href="index.html">
+                  <img src="assets/favicon/favicon.ico" alt="Favicon" class="favicon">
+                  Riley Elwell
+              </a>
+            </div>
+              <ul class="navbar-menu">
+                    <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
+                     <li class="dropdown-toggle">
+                        <!-- <a href="#" id="games-link">Portfolio <img src="assets/icons/caret-down-white.svg" class="arrow-icon-drop"></span></a> -->
+                        <a href="#" id="games-link">Portfolio<span class="arrow-icon-drop">&#9660;</span></a>
+                        <div class="dropdown-full-width" id="games-dropdown">
+                            <div class="games-gallery">
+                                <a href="neila.html" class="game-card">
+                                    <img src="assets/projects/neila/images/NeilaPosterVertical.png" alt="NEILA">
+                                    <!-- <div class="game-title-overlay">
+                                        <h3>NEILA</h3>
+                                    </div> -->
+                                </a>
+                                
+                                <a href="the-last-flame.html" class="game-card">
+                                    <img src="assets/projects/last-flame/images/TheLastFlamePosterVertical.JPEG" alt="The Last Flame">
+                                    <div class="game-title-overlay">
+                                        <h3>The Last Flame</h3>
+                                    </div>
+                                </a>
+                                
+                                <a href="crazy-robot.html" class="game-card">
+                                    <img src="assets/projects/crazy-robot/thumbnail_robot.png" alt="Crazy Robot">
+                                    <div class="game-title-overlay">
+                                        <h3>Crazy Robot Prototype</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="other-projects.html">Other Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                </ul>
-                <div class="navbar-social">
-                    <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
-                        target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
-                </div>
-            </div>
-        </nav>
+              </ul>
+              <div class="navbar-social">
+                  <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
+                  <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                      target="_blank" rel="noopener noreferrer" href="mailto:rileyelwell2@gmail.com"><i class="fab fa fa-envelope"></i></a></li></a>
+              </div>
+          </div>
+      </nav>
 
         <section class="hero-section">
             <img src="assets/projects/meandro/MeandroFullGame.jpg" alt="Meandro Banner Image" class="hero-image">
@@ -91,7 +119,46 @@
                       <img src="assets/projects/meandro/MeandroCinematic.jpg" alt="Meandro Cinematic">
                     </div>
                     <h2>Be the first boat to sail onto an ocean tile at the board's edge—by any 'stream' necessary!</h2>
-                    <ul class="project-info-list">
+                    <div class="project-details-container">
+                        <ul class="project-info-list2">
+                            <li id="about-info-list-item">
+                                <img src="assets/icons/briefcase_icon_white.svg" alt="Designer Icon" class="project-info-icon2">
+                                <p>Game Designer</p>
+                            </li>
+                            <li id="about-info-list-item">
+                                <img src="assets/icons/clock_icon_white.svg" alt="Prototype Icon" class="project-info-icon2">
+                                <p>3 Weeks (2024)</p>
+                            </li>
+                            <li id="about-info-list-item">
+                                <img src="assets/icons/team_icon_white.svg" alt="Person Icon" class="project-info-icon2">
+                                <p>4</p>
+                            </li>
+                            </ul>
+                    </div>
+                    <div class="tags-and-platform">
+                        <div class="tags">
+                            <span class="tag">Baord Game</span>
+                            <span class="tag">Social</span>
+                            <span class="tag">Sabotage</span>
+                            <span class="tag">2-4 Players</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="contribution-container">
+                    <h3 style="text-align: center; font-size: 2em;">My Contributions</h3>
+                    <div class="contribution-section">
+                        <ul class="contribution-list">
+                            <li><img src="assets/icons/tool_icon_white.svg"></i><span>Designed and <span class="keyword">paper prototyped</span> gameplay ideas.</span></li>
+                            <li><img src="assets/icons/blueprint_icon_white.svg"></i>Collaborated with other designers to iterate and implement rules.</span></li>
+                            <li><img src="assets/icons/pencil_icon_white.svg"></i>Wrote the technical rulebook for the game, with several iterations.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+                    <!-- <ul class="project-info-list">
                       <li>
                           <img src="assets/icons/type.svg" alt="Briefcase Icon" class="project-info-icon">
                           <p>Systems Design, Technical Writing</p>
@@ -116,18 +183,7 @@
                         <span class="tag">Sabotage</span>
                     </div>
                 </div>
-            </div>
-
-            <!-- About Bottom Section -->
-            <!-- <div class="about-bottom-section">
-                <div class="bottom-project-summary">
-                    <h3>Great Minds Think Alike</h3>
-                    <p>You need the help of your squirrel brothers to solve puzzles. To overcome these obstacles, you will control two characters at the same time, creating a new perpsective to this problem-solving.</p>
-                    <h3>Squirrel See, Squirrel Do</h3>
-                    <p>Precision platform from the ground up to tallest trees by jumping, climbing, and avoiding dangers along the way.</p>
-                  </div>
-            </div>
-            </section> -->
+            </div> -->
 
             <section id="reflectionSection" class="portfolio-title-section"> <h1 class="section-title">REFLECTION</h1>
                 <div class="project-area-normal">
@@ -181,11 +237,11 @@
         <footer class="site-footer">
             <div class="footer-container">
                 <p>&copy; <span id="current-year"></span> Riley Elwell. All rights reserved.</p>
-                <p>Website designed and developed by Riley Elwell.</p>
+                <p>Website designed and developed by Riley Elwell using HTML, CSS, and JS.</p>
                 <p>
-                    <a href="rileyelwell2@gmail.com" class="footer-link">Contact</a>
+                    <a href="mailto:rileyelwell2@gmail.com" class="footer-link">rileyelwell2@gmail.com</a>
                 </p>
-                <div class="mailto:footer-social">
+                <div class="footer-social">
                     <a href="https://github.com/rileyelwell" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/rileyelwell/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                 </div>
