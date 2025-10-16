@@ -2877,7 +2877,7 @@ pre {
     height: auto; /* Maintain aspect ratio */
     display: block; /* Removes extra space below image */
     border-radius: 8px; /* Rounded corners for the images */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Shadow for images */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
     /* object-fit: cover; */
 }
 

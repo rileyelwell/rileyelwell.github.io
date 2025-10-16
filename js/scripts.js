@@ -253,6 +253,12 @@ document.addEventListener('DOMContentLoaded', function() {
         Carousel('neilaScientistCarousel');
         Carousel('enemyAnimationCarousel');
     }
+    if (currentPage.includes('/suboptimal.html')) {
+        Carousel('submarineSolutionCarousel');
+        Carousel('suboptimalProblemsCarousel');
+        Carousel('suboptimalInteractionsCarousel');
+        Carousel('suboptimalMultiplayerCarousel');
+    }
 
 
 
