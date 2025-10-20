@@ -173,31 +173,166 @@
                     <h3 style="text-align: center; font-size: 2em;">Main Features</h3>
                     <div class="contribution-section">
                         <ul class="contribution-list">
-                            <li><img src="assets/icons/blueprint_icon_white.svg"></i>Building system for players to create their own levels.</span></li>
-                            <li><img src="assets/icons/physics_icon_white.svg"></i>Custom physics calculations for suspension, lateral slip, and acceleration.</li>
-                            <li><img src="assets/icons/tricks_icon_white.svg"></i>Air control to do epic tricks and flips!</li>
-                            <li><img src="assets/icons/gear_icon_white.svg">Delivery core to set up for quests later on.</li> 
+                            <a href=#newSectionWithDropdowns><li><img src="assets/icons/physics_icon_white.svg"></i><span class="keyword">Custom physics</span> calculations for suspension, lateral slip, and acceleration.</li></a>
+                            <a href="#buildSection"><li><img src="assets/icons/blueprint_icon_white.svg"></i><span class="keyword">Building system</span> for players to create their own levels.</span></li></a>
+                            
+                            <!-- <li><img src="assets/icons/tricks_icon_white.svg"></i>Air control to do epic tricks and flips!</li> -->
+                            <a href="#buildSection"><li><img src="assets/icons/gear_icon_white.svg">Delivery core to set up for <span class="keyword">quests</span> later on.</li></a>
                         </ul>
                     </div>
                 </div>
             </section>
 
+            <section id="newSectionWithDropdowns">
+                    <h2>Arcade Physics Controller</h2>
+
+                    <div class="fixed-content-row">
+                        <div class="text-content">
+                            <p>
+                                After struggling with the Chaos Vehicle plugin in UE5, I decided to create a <span class="keyword">custom vehicle controller from scratch,</span>
+                                simulating my own <span class="keyword">suspension, lateral slip, and acceleration forces.</span> This made it easier to control each variable for what 
+                                I wanted and allowed me to make it feel more arcadey.
+                            </p>
+                            <p>
+                                The colored arrows represent each of the <span class="keyword">forces being applied</span> on each wheel at a given time, which made it much easier to not only visualize,
+                                but <span class="keyword">debug issues</span> throughout development.
+                            </p>
+
+                            <a 
+                                href="https://youtube.com/playlist?list=PLPdfASITitmp2Rxe-SyOgz3BUZO_gPGqc&si=Np2zod92Wbf82w7c" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="link-button"
+                            >
+                                In-Depth Video Tutorial/Analysis Series &#x2197;
+                            </a>
+
+                            <br>
+
+                            <a 
+                                href="https://blueprintue.com/render/qehotpl7/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="link-button"
+                            >
+                                View Suspension Blueprint (Function) &#x2197;
+                            </a>
+
+                            <br>
+
+                            <a 
+                                href="https://blueprintue.com/render/jt96t2up/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="link-button"
+                            >
+                                View Lateral Slip Blueprint (Function) &#x2197;
+                            </a>
+
+                            <br>
+
+                            <a 
+                                href="https://blueprintue.com/render/0z9_kkkx/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="link-button"
+                            >
+                                View Accel/Decel Blueprint (Function) &#x2197;
+                            </a>
+
+                            <br>
+
+                            <a 
+                                href="https://blueprintue.com/render/6366gw8x/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="link-button"
+                            >
+                                View HandleForces Blueprint (Function) &#x2197;
+                            </a>
+
+                        </div>
+
+                        <div class="image-content">
+                            <video src="assets/projects/crazy-robot/robotdebugs.mp4" autoplay controls loop muted playsinline loading="lazy" class="development-media-item"></video>
+                        </div>
+
+                    </div>
+                </section>
+
+                <div class="puzzle-sections-container" id="buildSection">
+                  <div class="puzzle-block">
+                        <h2 class="puzzle-title">Build Mode</h2>
+                        <div class="puzzle-content">
+
+                            <div class="puzzle-description">
+                                <p>
+                                    After adding some ramps and boost pads, I decided I wanted to let the player build their own level a bit. I started by having a 
+                                    <span class="keyword">base object class</span> that each of the placeable items could inherit from. When entering the build mode, the player possesses a new 
+                                    <span class="keyword">free-movement camera</span> and gains UI controls to place objects.
+                                </p>
+                            </div>
+
+                            <div class="image-content">
+                                <video src="assets/projects/crazy-robot/buildMode.mp4" autoplay controls loop muted playsinline loading="lazy" class="development-media-item"></video>
+                            </div>
+
+                            <a 
+                                href="https://blueprintue.com/render/qg-ulenc/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="link-button"
+                            >
+                                View Base Object Class Blueprint &#x2197;
+                            </a>
+
+                      </div>
+                  </div>
+
+                  <div class="puzzle-block">
+                      <h2 class="puzzle-title">Delivery System Core</h2>
+                      <div class="puzzle-content">
+
+                        <div class="image-content">
+                                <video src="assets/projects/crazy-robot/deliverysystem.mp4" autoplay controls loop muted playsinline loading="lazy" class="development-media-item"></video>
+                        </div>
+
+                        <div class="puzzle-description">
+                            <p>
+                                I had an idea to create a delivery quest system, and so I prototyped one with a <span class="keyword">DataTable.</span> I had custom stats for each one that 
+                                was put into a <span class="keyword">map on the game start,</span> connecting them up to a proper interaction point (often a person). Based on the time and distance,
+                                the player would get a score.
+                            </p>
+
+                            <br>
+
+                            <a 
+                                href="https://blueprintue.com/render/b7xri5ip/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="link-button"
+                            >
+                                View Delivery Map Blueprint (Function) &#x2197;
+                            </a>
+                            
+                            
+                        </div>
+
+                      </div>
+                  </div>
+              </div>
+
             <section id="reflectionSection" class="portfolio-title-section"> <h1 class="section-title">REFLECTION</h1>
                 <div class="project-area-normal">
                     <div class="project-content-normal">
                         <div class="project-description-normal">
-                            <p style="text-align: left; margin-bottom: 10px;">
+                            <p>
                                 I decided to revisit my old robot friend from my capstone project when trying Unreal Engine for the first time.
                                 This time, I wanted to experiment with a more arcadey feel, rather than the realistic simulation one.
-                            </p>
-                            <p style="text-align: left; margin-bottom: 10px;">
-                                After struggling with the Chaos Vehicle plugin in UE5, I decided to just create a custom vehicle controller from scratch,
-                                simulating my own suspension, lateral slip, and acceleration forces. This made it easier to control each variable for what 
-                                I wanted. I also decided to implement some drifting, a delivery system with a data table, and a modular building system. To
-                                add some more fun to the arcadey feel, I took inspiration from Crazy Taxi and added some boost pads, ramps, and the ability to
+                                To add some more fun to the arcadey feel, I took inspiration from Crazy Taxi and added some boost pads, ramps, and the ability to
                                 do tricks in the air.
                             </p>
-                            <p style="text-align: left; margin-bottom: 10px;">
+                            <p>
                                 Lastly, I decided to make a <a href="https://youtube.com/playlist?list=PLPdfASITitmp2Rxe-SyOgz3BUZO_gPGqc&si=Np2zod92Wbf82w7c" target="_blank">three-part tutorial series on YouTube</a>, following my frustration with a lack of resources when 
                                 first starting out. This also helped me to reinforce my knowledge of what I built, as well as gain great feedback from viewers
                                 on potential improvements.

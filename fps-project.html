@@ -168,7 +168,7 @@
                             <span class="tag">Singleplayer</span>
                             <span class="tag">Action</span>
                             <span class="tag">Stealth</span>
-                            <span class="tag">Adventure</span>
+                            <span class="tag">Single Mission</span>
                         </div>
                         <div class="platform-icon">
                             <i class="fab fa-windows"></i>
@@ -244,12 +244,12 @@
                                 <div class="description-content">
                                     <p>
                                         Working with a level designer friend, we wanted to create an FPS mission that takes inspiration from games like Wolfenstein.
-                                        The goal is to have dual wielding weapons, the option of stealth, and some set piece moments.
+                                        The goal is to have <span class="keyword">dual wielding weapons,</span> the option of <span class="keyword">stealth,</span> and some <span class="keyword">set piece moments.</span>
                                     </p>
                                     <p>
                                         This project has not been active very long, but we are planning on having the player traverse through a train station area,
-                                        before boarding the train and fighting on it. So far, I have been building the base systems and player-related features in C++ in 
-                                        Unreal.
+                                        before boarding the train and fighting on it. So far, I have been building the base systems and player-related features in <span class="keyword">C++ in 
+                                        Unreal.</span>
                                     </p>
                                     <!-- <ul style="text-align: left;">
                                         <li>A challenge that requires <span class="keyword">teamwork and communication</span></li>
@@ -296,20 +296,20 @@
                         <div class="text-content">
                             <p>
                                 I've used C++ before, but not in Unreal, so this is my first time. I want to understand it better though, so I am building all the 
-                                base classes starting in C++ first. After getting the first-person character set up, I began on the combat system.
+                                <span class="keyword">base classes starting in C++ first.</span> After getting the first-person character set up, I began on the combat system.
                             </p>
 
                             <details class="text-image-dropdown full-width-dropdown">
                                 <summary>Weapons</summary>
                                 <div class="dropdown-content">
                                     <p>
-                                        We really wanted to focus our combat around fun weapons, including the ability to mix and match dual-wielding them. To do this
-                                        I created a weapon component that contains a switchable WeaponDataAsset. I then attached two weapon components to the player, and 
+                                        We really wanted to focus our combat around fun weapons, including the ability to <span class="keyword">mix and match dual-wielding</span> them. To do this
+                                        I created a <span class="keyword">weapon component</span> that contains a switchable <span class="keyword">WeaponDataAsset.</span> I then attached two weapon components to the player, and 
                                         hooked up the player input to control each hands weapon.
                                     </p>
                                     <p>
                                         When the player equips a weapon, I can switch the WeaponDataAsset with the
-                                        correct data. This means it is decoupled from the WeaponComponent itself and changing a weapon stats independently is easy.
+                                        correct data. This means it is <span class="keyword">decoupled from the WeaponComponent</span> itself and changing a weapon stats independently is easy.
                                     </p>
                                     <details class="code-toggle">
                                         <summary>View WeaponComponent Script</summary>
@@ -325,13 +325,13 @@
                                 <summary>Ammo & Inventory</summary>
                                 <div class="dropdown-content">
                                     <p>
-                                        Since different weapons can have the same ammo type, I made a Combat Component to compliment the two Weapon Components. This became the authority 
-                                        over the player and holds all information related to ammo reserves. So, when the player requests to reload their weapon, it checks the Combat Component to see 
+                                        Since different weapons can have the same ammo type, I made a <span class="keyword">Combat Component to compliment the two Weapon Components.</span> This became the authority 
+                                        over the player and <span class="keyword">holds all information related to ammo reserves.</span> So, when the player requests to reload their weapon, it checks the Combat Component to see 
                                         what is available.
                                     </p>
                                     <p>
                                         I did this because it removes the need for each WeaponDataAsset to know the amount of ammo a weapon currently has, and the component 
-                                        will also become more useful in the future with added player abilities or inventory items.
+                                        will also become more <span class="keyword">useful in the future</span> with added player abilities or inventory items.
                                     </p>
                                     <details class="code-toggle">
                                         <summary>View CombatComponent Script</summary>
@@ -347,8 +347,8 @@
                                 <summary>Firing</summary>
                                 <div class="dropdown-content">
                                     <p>
-                                        This is still a work-in-progress, but we are going for the design of having no bullets actively spawn in. When you fire
-                                        your weapon, it draws a small sphere trace and adds some random spread (depending on adjustable variables) to check for immediate hits.
+                                        This is still a work-in-progress, but we are going for the design of having <span class="keyword">no bullets</span> actively spawn in. When you fire
+                                        your weapon, it draws a small sphere trace and adds some <span class="keyword">random spread</span> (depending on adjustable variables) to check for immediate hits.
                                     </p>
                                     <p>
                                         I will have to use effects to make this believable in the future, but for now it detects hits and will damage enemies or activate effects 
@@ -372,18 +372,18 @@
 
                         </div>
 
-                        <div class="carousel-container" id="suboptimalMultiplayerCarousel">
+                        <!-- <div class="carousel-container" id="suboptimalMultiplayerCarousel">
                             <div class="carousel-track">
                                 <video class="carousel-slide carousel-video active" controls loop muted playsinline preload="none">
                                     <source data-src="assets/projects/suboptimal/videos/MultiplayerClip.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                                <!-- <video class="carousel-slide carousel-video active" controls loop muted playsinline preload="none">
+                                <video class="carousel-slide carousel-video active" controls loop muted playsinline preload="none">
                                     <source data-src="assets/projects/suboptimal/videos/Replicatedemotes.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
-                                </video> -->
+                                </video>
                             </div>
-                            <!-- <div class="media-controls-wrapper">
+                            <div class="media-controls-wrapper">
                                 <button class="arrow prev-arrow">&#9664;</button>
                                 <div class="thumbnail-nav">
                                     <div class="thumbnail active-thumbnail" data-index="0">
@@ -396,8 +396,8 @@
                                 <button class="arrow next-arrow">&#9654;</button>
                             </div>
                             <div class="carousel-dots">
-                            </div> -->
-                        </div>
+                            </div>
+                        </div> -->
 
                     </div>
                 </section>
