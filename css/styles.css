@@ -8,6 +8,7 @@ body, html {
   background-color: #0D1B2A;
   color: white;
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body a {
@@ -311,9 +312,9 @@ body p, ul, li {
   height: 100%;
   opacity: 0.2; /* Adjust the opacity of the pattern */
   z-index: -1; /* Place the background behind the text and separator */
-  transform: translateZ(-1px) scale(1.1); /* The parallax effect */
+  /* transform: translateZ(-1px) scale(1.1);
   transform-origin: 0 0;
-  will-change: transform; /* Hint to the browser for optimization */
+  will-change: transform; */
 }
 
 .portfolio-title-section h1 {
@@ -666,6 +667,10 @@ body p, ul, li {
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.contribution-list a {
+  text-decoration: none;
+  color: inherit;
+}
 
 /* New rule for the hover effect */
 .contribution-list li:hover {
@@ -691,7 +696,7 @@ body p, ul, li {
 .project-details-page .hero-section {
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 320px;
   overflow: hidden;
   display: flex;
   justify-content: center; /* Center content horizontally */
@@ -731,9 +736,9 @@ body p, ul, li {
 }
 
 .project-details-page .hero-content .project-title {
-  font-size: 3em;
+  font-size: 2em;
   font-weight: bold;
-  margin-bottom: 20px; /* Add some space below the title */
+  margin-bottom: 20px;
 }
 
 .project-details-page .hero-content .project-links {
@@ -1003,9 +1008,21 @@ body p, ul, li {
     margin-left: auto; /* Centers the video horizontally */
     margin-right: auto;/* Centers the video horizontally */
     border-radius: 8px; /* Optional: Adds rounded corners, matching the carousel images */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); Optional: Adds a subtle shadow */
     margin-top: 20px; /* Adjust spacing above the video as needed */
     margin-bottom: 20px; /* Adjust spacing below the video as needed */
+}
+
+#smaller-dropdown-video {
+    /* Set a maximum width (e.g., 500px or 75% of the container) */
+    max-width: 600px; 
+    
+    /* Ensure height scales proportionally */
+    height: auto; 
+    
+    /* Optional: Center the video if its max-width is less than the container width */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Description Styling */
@@ -1053,6 +1070,11 @@ main {
 
   box-sizing: border-box; /* Include padding in the width calculation */
   text-align: center; /* Center the title, image, and text within each block */
+}
+
+.puzzle-content {
+  height: auto; 
+  overflow: visible;
 }
 
 .puzzle-title {
@@ -1272,7 +1294,6 @@ main {
   display: flex; /* Arrange icon and text side-by-side */
   align-items: center; /* Vertically center icon and text */
   margin-bottom: 15px;
-  /* font-size: 0.9em; */
   line-height: 1.6;
 }
 
@@ -1562,6 +1583,7 @@ main {
     padding: 0 5px; /* Add some horizontal padding inside this wrapper if needed */
     box-sizing: border-box; /* Include padding in width */
     /* margin-top: -40px; */
+    padding-top: 10px;
 }
 
 .thumbnail-nav {
@@ -2026,32 +2048,6 @@ pre {
 }
 
 
-/* Add to your style.css */
-
-#scrollToTopBtn {
-    display: none; 
-    position: fixed; /* Fixed position relative to the viewport */
-    bottom: 20px; /* 20px from the bottom of the viewport */
-    right: 20px; /* 20px from the right of the viewport */
-    z-index: 99; /* Higher z-index to ensure it's above other content */
-    border: none; /* Remove default button border */
-    outline: none; /* Remove outline on focus */
-    background-color: #4CAF50; /* Your theme's green background */
-    color: white; /* White text/arrow color */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    padding: 15px; /* Padding inside the button */
-    border-radius: 50%; /* Makes it a circle */
-    font-size: 20px; /* Size of the arrow */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    transition: background-color 0.3s, opacity 0.3s, transform 0.3s; /* Smooth transitions */
-}
-
-#scrollToTopBtn:hover {
-    background-color: #5cb85c; /* Slightly lighter green on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-
 /* Target the main section container for layout adjustments */
 #reflectionSection .project-content-normal {
     display: flex; /* Make it a flex container */
@@ -2287,6 +2283,7 @@ pre {
 .description-section.full-width p,
 .description-section.full-width ul {
     margin-bottom: 1em; /* Space between p and ul */
+    text-align: left;
 }
 
 /* Sections for half-width layouts (both right and left image sections) */
@@ -2423,23 +2420,23 @@ pre {
     gap: 30px; /* Space between grid items (dropdowns) */
     width: calc(100% - 40px); /* Adjust width to account for section padding */
     max-width: 1400px; /* Match fixed-content-row max-width */
-    align-items: start; /* Align items to the start of their grid cell */
+    /* align-items: start; */
 }
 
 /* --- Styles for Individual Dropdowns (text-image-dropdown) --- */
 .text-image-dropdown {
     background-color: #3B4E64; /* Your specified background */
     border-radius: 5px;
-    overflow: hidden; /* Contains expanded content */
+    overflow: hidden; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Your specified shadow */
     transition: background-color 0.3s ease;
-    height: fit-content; /* Allow height to adjust to content when closed */
+    height: fit-content; 
     align-self: start; /* Prevent stretching when closed, important for consistent top alignment */
 }
 
 .text-image-dropdown[open] {
     align-self: stretch; /* Stretch to fill the grid row height when open */
-    height: auto; /* Allow height to auto-adjust when open */
+    height: auto;
 }
 
 
@@ -2486,10 +2483,10 @@ pre {
     color: #ccc; /* Your specified color */
     /* font-size: 0.95em; */
     line-height: 1.6;
-    max-height: 400px; /* Adjust as needed */
-    overflow-y: auto; /* Enable scrolling for long content */
+    /* max-height: 400px; */
+    /* overflow-y: auto; 
     scrollbar-width: thin;
-    scrollbar-color: #555 #333;
+    scrollbar-color: #555 #333; */
     display: flex; /* Use flexbox for content to ensure image is at bottom */
     flex-direction: column; /* Stack text and image vertically */
 }
@@ -2518,6 +2515,31 @@ pre {
     border-radius: 5px;
     margin-top: 15px;
     margin-top: auto; /* Pushes image to the bottom if there's extra space */
+}
+
+.link-button {
+    /* Inherited from .text-image-dropdown summary and .text-image-dropdown */
+    background-color: #3B4E64; /* Dark Blue/Gray */
+    color: #eee;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    
+    /* Text/Layout Styles */
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none; /* Remove default link underline */
+    text-align: center; /* Center the text */
+    display: block; /* Make it fill the available width (like the full-width dropdown) */
+    
+    /* Hover Effect */
+    transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+    /* Mimics the [open] summary color for a hover state */
+    background-color: #65B2FF; 
+    color: #fff;
 }
 
 
@@ -2565,11 +2587,12 @@ pre {
 /* Also, ensure your existing blueprint-embed-container styles are present: */
 .blueprint-embed-container {
     position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* For 16:9 aspect ratio */
-    height: 0;
+    width: 80%;
+    padding-bottom: 40%;
     overflow: hidden;
-    margin-top: 15px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #2a2a2a;
     border-radius: 6px;
 }
@@ -2583,34 +2606,33 @@ pre {
     border: none;
 }
 
-/* Ensure the max-height of dropdown content is suitable for your embed */
-.text-image-dropdown .dropdown-content {
-    /* Existing styles... */
-    max-height: 500px; /* Adjust this value if your embeds are taller or shorter */
-}
-
 
 .carousel-container {
-    position: relative; /* Keep relative for inner positioning if needed, or remove if not */
-    width: 100%; /* Take up available width in puzzle-content */
-    max-width: 700px; /* Adjust max-width as desired for the carousel */
-    margin: 20px auto; /* Center the carousel below the description */
-    overflow: hidden; /* Hide overflowing images */
+    position: relative; 
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto; 
+    overflow: hidden; 
     border-radius: 5px;
-    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio, adjust as needed */
 
-    /* KEY CHANGE for dots below: */
-    display: flex; /* Make carousel-container a flex container */
-    flex-direction: column; /* Stack track and dots vertically */
-    height: auto; /* Allow height to adjust to content */
-    padding-bottom: 30px; /* Add padding at the bottom for the dots */
+    /* REMOVE: aspect-ratio: 16 / 9; */ 
+    
+    /* Make the container stack its contents (track, controls, dots) vertically */
+    display: flex;
+    flex-direction: column; 
+    height: auto; /* Allow height to be determined by children */
 }
 
 .carousel-track {
-    display: flex; /* Arrange slides horizontally */
-    width: 100%; /* Will be dynamically adjusted by JS */
-    height: 100%;
-    transition: transform 0.5s ease-in-out; /* Smooth sliding transition */
+    /* The track should take up the primary viewing space, using 16:9 aspect ratio */
+    aspect-ratio: 16 / 9;
+    
+    /* Ensure the track takes the full width and determines the height based on aspect ratio */
+    width: 100%; 
+    height: auto;
+    
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
 }
 
 .carousel-track .carousel-slide,
@@ -2639,15 +2661,17 @@ pre {
 }
 
 .carousel-dots {
-    /* KEY CHANGES for dots positioning */
-    position: absolute; /* Position absolutely within the carousel-container */
-    bottom: 0; /* Align to the bottom of carousel-container's padding */
-    left: 50%;
-    transform: translateX(-50%);
+    /* If you still want dots, you may need to simplify their positioning */
+    /* Remove absolute positioning so they stack naturally */
+    position: static; 
+    align-self: center; 
     display: flex;
-    gap: 10px; /* Space between dots */
-    z-index: 10; /* Ensure dots are above slides */
-    padding-bottom: 10px; /* Optional: adds a little space between dots and the very bottom edge */
+    gap: 10px; 
+    margin-top: 5px;
+    margin-bottom: 5px; 
+    
+    /* ADDED: Padding around the dots container itself to ensure they aren't flush */
+    padding: 2px 0;
 }
 
 .dot {
@@ -2962,7 +2986,7 @@ pre {
     justify-content: center;
     align-items: stretch; /* Ensures children stretch to full height */
     width: 100%; /* Or a max-width for the entire entry */
-    max-width: 1500px; /* Example: A suitable max-width for the entire project entry */
+    max-width: 1500px;
     /* margin: 40px auto; */
     background-color: #1a222c;
     border-radius: 12px;
@@ -3010,10 +3034,25 @@ pre {
 }
 
 .project-details-container {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-grow: 1; */
     display: flex;
-    justify-content: space-between; /* Pushes the list and software icons to opposite sides */
-    align-items: flex-start; /* Aligns them to the top */
-    flex-grow: 1; /* Allows this section to grow and fill available space */
+    flex-wrap: wrap; /* Allows the content to wrap on smaller screens */
+    align-items: flex-start;
+}
+
+.project-details-container .software-icons-grid {
+    /* KEY: Pushes the element as far right as possible */
+    margin-left: auto;
+    
+    /* Make the icons horizontal with a small gap */
+    display: flex;
+    gap: 10px; 
+    
+    /* Ensures the icons are top-aligned relative to the container */
+    align-self: flex-start; 
 }
 
 /* --- Project Name/Title --- */
@@ -3063,10 +3102,11 @@ pre {
 }
 
 .project-info-list2 {
-    list-style: none; /* Remove default list bullets */
-    padding: 0; /* Remove default list padding */
-    margin: 0; /* Remove default list margin */
-    flex-grow: 1;
+    flex-grow: 1; 
+    max-width: 65%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .project-info-list2 li {
@@ -3127,11 +3167,19 @@ pre {
     object-fit: contain;
 }
 
+.software-icons-grid .software-icon {
+    width: 32px; /* Original size may have been 40px or more */
+    height: 32px;
+    
+    /* Good practice for images/icons */
+    object-fit: contain; 
+}
+
 .bottom-panel-container {
     display: flex;
     justify-content: space-between; /* Pushes items to opposite ends */
     align-items: center; /* Vertically aligns them */
-    margin-top: 5px; /* Spacing from the info list above */
+    margin-top: auto;
 }
 
 /* --- Separator (optional, for multiple entries) --- */
@@ -3351,17 +3399,19 @@ pre {
     }
 }
 
+
+
 .platform-icon {
-    /* position: absolute; */
-    bottom: 15px; /* Distance from the bottom edge */
-    right: 15px; /* Distance from the right edge */
-    z-index: 1; /* Ensure it stays above other content if overlapping */
+    /* Use Flexbox to align icons and manage spacing */
+    display: flex;
+    /* align-items: center; */
+    font-size: 1.5em;
+    gap: 1rem;
 }
 
-.platform-icon i.fa-windows {
-    font-size: 1.5em; /* Adjust size as needed, a bit smaller than 2em perhaps */
-    color: #8c9fae; /* A muted grey color, similar to Steam's platform icons */
-    opacity: 0.8; /* Slightly transparent to blend in */
+.platform-icon a {
+    text-decoration: none;
+    color: white;
 }
 
 

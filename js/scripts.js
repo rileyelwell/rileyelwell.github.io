@@ -167,6 +167,32 @@ document.addEventListener('DOMContentLoaded', function() {
         loadCodeSnippet('triggerPointCode', 'assets/code/TriggerPoint.cs.txt');
     }
 
+    const weaponComponentDetails = document.querySelector('details:has(#weaponComponentCode)');
+    if (weaponComponentDetails) {
+        const weaponComponentCodePreElement = weaponComponentDetails.querySelector('pre');
+        weaponComponentDetails.addEventListener('toggle', function() {
+            if (this.open) {
+                weaponComponentCodePreElement.classList.add('code-scrollable');
+            } else {
+                weaponComponentCodePreElement.classList.remove('code-scrollable');
+            }
+        });
+        loadCodeSnippet('weaponComponentCode', 'assets/code/WeaponComponent.cpp.txt');
+    }
+
+    const combatComponentDetails = document.querySelector('details:has(#combatComponentCode)');
+    if (combatComponentDetails) {
+        const combatComponentCodePreElement = combatComponentDetails.querySelector('pre');
+        combatComponentDetails.addEventListener('toggle', function() {
+            if (this.open) {
+                combatComponentCodePreElement.classList.add('code-scrollable');
+            } else {
+                combatComponentCodePreElement.classList.remove('code-scrollable');
+            }
+        });
+        loadCodeSnippet('combatComponentCode', 'assets/code/CombatComponent.cpp.txt');
+    }
+
     // CAROUSEL CLASS/FUNCTION
     function Carousel(containerId) {
         const carouselContainer = document.getElementById(containerId);
@@ -192,12 +218,21 @@ document.addEventListener('DOMContentLoaded', function() {
             carouselTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
             updateDots();
 
+            const thumbnails = carouselContainer.querySelectorAll('.thumbnail-nav .thumbnail');
+
             carouselSlides.forEach((slide, index) => {
                 const videoElement = slide;
 
                 slide.classList.remove('active');
                 if (index === slideIndex) {
                     slide.classList.add('active');
+
+                    // Update thumbnail active class
+                    if (thumbnails[index]) {
+                        // Remove active class from all first, then add to current
+                        thumbnails.forEach(thumb => thumb.classList.remove('active-thumbnail'));
+                        thumbnails[index].classList.add('active-thumbnail');
+                    }
                 }
 
                 if (videoElement && videoElement.tagName === 'VIDEO') {
@@ -243,6 +278,40 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         };
 
+        // 1. Get the new control elements
+        const prevArrow = carouselContainer.querySelector('.prev-arrow');
+        const nextArrow = carouselContainer.querySelector('.next-arrow');
+        // Note: We select the thumbnail divs (your old carousel structure uses 'div.thumbnail')
+        const thumbnails = Array.from(carouselContainer.querySelectorAll('.thumbnail-nav .thumbnail'));
+
+        // 2. Add event listeners for arrows
+        if (prevArrow) {
+            prevArrow.addEventListener('click', () => {
+                // Your existing navigation logic
+                slideIndex = (slideIndex - 1 + carouselSlides.length) % carouselSlides.length;
+                updateCarousel();
+            });
+        }
+
+        if (nextArrow) {
+            nextArrow.addEventListener('click', () => {
+                // Your existing navigation logic
+                slideIndex = (slideIndex + 1) % carouselSlides.length;
+                updateCarousel();
+            });
+        }
+
+        // 3. Add event listeners for thumbnails
+        thumbnails.forEach((thumbnail) => {
+            const index = parseInt(thumbnail.dataset.index);
+            if (!isNaN(index)) {
+                thumbnail.addEventListener('click', () => {
+                    slideIndex = index;
+                    updateCarousel();
+                });
+            }
+        });
+
         updateCarousel();
         window.addEventListener('resize', updateCarousel);
     }
@@ -258,6 +327,9 @@ document.addEventListener('DOMContentLoaded', function() {
         Carousel('suboptimalProblemsCarousel');
         Carousel('suboptimalInteractionsCarousel');
         Carousel('suboptimalMultiplayerCarousel');
+    }
+    if (currentPage.includes('/squirrel-bros.html')) {
+        Carousel('squirrelConceptsCarousel');
     }
 
 

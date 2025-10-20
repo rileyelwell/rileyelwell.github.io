@@ -31,9 +31,7 @@
               </a>
             </div>
               <ul class="navbar-menu">
-                    <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
                      <li class="dropdown-toggle">
-                        <!-- <a href="#" id="games-link">Portfolio <img src="assets/icons/caret-down-white.svg" class="arrow-icon-drop"></span></a> -->
                         <a href="#" id="games-link">Portfolio<span class="arrow-icon-drop">&#9660;</span></a>
                         <div class="dropdown-full-width" id="games-dropdown">
                             <div class="games-gallery">
@@ -51,6 +49,13 @@
                                     </div>
                                 </a>
                                 
+                                <a href="squirrel-bros.html" class="game-card">
+                                    <img src="assets/projects/squirrel-bros/images/about_img2.png" alt="Squirrel Bros">
+                                    <div class="game-title-overlay">
+                                        <h3>Squirrel Bros</h3>
+                                    </div>
+                                </a>
+
                                 <a href="crazy-robot.html" class="game-card">
                                     <img src="assets/projects/crazy-robot/thumbnail_robot.png" alt="Crazy Robot">
                                     <div class="game-title-overlay">
@@ -61,12 +66,15 @@
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="other-projects.html">Other Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href=index.html#about-section>About</a></li>
                     <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
               </ul>
               <div class="navbar-social">
                   <li><a class="nav-item nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
                       target="_blank" rel="noopener noreferrer" href="https://github.com/rileyelwell"><i class="fab fa-fw fa-github"></i></a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
+                    target="_blank" rel="noopener noreferrer" href="https://rileyelwell.itch.io/"><i class="fab fa-fw fa-itch-io"></i></a></li>
                   <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
                       target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rileyelwell/"><i class="fab fa-fw fa-linkedin-in"></i></a></li>
                   <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded btn btn-social mx-1" 
@@ -83,10 +91,6 @@
               <div class="project-links">
                 <!-- <a href="YOUR_STEAM_LINK" target="_blank" aria-label="Steam"><i class="fab fa-steam fa-2x"></i></a> -->
                 <a href="https://futuregames.itch.io/project-neila" target="_blank" aria-label="Itch.io"><i class="fab fa-itch-io fa-2x"></i></a>
-                <!-- <a href="YOUR_YOUTUBE_LINK" target="_blank" aria-label="YouTube"><i class="fab fa-youtube fa-2x"></i></a> -->
-                <!-- <a href="YOUR_ROOKIES_LINK" target="_blank" aria-label="The Rookies Competition">
-                    <img src="path/to/your/the-rookies-icon.svg" alt="The Rookies Icon" class="custom-icon">
-                </a> -->
               </div>
             </div>
           </section>
@@ -169,6 +173,7 @@
                             <span class="tag">Third-Person</span>
                         </div>
                         <div class="platform-icon">
+                            <a href="https://futuregames.itch.io/project-neila" target="_blank" aria-label="Itch.io"><i class="fab fa-itch-io"></i></a>
                             <i class="fab fa-windows"></i>
                         </div>
                     </div>
@@ -179,11 +184,14 @@
                     <h3 style="text-align: center; font-size: 2em;">My Contributions</h3>
                     <div class="contribution-section">
                         <ul class="contribution-list">
-                            <li><img src="assets/icons/pencil_icon_white.svg"></i><span>Designed and <span class="keyword">prototyped</span> gameplay features and mechanics.</span></li>
-                            <li><img src="assets/icons/blueprint_icon_white.svg"></i><span>Developed <span class="keyword">custom blueprints/interactions</span> for level designers.</span></li>
-                            <li><img src="assets/icons/tool_icon_white.svg"></i><span>Collaborated with programmers on optimizing my prototypes.</span></li>
-                            <li><img src="assets/icons/ai_icon_white.svg"><span>Designed and developed <span class="keyword">enemy AI,</span> including behavior trees.</span></li> 
-                            <li><img src="assets/icons/anim_icon_white.svg"></i><span><span class="keyword">Implemented animations</span> through blend spaces, animation blueprints, and montages</span></li>
+                            <a href=#newSectionWithDropdowns><li><img src="assets/icons/pencil_icon_white.svg"></i><span>Designed and 
+                                <span class="keyword">prototyped</span> gameplay features and mechanics.</span></li></a>
+                            <a href=#anim-section><li><img src="assets/icons/anim_icon_white.svg"></i><span><span class="keyword">Implemented animations
+                                </span> through blend spaces, animation blueprints, and montages</span></li></a>
+                            <a href=#ai-section><li><img src="assets/icons/ai_icon_white.svg"><span>Designed and developed <span class="keyword">
+                                enemy AI,</span> including behavior trees.</span></li></a>
+                            <a href=#bp-section><li><img src="assets/icons/blueprint_icon_white.svg"></i><span>Developed <span class="keyword">
+                                custom blueprints/interactions</span> for level designers.</span></li></a>
                         </ul>
                     </div>
                 </div>
@@ -316,10 +324,30 @@
                                 My prototype focused on replicating Control's "Pull" ability's feel. While the <span class="keyword">core logic was in Blueprints,</span> I discussed
                                 with a programmer about implementing custom C++ nodes for optimization later on.
                             </p>
+
+                            <a 
+                                href="https://blueprintue.com/render/pn4-qb9h/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="link-button"
+                            >
+                                View Pullable Actor Component Blueprint &#x2197;
+                            </a>
+                            <br>
+                            <a 
+                                href="https://blueprintue.com/render/kxh1zrh-/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="link-button"
+                            >
+                                View PlayerController Blueprint (Telekinesis) &#x2197;
+                            </a>
+
                         </div>
                         <div class="image-content">
                             <video src="assets/projects/neila/videos/NeilaTelekinesisFinal.mp4" autoplay controls loop muted playsinline loading="lazy" class="development-media-item" alt="Platforming Clips"></video>
                         </div>
+
                     </div>
 
                     <div class="dropdowns-grid-container">
@@ -425,30 +453,20 @@
                             </div>
                         </details>
 
-                        <details class="text-image-dropdown full-width-dropdown">
-                            <summary>View Blueprints</summary>
-                            <div class="dropdown-content">
-                                <h2>Pullable Actor Component Blueprint</h2>
-                                <div class="blueprint-embed-container">
-                                    <iframe src="https://blueprintue.com/render/pn4-qb9h/" scrolling="no" allowfullscreen></iframe>
-                                </div>
-                                <h2 style="margin-top: 20px;">Telekinesis (PlayerController) Blueprint</h2>
-                                <div class="blueprint-embed-container">
-                                    <iframe src="https://blueprintue.com/render/kxh1zrh-/" scrolling="no" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </details>
-
                     </div>
+
+                    
+                        
                 </section>
 
                 <!-- Implementing Animations Sections -->
-                <div class="puzzle-sections-container">
+                <div class="puzzle-sections-container" id="anim-section">
                   <div class="puzzle-block">
                         <h2 class="puzzle-title">Implementing Animations for Enemies</h2>
                         <div class="puzzle-content">
                           
                             <div class="carousel-container" id="enemyAnimationCarousel">
+    
                                 <div class="carousel-track">
                                     <video class="carousel-slide carousel-video active" controls loop muted playsinline preload="none">
                                         <source data-src="assets/projects/neila/videos/NeilaScientistAnimations.mp4" type="video/mp4">
@@ -459,8 +477,26 @@
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
+                                
+                                <div class="media-controls-wrapper">
+                                    <button class="arrow prev-arrow">&#9664;</button>
+                                    
+                                    <div class="thumbnail-nav">
+                                        <div class="thumbnail active-thumbnail" data-index="0">
+                                            <img src="assets/projects/neila/images/VideoPoster_Scientist.png" alt="Scientist Animations Thumbnail">
+                                        </div>
+                                        
+                                        <div class="thumbnail" data-index="1">
+                                            <img src="assets/projects/neila/images/VideoPoster_Spider.png" alt="Spider Animations Thumbnail">
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="arrow next-arrow">&#9654;</button>
+                                </div>
+
                                 <div class="carousel-dots">
                                 </div>
+                                
                             </div>
 
                             <div class="puzzle-description">
@@ -493,43 +529,86 @@
                         </div>
 
                         <div class="carousel-container" id="neilaAnimationCarousel">
-                            <div class="carousel-track">   
-                                <video class="carousel-slide carousel-video active" controls loop muted playsinline preload="none">
+    
+                            <div class="carousel-track"> 
+                                <video class="carousel-slide carousel-video active" controls loop muted playsinline preload="none"> 
                                     <source data-src="assets/projects/neila/videos/NeilaTelekinesisBlendSpace.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                                <video class="carousel-slide carousel-video" controls loop muted playsinline preload="none">
+                                
+                                <video class="carousel-slide carousel-video" controls loop muted playsinline preload="none"> 
                                     <source data-src="assets/projects/neila/videos/NeilaTelekinesisAnimations.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                                <!-- <video src="assets/projects/neila/videos/NeilaTelekinesisBlendSpace.mp4" autoplay loop muted playsinline loading="lazy" class="carousel-slide" alt="Neila Blend Space"></video>
-                                <video src="assets/projects/neila/videos/NeilaTelekinesisAnimations.mp4" autoplay loop muted playsinline loading="lazy" class="carousel-slide" alt="Neila Animations Example"></video> -->
+                                
                                 <img class="carousel-slide" src="assets/projects/neila/images/NeilaStateMachine.png" alt="Neila State Machine">
                             </div>
+                            
+                            <div class="media-controls-wrapper">
+                                <button class="arrow prev-arrow">&#9664;</button>
+                                
+                                <div class="thumbnail-nav">
+                                    <div class="thumbnail active-thumbnail" data-index="0">
+                                        <img src="assets/projects/neila/images/VideoPoster_Blend.png" alt="Blend Space Thumbnail">
+                                    </div>
+                                    
+                                    <div class="thumbnail" data-index="1">
+                                        <img src="assets/projects/neila/images/VideoPoster_Tele.png" alt="Animations Thumbnail">
+                                    </div>
+                                    
+                                    <div class="thumbnail" data-index="2">
+                                        <img src="assets/projects/neila/images/NeilaStateMachine.png" alt="State Machine Thumbnail">
+                                    </div>
+                                </div>
+                                
+                                <button class="arrow next-arrow">&#9654;</button>
+                            </div>
+
                             <div class="carousel-dots">
                             </div>
                         </div>
+
                       </div>
                   </div>
               </div>
 
               <!-- Scientist Enemy Section -->
-              <div class="project-area-normal">
+              <div class="project-area-normal" id="ai-section">
                 <h2 class="project-title">Designing a More Advanced Enemy</h2>
                 <div class="project-content-normal">
                     <div class="project-description-normal-neila">
                         <div class="description-section half-width-left-image">
                             <div class="image-content">
+
                                 <div class="carousel-container" id="neilaScientistCarousel">
+    
                                     <div class="carousel-track">
                                         <video class="carousel-slide carousel-video active" controls loop muted playsinline preload="none">
                                             <source data-src="assets/projects/neila/videos/NeilaScientistPrototype.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
-                                       <img class="carousel-slide" src="assets/projects/neila/images/ScientistBehaviorTree.png" alt="Neila Animation 2">
+                                        <img class="carousel-slide" src="assets/projects/neila/images/ScientistBehaviorTree.png" alt="Neila Animation 2">
                                     </div>
+                                    
+                                    <div class="media-controls-wrapper">
+                                        <button class="arrow prev-arrow">&#9664;</button>
+                                        
+                                        <div class="thumbnail-nav">
+                                            <div class="thumbnail active-thumbnail" data-index="0">
+                                                <img src="assets/projects/neila/images/VideoPoster_ProtoScientist.png" alt="Scientist Animations Thumbnail">
+                                            </div>
+                                            
+                                            <div class="thumbnail" data-index="1">
+                                                <img src="assets/projects/neila/images/ScientistBehaviorTree.png" alt="Spider Animations Thumbnail">
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="arrow next-arrow">&#9654;</button>
+                                    </div>
+
                                     <div class="carousel-dots">
                                     </div>
+                                    
                                 </div>
                             </div>
                                 
@@ -563,19 +642,16 @@
                                 <video src="assets/projects/neila/videos/NeilaScientistFinal.mp4" autoplay controls loop muted playsinline loading="lazy" class="development-media-item"></video>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="dropdowns-grid-container">
-                        <details class="text-image-dropdown full-width-dropdown">
-                            <summary>View Scientist Actor Blueprint</summary>
-                            <div class="dropdown-content">
-                                <div class="blueprint-embed-container">
-                                    <iframe src="https://blueprintue.com/render/ed_dupsx/" scrolling="no" allowfullscreen></iframe>
-                                </div>
-                                
-                            </div>
-                        </details>
-                        </div>
+                        <a 
+                            href="https://blueprintue.com/render/ed_dupsx/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="link-button"
+                        >
+                            View Scientist Actor Blueprint &#x2197;
+                        </a>
+                    </div>
                     
                 </div>
               </div>
@@ -594,7 +670,7 @@
                         <div class="before-after-container">
                             <div class="before-after-item">
                                 <img style="width: 93%; margin-left: 35px;" src="assets/projects/neila/images/BallEnemyPrototype.gif" muted alt="Before Image" class="before-after-image">
-                                <p class="image-caption">Before (Initial Concept)</p>
+                                <p style="text-align: center;" class="image-caption">Before (Initial Concept)</p>
                                 <ul class="image-caption-bullets">
                                     <li>light and bouncy</li>
                                     <li>appears non-threatening</li>
@@ -608,7 +684,7 @@
                             </div>
                             <div class="before-after-item">
                                 <video src="assets/projects/neila/videos/NeilaBallEnemy.mp4" autoplay loop muted playsinline loading="lazy" class="before-after-image" alt="Platforming Clips"></video>
-                                <p class="image-caption">After (Refined Version)</p>
+                                <p style="text-align: center;" class="image-caption">After (Refined Version)</p>
                                 <ul class="image-caption-bullets">
                                     <li>heavy and resilient</li>
                                     <li>aggressive attack/damage</li>
@@ -620,7 +696,7 @@
                 </div>
             </div>
 
-              <div class="development-content-item">
+              <div class="development-content-item" id="bp-section">
                 <div class="two-column-section uneven-columns"> 
                     <div class="column left-column">
                         <h2>Role as a Tech Designer</h2>
@@ -658,7 +734,8 @@
                                         designers to easily place <span class="keyword">custom lore elements</span> throughout levels. The system supported 
                                         <span class="keyword">variable UI widgets,</span> offering customization while centralizing core functionality.
                                     </p>
-                                    <video class="development-media-item lazy-video"
+                                    <video id="smaller-dropdown-video"
+                                        class="development-media-item lazy-video"
                                         controls muted playsinline preload="none">
                                         <source data-src="assets/projects/neila/videos/NeilaUpgradesAndLore.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
@@ -679,7 +756,8 @@
                                         I achieved this using a <span class="keyword">UI animation.</span> The interaction points themselves relied on <span class="keyword">box triggers</span> and 
                                         an <span class="keyword">interface created by a programmer</span> to function.
                                     </p>
-                                    <video class="development-media-item lazy-video"
+                                    <video id="smaller-dropdown-video"
+                                        class="development-media-item lazy-video"
                                         controls muted playsinline preload="none">
                                         <source data-src="assets/projects/neila/videos/NeilaUIExamples.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
@@ -703,7 +781,8 @@
                                         ability, I <span class="keyword">redesigned the encounter.</span> Now, the door can only be unlocked by the player's glue ability, and 
                                         the Scientist spawns once the player opens the door.
                                     </p>
-                                    <video class="development-media-item lazy-video"
+                                    <video id="smaller-dropdown-video" 
+                                        class="development-media-item lazy-video"
                                         controls muted playsinline preload="none">
                                         <source data-src="assets/projects/neila/videos/NeilaEncounterAdjustment.mp4" type="video/mp4">
                                         Your browser does not support the video tag.

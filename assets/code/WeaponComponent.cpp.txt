@@ -1,0 +1,193 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+
+#include "WeaponComponent.h"
+#include "GameFramework/Character.h" 
+#include "GameFramework/PlayerController.h" 
+#include "Weapons/CombatComponent.h"
+#include "FPSCharacter.h"
+#include "Engine/World.h"
+#include <Kismet/KismetSystemLibrary.h>
+
+// Sets default values for this component's properties
+UWeaponComponent::UWeaponComponent()
+{
+	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
+	// off to improve performance if you don't need them.
+	PrimaryComponentTick.bCanEverTick = true;
+
+	WeaponMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("WeaponSkeletalMesh"));
+	//WeaponMeshComponent->SetupAttachment(GetOwner());
+}
+
+
+// Called when the game starts
+void UWeaponComponent::BeginPlay()
+{
+	Super::BeginPlay();
+
+	Player = Cast<ACharacter>(GetOwner());
+
+	if (IsValid(Player))
+	{
+		PlayerController = Cast<APlayerController>(Player->GetController());
+		CombatManager = Player->FindComponentByClass<UCombatComponent>();
+		
+		FPSPlayer = Cast<AFPSCharacter>(Player);
+		USkeletalMeshComponent* CharacterMesh = FPSPlayer->GetFirstPersonMesh();
+		if (IsValid(CharacterMesh) && !HandSocketName.IsNone())
+		{
+			WeaponMeshComponent->AttachToComponent(CharacterMesh,FAttachmentTransformRules::SnapToTargetNotIncludingScale,HandSocketName);
+			GEngine->AddOnScreenDebugMessage(1, 5.0f, FColor::Green, FString::Printf(TEXT("Weapon attached to %s"), *HandSocketName.ToString()));
+		}
+		else 
+		{
+			GEngine->AddOnScreenDebugMessage(1, 5.0f, FColor::Red, "Weapon attachment failed!");
+		}
+	}
+}
+
+
+// Called every frame
+void UWeaponComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	// ...
+}
+
+void UWeaponComponent::Fire()
+{
+	if (CurrentClipAmmo <= 0)
+	{
+		// play empty clip sound
+		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "Out of Ammo!");
+		return;
+	}
+
+	GEngine->AddOnScreenDebugMessage(1, 1.0f, FColor::Orange, "Weapon Firing!");
+	HandleFireFX();
+
+	// decrease current ammo
+	CurrentClipAmmo--;
+	OnClipAmmoChanged.Broadcast(CurrentClipAmmo);
+
+	// set trace parameters
+	FHitResult HitResult;
+
+	FCollisionQueryParams QueryParams;
+	QueryParams.AddIgnoredActor(GetOwner());
+	QueryParams.bTraceComplex = true;
+
+	FVector CameraLocation;
+	FRotator CameraRotation;
+	if (PlayerController) PlayerController->GetPlayerViewPoint(CameraLocation, CameraRotation);
+
+	const FVector Start = CameraLocation;
+
+	const float HalfSpread = CurrentWeaponData->WeaponSpreadAngle * 0.5f;
+
+	// Randomly offset Yaw and Pitch within the MaxSpreadAngle
+	const float RandYaw = FMath::RandRange(-HalfSpread, HalfSpread);
+	const float RandPitch = FMath::RandRange(-HalfSpread, HalfSpread);
+
+	FRotator SpreadRotation = CameraRotation;
+	SpreadRotation.Yaw += RandYaw;
+	SpreadRotation.Pitch += RandPitch;
+
+	const FVector SpreadDirection = SpreadRotation.Vector();
+	const FVector End = Start + (SpreadDirection * MaxRange);
+	const float Radius = CurrentWeaponData->BulletRadius;
+
+	bool bHit = GetWorld()->SweepSingleByChannel(
+		HitResult,
+		Start,
+		End,
+		FQuat::Identity,
+		ECC_Visibility,
+		FCollisionShape::MakeSphere(Radius),
+		QueryParams
+	);
+
+	if (bHit)
+	{
+		HandleHitActor(HitResult);
+	}
+	else
+	{
+		// draw debug line for the actual shot path
+		DrawDebugLine(GetWorld(), Start, End, FColor::Blue, false, 3.0f);
+
+		// Draw a debug sphere at the end to visualize the trace volume if it missed
+		// DrawDebugSphere(GetWorld(), End, Radius, 12, FColor::Red, false, 3.0f);
+	}
+}
+
+void UWeaponComponent::HandleHitActor(const FHitResult& HitResult)
+{
+	if (AActor* HitActor = HitResult.GetActor())
+	{
+		// apply damage to hit actor
+		//UGameplayStatics::ApplyPointDamage(HitActor, Damage, ForwardDirection, HitResult, PlayerController, GetOwner(), nullptr);
+
+		float Damage = CurrentWeaponData ? CurrentWeaponData->BaseDamage : 0.f; // set damage to base damage or 0 if no weapon data
+
+		// debug message
+		GEngine->AddOnScreenDebugMessage(2, 2.0f, FColor::Red, FString::Printf(TEXT("Hit Actor: %s"), *HitActor->GetName()));
+	}
+}
+
+void UWeaponComponent::HandleFireFX()
+{
+	// play muzzle flash, sound, etc.
+}
+
+void UWeaponComponent::StartReload()
+{
+	if (IsValid(CombatManager))
+	{
+		const FName AmmoType = CurrentWeaponData ? CurrentWeaponData->AmmoType : NAME_None;
+		if (AmmoType != NAME_None)
+		{
+			const int32 AmmoNeeded = MaxClipAmmo - CurrentClipAmmo;
+			if (AmmoNeeded > 0)
+			{
+				CombatManager->RequestReloadAmmo(AmmoNeeded, AmmoType, this);
+			}
+		}
+	}
+}
+
+void UWeaponComponent::GrantReloadAmmo(int32 GrantedAmount)
+{
+	if (GrantedAmount > 0)
+	{
+		CurrentClipAmmo += GrantedAmount;
+		CurrentClipAmmo = FMath::Min(CurrentClipAmmo, MaxClipAmmo);
+		OnClipAmmoChanged.Broadcast(CurrentClipAmmo);
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, FString::Printf(TEXT("Reloaded %d ammo. Current Clip: %d"), GrantedAmount, CurrentClipAmmo));
+	}
+}
+
+void UWeaponComponent::SetCurrentWeapon(UWeaponDataAsset* Weapon)
+{
+	if (CombatManager)
+	{
+		CurrentWeaponData = Weapon;
+		if (CurrentWeaponData)
+		{
+			CurrentClipAmmo = MaxClipAmmo;
+			OnClipAmmoChanged.Broadcast(CurrentClipAmmo);
+
+			WeaponMeshComponent->SetSkeletalMesh(CurrentWeaponData->WeaponMesh);
+		}
+		else {
+			CurrentClipAmmo = 0;
+			OnClipAmmoChanged.Broadcast(CurrentClipAmmo);
+			WeaponMeshComponent->SetSkeletalMesh(nullptr);
+		}
+	}
+}
+
+
+
