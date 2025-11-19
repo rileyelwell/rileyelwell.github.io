@@ -1,0 +1,126 @@
+void UWeaponComponent::Fire()
+{
+	if (CurrentClipAmmo <= 0)
+	{
+		// play empty clip sound
+		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "Out of Ammo!");
+		return;
+	}
+
+	GEngine->AddOnScreenDebugMessage(1, 1.0f, FColor::Orange, "Weapon Firing!");
+	HandleFireFX();
+
+	// decrease current ammo
+	CurrentClipAmmo--;
+
+	if (IsValid(CurrentWeaponData))
+	{
+		FWeaponInstance* SavedState = WeaponInstanceMap.Find(CurrentWeaponData);
+		if (SavedState)
+		{
+			SavedState->CurrentClipAmmo = CurrentClipAmmo;
+		}
+	}
+
+	OnClipAmmoChanged.Broadcast(CurrentClipAmmo);
+
+	// set trace parameters
+	FHitResult HitResult;
+
+	FCollisionQueryParams QueryParams;
+	QueryParams.AddIgnoredActor(GetOwner());
+	QueryParams.bTraceComplex = true;
+
+	FVector CameraLocation;
+	FRotator CameraRotation;
+	if (PlayerController) PlayerController->GetPlayerViewPoint(CameraLocation, CameraRotation);
+
+	const FVector Start = CameraLocation;
+	const float HalfSpread = CurrentWeaponData->WeaponSpreadAngle * 0.5f;
+
+	// Randomly offset Yaw and Pitch within the MaxSpreadAngle
+	const float RandYaw = FMath::RandRange(-HalfSpread, HalfSpread);
+	const float RandPitch = FMath::RandRange(-HalfSpread, HalfSpread);
+
+	// Apply the random deviation to the camera's rotation
+	FRotator SpreadRotation = CameraRotation;
+	SpreadRotation.Yaw += RandYaw;
+	SpreadRotation.Pitch += RandPitch;
+
+	const FVector SpreadDirection = SpreadRotation.Vector();
+	const FVector End = Start + (SpreadDirection * MaxRange);
+	const float Radius = CurrentWeaponData->BulletRadius;
+
+	bool bHit = GetWorld()->SweepSingleByChannel(
+		HitResult,
+		Start,
+		End,
+		FQuat::Identity,
+		ECC_Visibility,
+		FCollisionShape::MakeSphere(Radius),
+		QueryParams
+	);
+
+	if (bHit)
+	{
+		HandleHitActor(HitResult);
+	}
+	else
+	{
+		// nothing for now
+	}
+}
+
+void UWeaponComponent::HandleHitActor(const FHitResult& HitResult)
+{
+	if (AActor* HitActor = HitResult.GetActor())
+	{
+
+		// check if it is a damageable object
+		if (HitActor->Implements<UDamageable>())
+		{
+
+			// check that we can damage it currently
+			bool bCanDamage = IDamageable::Execute_CanDamage(HitActor);
+			if (bCanDamage)
+			{
+				float Damage = CurrentWeaponData ? CurrentWeaponData->BaseDamage : 0.f;
+
+				// apply damage on whatever we hit
+				IDamageable::Execute_TakeDamage(HitActor, this->GetOwner(), Damage);
+
+				// debug message
+				GEngine->AddOnScreenDebugMessage(2, 2.0f, FColor::Red,
+					FString::Printf(TEXT("Hit Actor: %s - Damage: %.2f"), *HitActor->GetName(), Damage));
+			}
+		}
+	}
+}
+
+void UWeaponComponent::HandleFireFX()
+{
+	// play fire anim montage
+	UAnimMontage* FireMontage = CurrentWeaponData->FireAnimation;
+	USkeletalMeshComponent* CharacterMesh = FPSPlayer->GetFPSArmsMesh();
+	UAnimInstance* AnimInstance = CharacterMesh->GetAnimInstance();
+	if (AnimInstance)
+	{
+		float Duration = AnimInstance->Montage_Play(FireMontage, 1.0f);
+	}
+
+	// play fire sound
+	if (CurrentWeaponData->FireSound)
+	{
+		PlaySFX(CurrentWeaponData->FireSound, GetOwner()->GetActorLocation());
+	}
+
+	// spawn fire muzzle flash (maybe move to the animnotify?)
+	if (CurrentWeaponData->MuzzleFlash)
+	{
+		UGameplayStatics::SpawnEmitterAttached(
+		    CurrentWeaponData->MuzzleFlash,
+		    WeaponMeshComponent,
+		    FName(TEXT("MuzzleFlash")) 
+		);
+	}
+}

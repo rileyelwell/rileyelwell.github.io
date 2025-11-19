@@ -1,37 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
-#include "Weapons/CombatComponent.h"
-#include "WeaponComponent.h"
-
-// Sets default values for this component's properties
-UCombatComponent::UCombatComponent()
+void UCombatComponent::RequestReloadAmmo(int32 RequestedAmount, E_AmmoType Type, UWeaponComponent* RequestingWeapon)
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
-	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
-}
-
-
-// Called when the game starts
-void UCombatComponent::BeginPlay()
-{
-	Super::BeginPlay();
-}
-
-
-// Called every frame
-void UCombatComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
-{
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
-}
-
-void UCombatComponent::RequestReloadAmmo(int32 RequestedAmount, FName Type, UWeaponComponent* RequestingWeapon)
-{
+    // check reserve ammo type
     int32* AvailableAmmoPtr = ReserveAmmoMap.Find(Type);
 
     if (AvailableAmmoPtr)
@@ -41,16 +10,15 @@ void UCombatComponent::RequestReloadAmmo(int32 RequestedAmount, FName Type, UWea
 
         if (AmmoToTransfer > 0)
         {
-            AvailableAmmo -= AmmoToTransfer;
-
-            // update HUD later
+            //AvailableAmmo -= AmmoToTransfer;
 
             RequestingWeapon->GrantReloadAmmo(AmmoToTransfer);
+			RemoveReserveAmmo(Type, AmmoToTransfer);
         }
     }
 }
 
-void UCombatComponent::AddReserveAmmo(FName AmmoType, int32 Amount)
+void UCombatComponent::AddReserveAmmo(E_AmmoType AmmoType, int32 Amount)
 {
     if (Amount <= 0) return;
 
@@ -59,8 +27,73 @@ void UCombatComponent::AddReserveAmmo(FName AmmoType, int32 Amount)
     int32 NewTotal = CurrentAmmo + Amount;
     ReserveAmmoMap.Add(AmmoType, NewTotal);
 
-    UE_LOG(LogTemp, Log, TEXT("Added %d of %s. New total: %d"), Amount, *AmmoType.ToString(), NewTotal);
+    //UE_LOG(LogTemp, Log, TEXT("Added %d of %s. New total: %d"), Amount, *AmmoType.ToString(), NewTotal);
 
     OnReserveAmmoChanged.Broadcast(AmmoType, NewTotal);
 }
 
+void UCombatComponent::UpdateReserveAmmoUI(E_AmmoType AmmoType)
+{
+	int32 CurrentTotal = GetReserveAmmo(AmmoType);
+
+    	OnReserveAmmoChanged.Broadcast(AmmoType, CurrentTotal);
+}
+
+int32 UCombatComponent::GetReserveAmmo(E_AmmoType AmmoType)
+{
+    int32* CurrentAmmoPtr = ReserveAmmoMap.Find(AmmoType);
+    return CurrentAmmoPtr ? *CurrentAmmoPtr : 0;
+}
+
+void UCombatComponent::RemoveReserveAmmo(E_AmmoType AmmoType, int32 Amount)
+{
+    if (Amount <= 0) return;
+    int32* CurrentAmmoPtr = ReserveAmmoMap.Find(AmmoType);
+    if (CurrentAmmoPtr)
+    {
+        int32& CurrentAmmo = *CurrentAmmoPtr;
+        int32 NewTotal = FMath::Max(0, CurrentAmmo - Amount);
+        ReserveAmmoMap.Add(AmmoType, NewTotal);
+        //UE_LOG(LogTemp, Log, TEXT("Removed %d of %s. New total: %d"), Amount, *AmmoType.ToString(), NewTotal);
+        OnReserveAmmoChanged.Broadcast(AmmoType, NewTotal);
+    }
+}
+
+void UCombatComponent::HandleSecondaryInputAction(bool bIsPressed)
+{
+    const bool bHasRightWeapon = IsValid(RightHandWeaponComponent) && RightHandWeaponComponent->GetCurrentWeapon();
+    const bool bHasLeftWeapon = IsValid(LeftHandWeaponComponent) && LeftHandWeaponComponent->GetCurrentWeapon();
+
+    if (bIsPressed)
+    {
+        if (bHasLeftWeapon)
+        {
+            UE_LOG(LogTemp, Warning, TEXT("Fire Left"));
+            LeftHandWeaponComponent->Fire(); 
+        }
+        else if (bHasRightWeapon)
+        {
+            UE_LOG(LogTemp, Warning, TEXT("ADS"));
+            RightHandWeaponComponent->SetAiming(true);
+        }
+    }
+    else
+    {
+        if (!bHasLeftWeapon && bHasRightWeapon)
+        {
+            RightHandWeaponComponent->SetAiming(false);
+        }
+    }
+}
+
+void UCombatComponent::SetWeaponReference(UWeaponComponent* WeaponComponent, E_WeaponHand WeaponHand)
+{
+    if (WeaponHand==E_WeaponHand::EWH_RightHand)
+    {
+        RightHandWeaponComponent = WeaponComponent;
+    }
+    else if (WeaponHand==E_WeaponHand::EWH_LeftHand)
+    {
+        LeftHandWeaponComponent = WeaponComponent;
+    }
+}

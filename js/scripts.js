@@ -193,6 +193,32 @@ document.addEventListener('DOMContentLoaded', function() {
         loadCodeSnippet('combatComponentCode', 'assets/code/CombatComponent.cpp.txt');
     }
 
+    const fpsCharacterDetails = document.querySelector('details:has(#fpsCharacterCode)');
+    if (fpsCharacterDetails) {
+        const fpsCharacterCodePreElement = fpsCharacterDetails.querySelector('pre');
+        fpsCharacterDetails.addEventListener('toggle', function() {
+            if (this.open) {
+                fpsCharacterCodePreElement.classList.add('code-scrollable');
+            } else {
+                fpsCharacterCodePreElement.classList.remove('code-scrollable');
+            }
+        });
+        loadCodeSnippet('fpsCharacterCode', 'assets/code/FPSCharacterBase.cpp.txt');
+    }
+
+    const firingFunctionsDetails = document.querySelector('details:has(#firingFunctionsCode)');
+    if (firingFunctionsDetails) {
+        const firingFunctionsCodePreElement = firingFunctionsDetails.querySelector('pre');
+        firingFunctionsDetails.addEventListener('toggle', function() {
+            if (this.open) {
+                firingFunctionsCodePreElement.classList.add('code-scrollable');
+            } else {
+                firingFunctionsCodePreElement.classList.remove('code-scrollable');
+            }
+        });
+        loadCodeSnippet('firingFunctionsCode', 'assets/code/FiringFunctions.cpp.txt');
+    }
+
     // CAROUSEL CLASS/FUNCTION
     function Carousel(containerId) {
         const carouselContainer = document.getElementById(containerId);

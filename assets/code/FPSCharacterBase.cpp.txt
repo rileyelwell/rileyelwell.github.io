@@ -1,0 +1,73 @@
+AFPSCharacterBase::AFPSCharacterBase()
+{
+ 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+
+    // Set size for collision capsule
+    GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
+    GetCapsuleComponent()->SetCapsuleSize(34.0f, 96.0f);
+
+    // Configure character movement
+    GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
+    GetCharacterMovement()->AirControl = 0.5f;
+
+    PivotPoint = CreateDefaultSubobject<USceneComponent>(TEXT("PivotPoint"));
+    PivotPoint->SetupAttachment(RootComponent);
+    PivotPoint->SetRelativeLocation(FVector(1.325510f, -0.000002f, 75.150311f));
+
+    FPSArmsMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("FPSArmsMesh"));
+    FPSArmsMesh->SetupAttachment(PivotPoint);
+    FPSArmsMesh->SetRelativeLocation(FVector(-0.708016f, 0.000002f, -162.574875f));
+    FPSArmsMesh->SetRelativeRotation(FRotator(-0.000000f, -90.000033f, 0.015826f));
+
+    FPSCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FPSCamera"));
+    FPSCamera->SetupAttachment(FPSArmsMesh, FName("head"));
+    FPSCamera->SetRelativeRotation(FRotator(-90, 0, 90));
+    FPSCamera->SetRelativeScale3D(FVector(0.3f, 0.3f, 0.3f));
+    // FPSCamera.attachto
+    
+    
+    // FPSArmsMesh->SetRelativeTransform((X=-0.708016,Y=0.000002,Z=-162.574875));
+    // FPSArmsMesh->SetRelativeRotation((Pitch=-0.000000,Yaw=-90.000033,Roll=0.015826));
+    
+    // Configure weapon components
+    LeftWeaponComponent = CreateDefaultSubobject<UWeaponComponent>(TEXT("LeftHandWeaponComp"));
+    RightWeaponComponent = CreateDefaultSubobject<UWeaponComponent>(TEXT("RightHandWeaponComp"));
+
+    // configure combat and health components
+    CombatComponent = CreateDefaultSubobject<UCombatComponent>(TEXT("CombatComponent"));
+    HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
+}
+
+void AFPSCharacterBase::FirePrimary(const FInputActionValue& Value)
+{
+    if (IsValid(RightWeaponComponent) && IsValid(RightWeaponComponent->GetCurrentWeapon()))
+    {
+        RightWeaponComponent->Fire();
+    }
+}
+
+void AFPSCharacterBase::FireSecondary(const FInputActionValue& Value)
+{
+    bool bIsPressed = Value.Get<bool>();
+    // UE_LOG(LogTemp, Warning, TEXT("Input Value: %s"), bIsPressed ? TEXT("PRESSED") : TEXT("RELEASED"));
+
+    if (IsValid(CombatComponent))
+    {
+        // UE_LOG(LogTemp, Warning, TEXT("AFPSCharacterBase::HandleWeaponAction2 called!"));
+        CombatComponent->HandleSecondaryInputAction(bIsPressed);
+    }
+}
+
+void AFPSCharacterBase::FireSecondaryCompleted(const FInputActionValue& Value)
+{
+    bool bIsPressed = Value.Get<bool>();
+    UE_LOG(LogTemp, Warning, TEXT("Input Value: %s"), bIsPressed ? TEXT("PRESSED") : TEXT("RELEASED"));
+
+    if (IsValid(CombatComponent))
+    {
+        // Now call your combat component function
+        UE_LOG(LogTemp, Warning, TEXT("AFPSCharacterBase::HandleWeaponAction2 called!"));
+        CombatComponent->HandleSecondaryInputAction(bIsPressed);
+    }
+}

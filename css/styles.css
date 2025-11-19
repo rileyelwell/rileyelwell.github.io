@@ -1,4 +1,34 @@
+/* ============================================== */
+/* == 01. BASE STYLES                          == */
+/* ============================================== */
 @charset "UTF-8";
+
+@font-face {
+  font-family: 'Veto Sans';
+  src: url('fonts/VetoSans-Medium.ttf') format('truetype'),
+       url('fonts/VetoSans-Medium.otf') format('otf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Veto Sans Cond';
+  src: url('fonts/VetoSansCond-Cond.ttf') format('truetype'),
+       url('fonts/VetoSansCond-Cond.otf') format('otf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Veto Sans Light';
+  src: url('fonts/VetoSans-Light1.ttf') format('truetype'),
+       url('fonts/VetoSans-Light1.otf') format('otf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 body, html {
   margin: 0;
@@ -20,13 +50,235 @@ body p, ul, li {
   line-height: 1.6;
 }
 
-/* Hero Video Section with Tint Overlay */
+main {
+  max-width: 1400px; /* Limit content width */
+  margin: 40px auto; /* Center content with margin */
+  padding: 20px;
+}
+
+.keyword {
+  color: yellow;
+  /* font-weight: bold; */
+}
+
+.keyword-blue {
+  color: #65B2FF;
+  font-weight: bold;
+}
+
+.link-button {
+    /* Inherited from .text-image-dropdown summary and .text-image-dropdown */
+    background-color: #3B4E64; /* Dark Blue/Gray */
+    color: #eee;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    
+    /* Text/Layout Styles */
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none; /* Remove default link underline */
+    text-align: center; /* Center the text */
+    display: block; /* Make it fill the available width (like the full-width dropdown) */
+    
+    /* Hover Effect */
+    transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+    /* Mimics the [open] summary color for a hover state */
+    background-color: #65B2FF; 
+    color: #fff;
+}
+
+/* If your Font Awesome icons also have specific margins, apply similar ones here */
+.project-links a {
+    margin: 0 10px; /* Example: adjust as per your design */
+}
+
+/* ============================================== */
+/* == NAVBAR                                   == */
+/* ============================================== */
+
+.custom-navbar {
+  background-color: #0D1B2A;
+  color: #fff;
+  padding: 1em 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: 'Veto Sans', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.favicon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0 0.3em;
+}
+
+.custom-navbar .navbar-menu .nav-item .nav-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.custom-navbar .navbar-menu .nav-item .nav-link:hover {
+  background-color: #1C334A;
+}
+
+.navbar-social {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 0 3.5em;
+  margin: 0;
+}
+
+.navbar-social li {
+  margin-left: 0.5em;
+}
+
+.navbar-social .nav-link {
+  color: #fff;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.navbar-social .nav-link:hover {
+  opacity: 1;
+}
+
+.navbar-social img {
+  width: 24px;
+  height: auto;
+}
+
+.navbar-social img:hover {
+  opacity: 1;
+}
+
+.dropdown-full-width {
+  display: none; 
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #0D1B2A;
+  z-index: 999;
+  padding: 20px;
+}
+
+.dropdown-full-width.active {
+  display: block;
+  max-height: 500px;
+  overflow: visible;
+}
+
+.games-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.game-card {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+  scale: 1.02;
+}
+
+.game-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.game-title-overlay {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+  color: white;
+}
+
+.game-title-overlay h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: lighter;
+}
+
+#games-link {
+  position: relative;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+  color: white;
+  text-decoration: none;
+}
+
+#games-link:hover {
+  background-color: #1C334A;
+}
+
+/* ============================================== */
+/* == 02. MAIN PAGE HEADER                     == */
+/* ============================================== */
+
 .hero-video-section {
   position: relative;
   width: 100%;
   height: 60vh;
   overflow: hidden;
-  /* box-shadow: 0 -40px 40px -40px rgba(0, 0, 0, 0.9); */
   box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.7);
 }
 
@@ -78,484 +330,43 @@ body p, ul, li {
   opacity: 0.8;
 }
 
-.custom-navbar {
-  /* background-color: #21201E; */
-  background-color: #0D1B2A;
-  color: #fff;
-  padding: 1em 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  font-family: 'Veto Sans', sans-serif;
-  display: flex;
-  align-items: center;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-logo {
-  display: flex;
-  align-items: center;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-}
-
-.favicon {
-  width: 1.5rem; /* Adjust size as needed */
-  height: 1.5rem; /* Adjust size as needed */
-  margin-right: 0.5rem; /* Add some spacing between the icon and text */
-}
-
-/* Menu Styling */
-.navbar-menu {
-  list-style: none; /* Remove bullet points */
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item {
-  margin: 0 0.3em;
-}
-
-.custom-navbar .navbar-menu .nav-item .nav-link {
-  color: white; /* Your default text color */
-  text-decoration: none; /* Remove default underlines */
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1em;
-}
-
-.custom-navbar .navbar-menu .nav-item .nav-link:hover {
-  /* color: #B71C1C; */
-  background-color: #1C334A;
-}
-
-
-.navbar-social {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  padding: 0 3.5em;
-  margin: 0;
-}
-
-.navbar-social li {
-  margin-left: 0.5em;
-}
-
-.navbar-social .nav-link {
-  color: #fff;
-  opacity: 0.7;
-  text-decoration: none;
-}
-
-.navbar-social .nav-link:hover {
-  opacity: 1; /* Increase opacity on hover */
-}
-
-
-.social-links {
-  color: #fff;
-  opacity: 0.7;
-  text-decoration: none;
-}
-
-.social-links .nav-link:hover {
-  /* color: #B71C1C; */
-}
-
-.navbar-social img {
-  width: 24px; /* Adjust icon size */
-  height: auto;
-}
-
-.navbar-social img:hover {
-  opacity: 1; /* Increase opacity on hover */
-}
-
 #special-links {
-    /* Make it a flex container */
-    display: flex;
-    /* Center items horizontally */
-    justify-content: center;
-    /* Align items vertically (if they had different heights) */
-    align-items: center;
-    /* Remove default list padding/margin that might interfere with centering */
-    list-style: none; /* In case the parent is a <ul>, though it's a <div> */
-    padding: 0;
-    margin: 0;
-    width: 100%; /* Ensure it takes full width to allow centering */
-}
-
-/* Hide the full-width dropdown by default */
-.dropdown-full-width {
-    display: none; 
-    position: absolute;
-    top: 100%; /* Positions the dropdown directly below the navbar */
-    left: 0;
-    right: 0;
-    background-color: #0D1B2A;
-    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
-    z-index: 999; /* Ensure it's on top of other content */
-    padding: 20px;
-    /* display: flex;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out; */
-}
-
-/* Show the dropdown when the 'active' class is present */
-.dropdown-full-width.active {
-    display: block; /* or other properties to reveal it */
-    max-height: 500px; /* Set a value larger than the max height of your content */
-    overflow: visible; /* Allows content like shadows to show */
-}
-
-/* Use Flexbox for side-by-side layout within the dropdown */
-.games-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: auto;
-    /* max-width: 1200px;  */
-}
-
-/* Style the game cards as before */
-.game-card {
-    position: relative;
-    width: 250px;
-    height: 350px;
-    overflow: hidden;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
-
-.game-card:hover {
-  scale: 1.02;
-}
-
-.game-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.game-title-overlay {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 2;
-    color: white;
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
-}
-
-.game-title-overlay h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: lighter;
-}
-
-#games-link {
-    position: relative;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 1; /* Ensure text is above the pseudo-element */
-    color: white; /* Or your desired text color */
-    text-decoration: none;
-}
-
-#games-link:hover {
-    background-color: #1C334A;
-}
-
-
-
-
-
-/* MAIN PORTFOLIO PROJECTS */
-.portfolio-title-section {
-  width: 100%;
-  padding: 10px 0;
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden; 
-}
-
-.portfolio-title-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.2; /* Adjust the opacity of the pattern */
-  z-index: -1; /* Place the background behind the text and separator */
-  /* transform: translateZ(-1px) scale(1.1);
-  transform-origin: 0 0;
-  will-change: transform; */
-}
-
-.portfolio-title-section h1 {
-  font-size: 4em; /* Adjust as needed */
-  margin-bottom: 10px;
-  margin-top: 10px;
-  font-family: "Veto Sans", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.portfolio-title-section .title-separator {
-  width: 80px; /* Adjust width of the separator */
-  height: 2px; /* Adjust height of the separator */
-  background-color: white; /* Adjust separator color */
-  margin: 0 auto 20px; /* Center the separator */
-}
-
-.contribution-container {
-    background-color: #1C334A; /* Your desired background color */
-    padding: 30px; /* Add some padding around the content */
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    box-sizing: border-box;
-    margin-top: 20px; /* Add some space above the container if needed */
-}
-
-
-.fade-in-section {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.fade-in-section.visible {
-  opacity: 1;
-}
-
-
-
-
-
-
-
-
-
-
-
-/* Veto Sans Regular */
-@font-face {
-  font-family: 'Veto Sans'; /* Your chosen font family name */
-  src: url('fonts/VetoSans-Medium.ttf') format('truetype'),
-       url('fonts/VetoSans-Medium.otf') format('otf');
-  font-weight: 400; /* Normal weight */
-  font-style: normal;
-  font-display: swap; /* Improves performance by displaying fallback font */
-}
-
-@font-face {
-  font-family: 'Veto Sans Cond'; /* Your chosen font family name */
-  src: url('fonts/VetoSansCond-Cond.ttf') format('truetype'),
-       url('fonts/VetoSansCond-Cond.otf') format('otf');
-  font-weight: 400; /* Normal weight */
-  font-style: normal;
-  font-display: swap; /* Improves performance by displaying fallback font */
-}
-
-@font-face {
-  font-family: 'Veto Sans Light'; /* Your chosen font family name */
-  src: url('fonts/VetoSans-Light1.ttf') format('truetype'),
-       url('fonts/VetoSans-Light1.otf') format('otf');
-  font-weight: 400; /* Normal weight */
-  font-style: normal;
-  font-display: swap; /* Improves performance by displaying fallback font */
-}
-
-@font-face {
-  font-family: 'Shockwave';
-  src: url('fonts/Shockwave.woff') format('woff'),
-       url('fonts/Shockwave.ttf') format('truetype'), 
-       url('fonts/Shockwave.otf') format('otf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-/* testing! */
-.projects-section {
-  width: 100%;
-  padding: 20px 0;
-  box-sizing: border-box;
-  background-color: #0D1B2A;
-}
-
-.project-container {
   display: flex;
-  flex-direction: row;
-  /* Use space-around or space-between for equal spacing */
-  justify-content: space-around; /* Or try space-between */
-  align-items: flex-start;
-  /* Remove the fixed width on the container */
-  /* width: 80%; */
-  box-sizing: border-box;
-  padding: 0 20px; /* Add some padding to the container to control outer spacing */
-}
-
-.project {
-  flex: 0 0 auto; /* Don't grow or shrink, auto width based on content/basis */
-  width: calc(38% - 120px); /* Adjust width based on desired spacing */
-  overflow: hidden;
-  position: relative;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
   margin: 0;
-  height: 700px;
-  font-family: 'Veto Sans', sans-serif;
-  box-sizing: border-box;
-}
-
-.project-link1 {
-  display: block;
   width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: inherit;
 }
 
-.project img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
-}
-
-.project:hover img {
-  transform: scale(1.05);
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  display: flex;
-  flex-direction: column; /* Stack header and details vertically */
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.project:hover .overlay {
-  opacity: 1;
-}
-
-/* Style for the project header */
-.overlay .project-header {
-  margin-bottom: 15px;
-}
-
-.overlay .project-header h2.project-title {
-  margin-bottom: 5px;
-  font-size: 1.8em;
-}
-
-.overlay .project-header p.project-subtitle {
-  font-size: 1em;
-  color: #eee;
-}
-
-/* Style for the horizontal project details */
-.overlay .project-details-horizontal {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.overlay .detail-item-horizontal {
-  display: flex;
-  align-items: center;
-  margin: 5px 10px;
-}
-
-.overlay .detail-item-horizontal img.detail-icon-horizontal {
-  width: 20px;
-  height: auto;
-  margin-right: 8px;
-}
-
-.overlay .detail-item-horizontal span {
-  font-size: 0.85em;
-}
-
-
-
+/* ============================================== */
+/* == MAIN PAGE                                == */
+/* ============================================== */
 
 .about-container {
-  width: 80%; /* Adjust overall width as needed */
-  max-width: 1000px; /* Optional: Set a maximum width */
-  margin: 20px auto; /* Center the container horizontally and add vertical margin */
+  width: 80%;
+  max-width: 1000px;
+  margin: 20px auto;
   padding: 20px;
   box-sizing: border-box;
-  display: flex; /* Enable Flexbox */
-  align-items: flex-start; /* Align items to the top */
-  /* background-color: #1B263B; */
-}
-
-.page-section-heading {
-  font-size: 2.5em;
-  margin-bottom: 15px;
-  color: #333;
-  text-align: center; /* Center the heading above the flex layout */
-  width: 100%;
-}
-
-.my-divider {
-  border: 0;
-  height: 2px;
-  background-color: #ccc;
-  margin: 0 auto 30px !important;
-  width: 30%;
+  display: flex; 
+  align-items: flex-start; 
 }
 
 .about-image {
-  width: 50%; /* Take up roughly half the container width */
-  max-width: 300px; /* Optional: Set a maximum image width */
-  height: auto; /* Maintain aspect ratio */
+  width: 50%; 
+  max-width: 300px;
+  height: auto;
   border-radius: 10px;
   object-fit: cover;
-  margin-right: 30px; /* Add spacing between image and text */
+  margin-right: 30px;
   margin-bottom: 0;
 }
 
 .about-text {
-  width: 50%; /* Take up the other roughly half of the container width */
-  flex-grow: 1; /* Allow it to expand if needed */
+  width: 50%;
+  flex-grow: 1; 
 }
 
 .about-text h2 {
@@ -595,40 +406,94 @@ body p, ul, li {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap onto the next line */
-    justify-content: center; /* Centers the cards within the list container */
-    gap: 20px; /* Reduced gap for a tighter grid */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .skills-list li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Vertically centers the content */
+  justify-content: center;
   text-align: center;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  background-color: #2b3a4d; /* Add a background to make the cards visible */
-
-  /* Key properties for fixed size */
-  width: 150px; /* Adjust this value as needed */
-  height: 150px; /* Adjust this value as needed */
-  flex-shrink: 0; /* Prevents items from shrinking */
-  padding: 10px; /* Adjusted padding to better fit content */
-
+  background-color: #2b3a4d;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  padding: 10px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* New rule for the hover effect */
 .skills-list li:hover {
-    transform: translateY(-5px); /* Moves the card up by 5 pixels */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Makes the shadow more prominent */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
 .skills-list img {
     max-width: 50px;
     height: auto;
     margin-bottom: 10px;
+}
+
+/* ============================================== */
+/* == 04. PORTFOLIO-SPECIFIC PAGE TOP          == */
+/* ============================================== */
+
+.portfolio-title-section {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden; 
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+  letter-spacing: 2px;
+}
+
+.portfolio-title-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.portfolio-title-section h1 {
+  font-size: 4em;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-family: "Veto Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.portfolio-title-section .title-separator {
+  width: 80px; 
+  height: 2px; 
+  background-color: white; 
+  margin: 0 auto 20px; 
+}
+
+.contribution-container {
+    background-color: #1C334A; 
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    margin-top: 20px;
 }
 
 .contribution-section {
@@ -644,38 +509,35 @@ body p, ul, li {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap onto the next line */
-    justify-content: center; /* Centers the cards within the list container */
-    gap: 20px; /* Reduced gap for a tighter grid */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .contribution-list li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Vertically centers the content */
+  justify-content: center;
   text-align: center;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  background-color: #2b3a4d; /* Add a background to make the cards visible */
-
-  /* Key properties for fixed size */
-  width: 250px; /* Adjust this value as needed */
-  height: 200px; /* Adjust this value as needed */
-  flex-shrink: 0; /* Prevents items from shrinking */
+  background-color: #2b3a4d;
+  width: 250px;
+  height: 200px;
+  flex-shrink: 0;
   padding: 10px;
-
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .contribution-list a {
   text-decoration: none;
   color: inherit;
 }
 
-/* New rule for the hover effect */
 .contribution-list li:hover {
-    transform: translateY(-5px); /* Moves the card up by 5 pixels */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Makes the shadow more prominent */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
 .contribution-list img {
@@ -684,26 +546,17 @@ body p, ul, li {
     margin-bottom: 20px;
 }
 
-
-
-
-
-
-
-
-
-/* Project Details Hero Section */
 .project-details-page .hero-section {
   position: relative;
   width: 100%;
   height: 320px;
   overflow: hidden;
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center;
+  align-items: center;
   color: white;
   text-align: center;
-  flex-direction: column; /* Stack title and links vertically */
+  flex-direction: column;
 }
 
 .project-details-page .hero-image {
@@ -731,8 +584,8 @@ body p, ul, li {
   position: relative;
   z-index: 3;
   display: flex;
-  flex-direction: column; /* Stack title and links */
-  align-items: center; /* Center items within hero-content */
+  flex-direction: column;
+  align-items: center;
 }
 
 .project-details-page .hero-content .project-title {
@@ -743,240 +596,39 @@ body p, ul, li {
 
 .project-details-page .hero-content .project-links {
   display: flex;
-  gap: 30px; /* Spacing between the icons */
+  gap: 30px;
 }
 
 .project-details-page .hero-content .project-links a {
-  color: white; /* Icon color */
-  font-size: 1em; /* Icon size (can also be controlled by Font Awesome classes) */
-  text-decoration: none; /* Remove underlines from links */
-  opacity: 0.7; /* Slightly transparent initially */
-  transition: opacity 0.3s ease-in-out; /* Smooth hover effect */
+  color: white;
+  font-size: 1em;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .project-details-page .hero-content .project-links a:hover {
-  opacity: 1; /* Fully opaque on hover */
+  opacity: 1;
 }
 
-/* Styles for the project info bar below the hero */
-.project-details-page .project-info-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 100px;
-}
-
-.project-details-page .info-item {
-  display: flex; /* Arrange icon and text horizontally within each item */
-  flex-direction: row; /* Icon then text */
-  align-items: center; /* Vertically align icon and text */
-  margin: 0 20px; /* Add spacing between info items */
-}
-
-.project-details-page .info-item img {
-  width: 30px; /* Adjust icon size as needed */
-  height: auto;
-  margin-right: 10px; /* Spacing between icon and text */
-}
-
-.project-details-page .info-item span {
-  /* font-size: 0.9em;  */
-  color: white; /* Adjust text color as needed */
-}
-
-/* Project Tagline */
-.project-details-page .project-tagline {
-  font-size: 1.2em;
-  color: #8b8a8a;
-  text-align: center;
-  margin: 20px auto;
-  max-width: 80%;
-  font-style: italic;
-}
-
-
-.video-left-text-centered-right {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.video-right-text-centered-left {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.video-right-text-centered-left .feature-media {
-  order: 2;
-}
-
-.feature-media {
-  width: 50%;
-}
-
-.feature-media video {
-  display: block; /* Prevent extra space below the video */
-  width: 100%; /* Make the video fill its container (the left half) */
-  height: auto; /* Maintain aspect ratio */
-}
-
-.feature-media img {
-  display: block; 
-  width: 100%; 
-  height: auto; 
-}
-
-.video-grid {
-  order: 1; 
-  width: 50%; 
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 1fr 1fr; 
-}
-
-/* Styles for the individual videos within the grid */
-.video-grid video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-.feature-text {
-  width: 50%; /* Occupy the right half */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center text horizontally */
-  justify-content: center; /* Center text vertically (optional) */
-  padding-left: 20px; /* Add some spacing */
-  box-sizing: border-box; /* Include padding in width */
-}
-
-.feature-text h3 {
-  text-align: center;
-  width: 80%; /* Adjust text width as needed */
-}
-
-.feature-text p,
-.feature-text ul {
-  text-align: left;
-  width: 80%; /* Adjust text width as needed */
-}
-
-.keyword {
-  color: yellow;
-  /* font-weight: bold; */
-}
-
-.keyword-blue {
-  color: #65B2FF;
-  font-weight: bold;
-}
-
-
-
-.project-details-page .centered-text-with-carousel-section {
-  padding: 40px 20px; /* Add some top and bottom padding */
-  text-align: center; /* Center the text within the section */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center the carousel container horizontally */
-  gap: 30px; /* Spacing between text and carousel */
-}
-
-.project-details-page .centered-text-with-carousel-section:last-child {
-  border-bottom: none; /* Remove border from the very last section */
-}
-
-.project-details-page .centered-text-container {
-  max-width: 800px; /* Limit the width of the text for better readability */
-  margin: 0 auto; /* Center the text container horizontally */
-}
-
-.project-details-page .centered-text-container h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  /* color: white; */
-}
-
-.project-details-page .centered-text-container p {
-  line-height: 1.7;
-  /* color: #555; */
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.project-details-page .image-carousel-container {
-  width: 100%; /* Make the carousel container take full width */
-  /* Add any specific styling for your carousel container here */
-}
-
-/* Basic styling for the placeholder carousel - adjust based on your library */
-.project-details-page .image-carousel-container .carousel {
-  display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling if not using a library */
-  scroll-snap-type: x mandatory; /* For smoother scrolling with snap points */
-}
-
-.project-details-page .image-carousel-container .carousel img {
-  width: 300px; /* Adjust image width */
-  height: auto;
-  margin-right: 20px;
-  scroll-snap-align: start;
-}
-
-.project-details-page .image-carousel-container .carousel img:last-child {
-  margin-right: 0; /* Remove margin from the last image */
-}
-
-
-
-/* PDF VIEWER */
-.pdf-viewer {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.pdf-viewer-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-
-
-
-
-
-
-/* TESTING NEW PAGE */
-.section-title {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 50px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid white; /* A subtle line under the title */
-  letter-spacing: 2px;
-}
+/* ============================================== */
+/* == DETAILS PAGE SECTIONS                    == */
+/* ============================================== */
 
 .project-area-normal {
-  background-color: #1C334A; /* Darker background for the project box */
-  padding: 30px; /* Padding inside the box */
-  border-radius: 5px; /* Slightly rounded corners */
-  margin-bottom: 15px; /* Space between different project areas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+  background-color: #1C334A;
+  padding: 30px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .project-title-normal {
-  /* color: #65B2FF; */
   font-size: 1.8em;
-  margin-bottom: 25px; /* Space below the title */
-  text-align: center; /* Center the project title */
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-/* Flexbox Container for Image and Description */
 .project-content-normal {
   display: flex; /* Makes direct children (image & description) flex items */
   gap: 30px; /* Space between the image and the text */
@@ -984,7 +636,27 @@ body p, ul, li {
   flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
 }
 
-/* Image Styling */
+.project-content-normal {
+    display: flex; /* Make it a flex container */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    gap: 30px; /* Space between flex items */
+    align-items: flex-start; /* Align items to the top (important for text/spider height) */
+    /* You might need to remove or adjust existing width/max-width/padding/margin on this class */
+    padding: 20px; /* Example: add some padding to the overall content area */
+}
+
+/* Style for the text description column */
+.project-description-normal {
+    flex: 1; /* Allow it to grow */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+/* Adjustments for the media carousel if it needs to be full width below the columns */
+.project-content-normal .media-carousel {
+    flex-basis: 100%; /* Makes the carousel take up the full width below the two columns */
+    margin-top: 30px; /* Space between columns and carousel */
+}
+
 .project-image-normal {
   flex: 1; /* Allows image container to grow and shrink */
   min-width: 300px; /* Minimum width before wrapping */
@@ -994,7 +666,7 @@ body p, ul, li {
   align-items: center; /* Centers image vertically */
 }
 
-.project-image-normal img{
+.project-image-normal img {
   max-width: 100%; /* Ensures image doesn't overflow its container */
   height: auto; /* Maintains aspect ratio */
   /* border: 1px solid #444; Subtle border around image */
@@ -1043,13 +715,6 @@ body p, ul, li {
   color: #ccc;
 }
 
-main {
-  max-width: 1600px; /* Limit content width */
-  margin: 40px auto; /* Center content with margin */
-  padding: 20px;
-}
-
-
 .puzzle-sections-container {
   display: flex; /* Make the puzzle blocks sit side-by-side */
   gap: 15px; /* Space between the two puzzle blocks (will now show body background) */
@@ -1057,17 +722,13 @@ main {
   flex-wrap: wrap; /* Allow blocks to wrap onto the next line on smaller screens */
 }
 
-/* Styling for each individual puzzle block (Puzzle Design or Puzzle System) */
 .puzzle-block {
   flex: 1; /* Each block takes equal space */
   min-width: 300px; /* Minimum width before wrapping */
-  
-  /* ADD these styles to individual blocks: */
   background-color: #1C334A; /* This is now the background for each block */
   padding: 30px; /* Padding inside each block, matching the project-area */
   border-radius: 5px; /* Slightly rounded corners for each block */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
-
   box-sizing: border-box; /* Include padding in the width calculation */
   text-align: center; /* Center the title, image, and text within each block */
 }
@@ -1110,89 +771,157 @@ main {
   color: #ccc;
 }
 
+/* ============================================== */
+/* == DETAILS PAGE ABOUT SECTION               == */
+/* ============================================== */
 
-
-
-/* Main Header Container */
-.page-nav-header {
-  background-color: #2a3d52;
-  padding: 15px 0; /* Vertical padding, no horizontal padding from container */
-  text-align: center; /* Centers the navigation links inside */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: subtle shadow for depth */
-
-  /* NEW: Adjustments for width, margin, and rounded edges */
-  max-width: 500px; /* Set a maximum width (adjust as needed, e.g., 600px, 450px) */
-  margin: 20px auto; /* 50px top/bottom margin, 'auto' for left/right to center it */
-                        /* This creates the gap from the section above and below */
-  border-radius: 4px; /* Apply slight rounded edges (adjust as needed) */
-  box-sizing: border-box; /* Ensures padding is included within the max-width */
-
-  /* Remove the old 'width: 100%;' and 'margin-bottom: 50px;' if they exist here */
-  /* The 'margin: 50px auto;' handles both top/bottom and centering */
-}
-
-/* Navigation List */
-.page-nav .page-nav-links {
-  list-style: none; /* Remove bullet points from the list */
-  padding: 0;
-  margin: 0;
-  display: inline-block; /* Allows the ul to shrink-wrap its content and be centered by text-align on parent */
-}
-
-/* Individual Navigation Items */
-.page-nav .page-nav-links li {
-  display: inline-block; /* Arrange list items horizontally */
-  margin: 0 10px; /* Space between nav items */
-}
-
-/* Links themselves */
-.page-nav .page-nav-links .page-nav-item {
-  color: #e0e0e0; /* Light text color for normal links */
-  text-decoration: none; /* Remove underline from links */
-  font-size: 1.1em;
-  padding: 8px 15px; /* Padding inside the clickable area of each link */
-  border-radius: 5px; /* Slightly rounded corners for the link background */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-/* Hover effect */
-.page-nav .page-nav-links .page-nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Slight highlight on hover */
-}
-
-/* Active (current page) link style */
-.page-nav .page-nav-links .page-nav-item.active {
-  background-color: #3b4e64; /* Darker background for the active link */
-  color: #ffffff; /* Brighter text color for the active link */
-  cursor: default; /* Change cursor to default to indicate it's the current page */
-}
-
-.portfolio-title-section.hidden {
-  display: none;
-}
-
-
-
-
-
-/* ABOUT Section Specific Styles */
 .about-top-section {
   display: flex; /* Keeps the media and description side-by-side */
   gap: 20px; /* Space between the media and description */
   margin-bottom: 15px; /* Margin below the entire combined section */
   flex-wrap: wrap; /* Allows wrapping on smaller screens */
-  /* align-items: flex-start; */
-
-  /* Styles for the "single box thing" */
   background-color: #1C334A;
-                             /* If you want it completely without the dark background, set this to transparent.
-                                Otherwise, this will be your new combined box background */
   border-radius: 5px; /* Rounded corners for the combined box */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   padding: 30px; /* Internal padding within the combined box around its contents */
   box-sizing: border-box; /* Include padding in width calculation */
   width: 100%; /* Make it take full width of its parent container */
 }
+
+.about-description-panel {
+  flex: 1;
+  min-width: 300px;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-description-panel h2 {
+  color: #65B2FF;
+  font-size: 1.35em;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  text-align: left;
+  margin-top: 0px;
+}
+
+.project-info-list2 {
+    flex-grow: 1; 
+    max-width: 65%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.project-info-list2 li {
+    display: flex; /* Use flexbox for icon and text alignment */
+    align-items: center;
+    margin-bottom: 5px; /* Space between list items */
+    color: white;
+    font-size: 1em;
+}
+
+.project-info-list2 p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.tags {
+  margin-top: auto; /* Pushes tags to the bottom if panel grows */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px; /* Space between tags */
+}
+
+.tag {
+  background-color: #3B4E64; /* Darker background for tags */
+  color: white;
+  padding: 5px 12px;
+  border-radius: 4px; /* Pill shape */
+  font-size: 0.85em;
+  white-space: nowrap; /* Prevent tags from breaking lines */
+}
+
+/* Responsive adjustments for About section */
+@media (max-width: 768px) {
+  .about-top-section {
+      flex-direction: column; /* Stack top sections vertically */
+      align-items: center; /* Center them when stacked */
+  }
+
+  .media-carousel,
+  .about-description-panel {
+      max-width: 100%; /* Take full width when stacked */
+      min-width: unset; /* Remove min-width constraint */
+      width: 100%; /* Explicitly set full width */
+  }
+
+  .media-carousel {
+      margin-bottom: 30px; /* Space between stacked carousel and description */
+  }
+
+  .about-bottom-section {
+      flex-direction: column; /* Stack bottom summaries vertically */
+      align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .media-carousel {
+      padding: 15px;
+  }
+  .about-description-panel {
+      padding: 20px;
+  }
+  .about-bottom-section {
+      gap: 20px;
+  }
+  .icon-placeholder {
+      font-size: 1.3em;
+      margin-right: 10px;
+  }
+  .tag {
+      font-size: 0.8em;
+      padding: 4px 10px;
+  }
+}
+
+.about-description-image-container {
+  width: 100%; 
+  margin-bottom: 20px; 
+  box-sizing: border-box;
+}
+
+.about-description-image-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments (if needed, otherwise inherit from parent) */
+@media (max-width: 768px) {
+  .about-description-image-container {
+      padding: 0 5px; /* Adjust padding for smaller screens if desired */
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-description-image-container {
+      margin-top: 15px;
+      margin-bottom: 15px;
+  }
+}
+
+/* ============================================== */
+/* == MEDIA CAROUSEL ABOUT                     == */
+/* ============================================== */
 
 .media-carousel {
   width: 60%;
@@ -1211,7 +940,6 @@ main {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  /* border-radius: 8px 8px 0 0; */
   position: relative;
 }
 
@@ -1231,7 +959,6 @@ main {
 
 .media-display img.active-media,
 .media-display video.active-media {
-  /* display: block; */
   opacity: 1;
   z-index: 2;
 }
@@ -1261,287 +988,6 @@ main {
   border-color: #65B2FF;
 }
 
-.about-description-panel {
-  flex: 1;
-  min-width: 300px;
-  
-  background-color: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-
-.about-description-panel h2 {
-  color: #65B2FF;
-  font-size: 1.35em;
-  margin-bottom: 15px;
-  line-height: 1.4;
-  text-align: left;
-  margin-top: 0px;
-}
-
-.project-info-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 5px;
-}
-
-.project-info-list li {
-  display: flex; /* Arrange icon and text side-by-side */
-  align-items: center; /* Vertically center icon and text */
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-.project-info-icon {
-  width: 24px;   /* Adjust width as needed for your icon size */
-  height: 24px;  /* Adjust height to maintain aspect ratio */
-  object-fit: contain; /* Ensures the entire icon is visible */
-  margin-right: 15px; /* Space between icon and text */
-  vertical-align: middle; /* Helps align with text */
-}
-
-/* Optional: If you want to size them slightly differently on smaller screens */
-@media (max-width: 480px) {
-  .project-info-icon {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-  }
-}
-
-.project-info-list p {
-  margin: 0;
-  /* font-size: 0.95em; */
-  color: white;
-}
-
-.tags {
-  margin-top: auto; /* Pushes tags to the bottom if panel grows */
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px; /* Space between tags */
-}
-
-.tag {
-  background-color: #3B4E64; /* Darker background for tags */
-  color: white;
-  padding: 5px 12px;
-  border-radius: 4px; /* Pill shape */
-  font-size: 0.85em;
-  white-space: nowrap; /* Prevent tags from breaking lines */
-}
-
-
-/* Bottom Project Summaries */
-.about-bottom-section {
-  display: flex;
-  gap: 15px; 
-  flex-wrap: wrap; 
-  margin-bottom: 40px;
-}
-
-.content-wrapper-about {
-    display: flex; /* Makes children (text and panel) arrange horizontally */
-    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
-    gap: 15px; /* Space between the main text and the panel */
-    max-width: 1200px; /* Adjust as needed for your content width */
-    margin: 0 auto; /* Center the content wrapper */
-    align-items: stretch;
-}
-
-.main-text-content {
-    flex: 2; /* Takes up more space (e.g., 2 parts) compared to the panel */
-    min-width: 300px; /* Minimum width before wrapping */
-}
-
-.main-text-content p {
-    margin-bottom: 1em; /* Spacing between paragraphs */
-    line-height: 1.6;
-}
-
-.contribution-panel {
-    flex: 1;
-    min-width: 250px;
-    background-color: #3B4E64;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-}
-
-.contribution-panel h3 {
-    color: #fff; /* A highlight color for the heading */
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.5em; /* Adjust font size as needed */
-    text-align: center; /* Center the heading */
-}
-
-.contribution-panel ul {
-    list-style: none; /* Remove default bullet points */
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-.contribution-panel li {
-    padding-left: 25px; /* Space for custom bullet */
-    margin-bottom: 10px;
-    position: relative; /* For custom bullet positioning */
-    line-height: 1.5;
-    color: #ccc;
-}
-
-.contribution-panel li::before {
-    content: '•'; /* Custom bullet point character */
-    color: #fff; /* Color for the custom bullet */
-    position: absolute;
-    left: 0;
-    font-size: 1.2em;
-    top: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        gap: 30px; /* Adjust gap for vertical stacking */
-    }
-
-    .main-text-content,
-    .contribution-panel {
-        flex: auto; /* Allow them to take full width */
-        width: 100%; /* Ensure full width */
-    }
-}
-
-.bottom-project-summary {
-  /* flex: 1; */
-  /* min-width: 300px;  */
-  background-color: #1C334A;
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  box-sizing: border-box;
-}
-
-.bottom-project-summary h3 {
-  color: #65B2FF;
-  font-size: 1.3em;
-  margin-bottom: 15px;
-  text-align: left;
-  margin-top: 0px;
-}
-
-.bottom-project-summary p {
-  /* font-size: 0.9em; */
-  line-height: 1.6;
-  color: white;
-  text-align: left;
-}
-
-.bottom-project-summary ul {
-    /* Use flexbox on the unordered list to center its contents */
-    display: flex;
-    flex-direction: column; /* Stacks the list items vertically */
-    align-items: center; /* Centers the list items and their content horizontally */
-    padding-left: 0; /* Remove default padding to allow full centering */
-    list-style-position: inside; /* Positions the bullet inside the list item's content box */
-}
-
-.bottom-project-summary ul li {
-    text-align: center;
-}
-
-/* Responsive adjustments for About section */
-@media (max-width: 768px) {
-  .about-top-section {
-      flex-direction: column; /* Stack top sections vertically */
-      align-items: center; /* Center them when stacked */
-  }
-
-  .media-carousel,
-  .about-description-panel {
-      max-width: 100%; /* Take full width when stacked */
-      min-width: unset; /* Remove min-width constraint */
-      width: 100%; /* Explicitly set full width */
-  }
-
-  .media-carousel {
-      margin-bottom: 30px; /* Space between stacked carousel and description */
-  }
-
-  .about-bottom-section {
-      flex-direction: column; /* Stack bottom summaries vertically */
-      align-items: center;
-  }
-
-  .bottom-project-summary {
-      width: 100%; /* Take full width when stacked */
-      min-width: unset;
-      margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .media-carousel {
-      padding: 15px;
-  }
-  .about-description-panel {
-      padding: 20px;
-  }
-  .about-bottom-section {
-      gap: 20px;
-  }
-  .project-info-list li {
-      margin-bottom: 10px;
-  }
-  .icon-placeholder {
-      font-size: 1.3em;
-      margin-right: 10px;
-  }
-  .tag {
-      font-size: 0.8em;
-      padding: 4px 10px;
-  }
-}
-
-.about-description-image-container {
-  width: 100%; 
-  margin-bottom: 20px; 
-  box-sizing: border-box;
-}
-
-.about-description-image-container img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  /* border-radius: 5px; */
-}
-
-/* Responsive adjustments (if needed, otherwise inherit from parent) */
-@media (max-width: 768px) {
-  .about-description-image-container {
-      padding: 0 5px; /* Adjust padding for smaller screens if desired */
-      margin-top: 20px;
-      margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-description-image-container {
-      margin-top: 15px;
-      margin-bottom: 15px;
-  }
-}
-
-
-/* Pagination Dots Container */
 .pagination-dots {
     display: flex; /* Use flexbox to arrange dots horizontally */
     justify-content: center; /* Center the dots */
@@ -1570,9 +1016,6 @@ main {
 .pagination-dots .dot:hover {
     background-color: rgba(255, 255, 255, 0.7); /* Slightly brighter on hover */
 }
-
-
-/* --- Modifications for Arrows Next to Thumbnails --- */
 
 .media-controls-wrapper {
     display: flex; /* Make this a flex container */
@@ -1621,10 +1064,10 @@ main {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* ============================================== */
+/* == CODE TOGGLES                             == */
+/* ============================================== */
 
-/* In your style.css */
-
-/* Base styles for the pre/code block */
 pre {
     background-color: #2a2a2a; /* Dark background for code block */
     color: #f8f8f2; /* Light text color */
@@ -1718,115 +1161,10 @@ pre {
     line-height: 1.4;
 }
 
+/* ============================================== */
+/* == TWO COLUMN SECTIONS                      == */
+/* ============================================== */
 
-/* --- Add these styles to your style.css --- */
-
-/* Container for the concept panels and arrow */
-.concept-flow-section {
-    display: flex; /* Makes panels and arrow sit side-by-side */
-    align-items: stretch; /* Vertically centers the items (panels and arrow) */
-    gap: 20px; /* Space between the panels and the arrow */
-    margin-top: 10px; /* Space above this section */
-    margin-bottom: 15px; /* Space below this section */
-    flex-wrap: wrap; /* Allows stacking on smaller screens */
-    justify-content: center; /* Centers items when wrapped or if total width is less than container */
-}
-
-/* Styles for each concept panel */
-.concept-panel {
-    flex: 1; /* Allows panels to grow and shrink */
-    min-width: 300px; /* Minimum width before wrapping */
-    background-color: #1C334A; /* Slightly darker background for the panels */
-    border-radius: 5px;
-    padding: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    box-sizing: border-box; /* Include padding in width */
-    display: flex;
-    flex-direction: column;
-    /* align-items: stretch; */
-}
-
-.concept-panel h2 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    text-align: center; /* Center the panel title */
-}
-
-.concept-panel p {
-    color: #ccc; /* Lighter text color */
-    /* font-size: 0.95em; */
-    line-height: 1.6;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.concept-panel ul {
-    list-style: disc; /* Default bullet style */
-    color: #ccc;
-    margin-left: 25px; /* Indent the bullets */
-    text-align: left;
-    margin-top: 10px;
-    /* font-size: 0.95em; */
-    line-height: 1.6;
-}
-
-.concept-panel ul li {
-    margin-bottom: 8px;
-    line-height: 1.4;
-}
-
-
-/* Styles for the arrow in between */
-.concept-arrow {
-    /* Existing styles for positioning and sizing */
-    font-size: 2.5em; /* Adjust size as needed */
-    color: #65B2FF; /* Color of your arrow */
-    position: relative; /* Needed for transform animation */
-    display: flex; /* Helps in centering */
-    justify-content: center;
-    align-items: center;
-
-    /* Animation for gentle bounce */
-    animation: arrowHorizontalBounce 1s infinite alternate ease-in-out;
-}
-
-@keyframes arrowHorizontalBounce {
-    0% { transform: translateX(0); } /* Starting position */
-    50% { transform: translateX(5px); } /* Moves 5px to the right */
-    100% { transform: translateX(0); } /* Returns to starting position */
-}
-
-/* .concept-arrow {
-    font-size: 3em; 
-    color: #65B2FF; 
-    flex-shrink: 0; 
-    padding: 0 10px; 
-    text-align: center;
-    align-self: center;
-} */
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .concept-flow-section {
-        flex-direction: column; /* Stack panels and arrow vertically */
-        gap: 15px; /* Adjust gap for stacked layout */
-    }
-
-    .concept-panel {
-        min-width: unset; /* Allow panels to shrink */
-        width: 100%; /* Take full width when stacked */
-    }
-
-    /* Rotate the arrow to point down when stacked vertically */
-    .concept-arrow {
-        transform: rotate(90deg);
-        font-size: 2.5em; /* Smaller arrow when stacked */
-        margin: 10px 0; /* Adjust vertical margin for stacked arrow */
-    }
-}
-
-
-/* General styles for two-column sections (if not already defined) */
 .two-column-section {
     display: flex;
     gap: 15px; /* Space between columns */
@@ -1904,151 +1242,84 @@ pre {
     }
 }
 
+/* ============================================== */
+/* == TIMELINES                                == */
+/* ============================================== */
 
-/* --- Timeline Container --- */
-.timeline-item {
-  background-color: #1C334A; /* A darker background color for the entire section */
-  padding: 30px; /* Add padding inside the background area (top/bottom, left/right) */
-  margin-top: 10px; /* Space above this section if needed */
-  margin-bottom: 15px; /* Space below this section if needed */
-  border-radius: 5px; /* Slightly rounded corners for the background block */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Optional: subtle shadow for depth */
-
-  display: flex; /* Use flexbox to center the title and align content */
-  flex-direction: column; /* Stack content vertically */
-  align-items: center; /* Center items horizontally within this section */
-}
-
-.timeline-container {
+.vertical-timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     position: relative;
-    width: 80%; /* Adjust width as needed */
-    max-width: 900px; /* Max width for larger screens */
-    height: 30px; /* Height to contain the line and dots */
-    margin: 50px auto; /* Center it horizontally with some vertical spacing */
-    display: flex; /* Use flexbox to easily position line and dots */
-    justify-content: center; /* Center content */
-    align-items: center; /* Vertically center content */
-    /* margin-top: 50px; */
+    max-width: unset;
+    margin: 0 auto;
+    padding-left: 0;
 }
 
-/* --- The Horizontal Line --- */
-.timeline-line {
+.vertical-timeline-container::before {
+    content: '';
     position: absolute;
-    width: 100%; /* Spans the full width of its container */
-    height: 4px; /* Thickness of the line */
-    background-color: #ccc; /* Color of the line */
-    border-radius: 2px;
-    z-index: 1; /* Place it below the dots */
+    /* Corrected left position for centering on dot */
+    left: 9px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #FFFFFF; /* White line */
+    z-index: 0;
 }
 
-/* --- Dot Wrapper --- */
-.timeline-dot-wrapper {
-    position: absolute; /* Position over the line */
+/* Vertical dot */
+.vertical-timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: white; /* Keeping dot blue unless specified otherwise */
+    /* border: 2px solid #3B4E64; */
+    border-radius: 50%;
+    flex-shrink: 0;
+    z-index: 1;
+    /* Corrected margin-left to center the dot over the line */
+    margin-left: -20px; 
+}
+
+.vertical-timeline-content {
+    flex-grow: 1;
+    padding: 10px 0;
+    color: #ccc;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.vertical-timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between; /* Distribute dots evenly */
-    align-items: center; /* Vertically center dots on the line */
-    z-index: 2; /* Place dots above the line */
+    text-align: left;
+    padding-left: 20px;
 }
 
-/* --- Individual Dots --- */
-.timeline-dot {
-    width: 20px; /* Size of the dot */
-    height: 20px; /* Size of the dot */
-    background-color: #ccc; /* Color of the dots */
-    border-radius: 50%; /* Make it perfectly round */
-    flex-shrink: 0; /* Prevent dots from shrinking */
-    box-shadow: 0 0 4px #ccc; /* Subtle glow */
-
-    /* --- Dot Animation Properties --- */
-    animation-name: dotPulse;
-    animation-duration: 2s; /* Duration of one pulse cycle */
-    animation-timing-function: ease-in-out; /* Smooth start and end */
-    animation-iteration-count: infinite; /* Loop infinitely */
-    animation-direction: alternate; /* Scale up then scale down */
+.vertical-timeline-item:last-child {
+    margin-bottom: 0;
 }
 
-/* --- Staggered Animation for Dots (using IDs) --- */
-#timelineDot1 {
-    animation-delay: 0s; /* Starts immediately */
-}
-
-#timelineDot2 {
-    animation-delay: 0.5s; /* Starts half a second later */
-}
-
-#timelineDot3 {
-    animation-delay: 1s; /* Starts one second later */
-}
-
-/* --- Keyframes for Dot Pulse Animation --- */
-@keyframes dotPulse {
-    0% {
-        transform: scale(1); /* Normal size */
-    }
-    50% {
-        transform: scale(1.2); /* Scale up by 20% */
-    }
-    100% {
-        transform: scale(1); /* Back to normal size */
-    }
-}
-
-/* --- Content Wrapper for Week Blocks (to align below dots) --- */
-.timeline-content-wrapper {
-    display: flex;
-    justify-content: space-between; /* Space out the week blocks */
-    width: 80%; /* Match width of timeline-container */
-    max-width: 900px;
-    /* margin: 30px auto 80px auto; Space below timeline, center horizontally */
-    gap: 20px; /* Space between week blocks */
-    flex-wrap: wrap; /* Allow blocks to wrap on smaller screens */
-}
-
-.timeline-week-block {
-    flex: 1; /* Allow blocks to grow and shrink */
-    min-width: 250px; /* Minimum width before wrapping */
-    /* background-color: #65B2FF; Darker background like your other panels */
-    border-radius: 5px; /* Rounded corners */
-    /* padding: 20px; */
-    box-sizing: border-box; /* Include padding in width calculations */
-    text-align: center; /* Center text within each block */
-    color: #ccc; /* Readable text color */
-}
-
-.timeline-week-block h4 {
+.vertical-timeline-content h3 {
     color: #65B2FF;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    font-size: 1.2em;
 }
 
-.timeline-week-block p {
-    /* font-size: 0.95em; */
+.vertical-timeline-content p {
+    /* font-size: 0.9em; */
     line-height: 1.5;
+    margin-bottom: 0;
 }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-    .timeline-container,
-    .timeline-content-wrapper {
-        width: 90%; /* Adjust width for smaller screens */
-        margin-left: auto;
-        margin-right: auto;
-    }
+/* ============================================== */
+/* == REFLECTION SECTION                       == */
+/* ============================================== */
 
-    .timeline-dot {
-        width: 14px; /* Smaller dots on mobile */
-        height: 14px;
-    }
-
-    .timeline-week-block {
-        min-width: 100%; /* Stack blocks vertically on mobile */
-    }
-}
-
-
-/* Target the main section container for layout adjustments */
 #reflectionSection .project-content-normal {
     display: flex; /* Make it a flex container */
     flex-direction: column; /* Stack children (description and image) vertically */
@@ -2101,26 +1372,10 @@ pre {
     margin-bottom: 10px;
 }
 
+/* ============================================== */
+/* == SPIDERS SECTIONS                         == */
+/* ============================================== */
 
-/* --- Add/Modify these styles in your style.css --- */
-
-/* Make project-content-normal arrange its children horizontally */
-.project-content-normal {
-    display: flex; /* Make it a flex container */
-    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
-    gap: 30px; /* Space between flex items */
-    align-items: flex-start; /* Align items to the top (important for text/spider height) */
-    /* You might need to remove or adjust existing width/max-width/padding/margin on this class */
-    padding: 20px; /* Example: add some padding to the overall content area */
-}
-
-/* Style for the text description column */
-.project-description-normal {
-    flex: 1; /* Allow it to grow */
-    min-width: 300px; /* Minimum width before wrapping */
-}
-
-/* NEW: Style for the spider animation column */
 .spider-animation-column {
     flex-shrink: 0; /* Prevent this column from shrinking too much */
     width: 50px; /* Fixed width for the spider column - adjust as needed */
@@ -2169,14 +1424,6 @@ pre {
     }
 }
 
-
-/* Adjustments for the media carousel if it needs to be full width below the columns */
-.project-content-normal .media-carousel {
-    flex-basis: 100%; /* Makes the carousel take up the full width below the two columns */
-    margin-top: 30px; /* Space between columns and carousel */
-}
-
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .project-content-normal {
@@ -2217,52 +1464,10 @@ pre {
     z-index: 1; /* Place it behind the spider */
 }
 
+/* ============================================== */
+/* == DESCRIPTION SECTIONS                     == */
+/* ============================================== */
 
-.custom-icon {
-    width: 32px; /* Or whatever size matches fa-2x, usually 32px or 2em */
-    height: 32px;
-    vertical-align: middle; /* Helps align it with text or other icons */
-    /* Add any other styling like margin if needed */
-}
-
-/* If your Font Awesome icons also have specific margins, apply similar ones here */
-.project-links a {
-    margin: 0 10px; /* Example: adjust as per your design */
-}
-
-/* .project-links {
-    display: flex;
-    gap: 8px; 
-    margin-bottom: 15px;
-    flex-wrap: wrap; 
-}
-
-
-.project-links a {
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    width: 36px; 
-    height: 36px; 
-    background-color: #485c78; 
-    border-radius: 6px; 
-    color: #c9d6e4; 
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.project-links a:hover {
-    background-color: #5d7491; 
-    color: #ffffff; 
-}
-
-
-.project-links a i {
-    font-size: 1.2em; 
-    line-height: 1; 
-    
-} */
-
-/* Container for the entire description section */
 .project-description-normal-neila {
     display: flex; /* Make it a flex container */
     flex-direction: column; /* Stack sections vertically */
@@ -2347,9 +1552,10 @@ pre {
     }
 }
 
+/* ============================================== */
+/* == DROPDOWN SECTIONS                        == */
+/* ============================================== */
 
-
-/* --- Styles for the New Section with Dropdowns --- */
 #newSectionWithDropdowns {
     background-color: #1C334A; /* Your specified background */
     padding: 60px 20px;
@@ -2364,6 +1570,25 @@ pre {
 }
 
 #newSectionWithDropdowns h2 {
+    margin-top: 0;
+    margin-bottom: 25px; /* Your specified margin */
+    text-align: center;
+}
+
+#newSectionWithDropdowns-2 {
+    background-color: #1C334A; /* Your specified background */
+    padding: 60px 20px;
+    margin-top: 15px; /* Your specified margin */
+    margin-bottom: 15px; /* Your specified margin */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Your specified shadow */
+    text-align: center; /* For the section title */
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack the title, fixed row, and dropdowns vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+#newSectionWithDropdowns-2 h2 {
     margin-top: 0;
     margin-bottom: 25px; /* Your specified margin */
     text-align: center;
@@ -2483,10 +1708,6 @@ pre {
     color: #ccc; /* Your specified color */
     /* font-size: 0.95em; */
     line-height: 1.6;
-    /* max-height: 400px; */
-    /* overflow-y: auto; 
-    scrollbar-width: thin;
-    scrollbar-color: #555 #333; */
     display: flex; /* Use flexbox for content to ensure image is at bottom */
     flex-direction: column; /* Stack text and image vertically */
 }
@@ -2515,31 +1736,6 @@ pre {
     border-radius: 5px;
     margin-top: 15px;
     margin-top: auto; /* Pushes image to the bottom if there's extra space */
-}
-
-.link-button {
-    /* Inherited from .text-image-dropdown summary and .text-image-dropdown */
-    background-color: #3B4E64; /* Dark Blue/Gray */
-    color: #eee;
-    padding: 15px 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    
-    /* Text/Layout Styles */
-    font-weight: bold;
-    font-size: 1.1em;
-    text-decoration: none; /* Remove default link underline */
-    text-align: center; /* Center the text */
-    display: block; /* Make it fill the available width (like the full-width dropdown) */
-    
-    /* Hover Effect */
-    transition: background-color 0.3s ease;
-}
-
-.link-button:hover {
-    /* Mimics the [open] summary color for a hover state */
-    background-color: #65B2FF; 
-    color: #fff;
 }
 
 
@@ -2584,28 +1780,9 @@ pre {
     grid-column: 1 / -1; /* This makes the item span all columns in the grid */
 }
 
-/* Also, ensure your existing blueprint-embed-container styles are present: */
-.blueprint-embed-container {
-    position: relative;
-    width: 80%;
-    padding-bottom: 40%;
-    overflow: hidden;
-    margin-top: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #2a2a2a;
-    border-radius: 6px;
-}
-
-.blueprint-embed-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
+/* ============================================== */
+/* == CAROUSEL CONTAINER                       == */
+/* ============================================== */
 
 .carousel-container {
     position: relative; 
@@ -2614,10 +1791,6 @@ pre {
     margin: 20px auto; 
     overflow: hidden; 
     border-radius: 5px;
-
-    /* REMOVE: aspect-ratio: 16 / 9; */ 
-    
-    /* Make the container stack its contents (track, controls, dots) vertically */
     display: flex;
     flex-direction: column; 
     height: auto; /* Allow height to be determined by children */
@@ -2626,11 +1799,8 @@ pre {
 .carousel-track {
     /* The track should take up the primary viewing space, using 16:9 aspect ratio */
     aspect-ratio: 16 / 9;
-    
-    /* Ensure the track takes the full width and determines the height based on aspect ratio */
     width: 100%; 
     height: auto;
-    
     display: flex;
     transition: transform 0.5s ease-in-out; 
 }
@@ -2644,7 +1814,6 @@ pre {
     object-fit: contain;
 }
 
-/* --- Optional: Ensure media elements within slides behave correctly --- */
 .carousel-track video,
 .carousel-track img {
     width: 100%; /* Make sure the media itself fills the slide */
@@ -2695,85 +1864,10 @@ pre {
     }
 }
 
+/* ============================================== */
+/* == NEXT TO TIMELINE SECTION                 == */
+/* ============================================== */
 
-
-
-
-
-
-
-
-.vertical-timeline-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    max-width: unset;
-    margin: 0 auto;
-    padding-left: 0;
-}
-
-.vertical-timeline-container::before {
-    content: '';
-    position: absolute;
-    /* Corrected left position for centering on dot */
-    left: 9px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #FFFFFF; /* White line */
-    z-index: 0;
-}
-
-/* Vertical dot */
-.vertical-timeline-dot {
-    width: 20px;
-    height: 20px;
-    background-color: white; /* Keeping dot blue unless specified otherwise */
-    /* border: 2px solid #3B4E64; */
-    border-radius: 50%;
-    flex-shrink: 0;
-    z-index: 1;
-    /* Corrected margin-left to center the dot over the line */
-    margin-left: -20px; 
-}
-
-.vertical-timeline-content {
-    flex-grow: 1;
-    padding: 10px 0;
-    color: #ccc;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.vertical-timeline-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    position: relative;
-    width: 100%;
-    text-align: left;
-    padding-left: 20px;
-}
-
-.vertical-timeline-item:last-child {
-    margin-bottom: 0;
-}
-
-.vertical-timeline-content h3 {
-    color: #65B2FF;
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-size: 1.2em;
-}
-
-.vertical-timeline-content p {
-    /* font-size: 0.9em; */
-    line-height: 1.5;
-    margin-bottom: 0;
-}
-
-/* --- New Content Section Styles (Right Side) --- */
 .timeline-right-content-section {
     flex-grow: 1;
     padding: 40px 20px; /* Padding inside this section */
@@ -2880,6 +1974,10 @@ pre {
   margin-bottom: 15px;
 }
 
+/* ============================================== */
+/* == BEFORE/AFTER SECTION                     == */
+/* ============================================== */
+
 .before-after-container {
     display: flex; /* Arranges children (items, arrow) in a row */
     align-items: center; /* Vertically centers items with the arrow */
@@ -2918,7 +2016,6 @@ pre {
     margin-left: 250px;
 }
 
-
 .before-after-arrow {
     flex-shrink: 0; /* Prevents the arrow from shrinking */
     display: flex;
@@ -2954,11 +2051,10 @@ pre {
     transform: rotate(180deg);
 }
 
+/* ============================================== */
+/* == MAIN PAGE PROJECTS                       == */
+/* ============================================== */
 
-
-
-
-/* --- Global Section Styling (similar to your existing project-area-normal) --- */
 .project-showcase-section {
     max-width: 1800px;
     margin: 40px auto;
@@ -2974,8 +2070,7 @@ pre {
 }
 
 .project-entry:hover {
-    /* transform: scale(1.01);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); */
+    
     transform: translateX(-15px); /* Moves the card up by 5 pixels */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
     z-index: 10;
@@ -2998,7 +2093,6 @@ pre {
     position: relative;
 }
 
-/* --- Left Media Panel (Hero Image/Video) --- */
 .project-hero-media {
     flex: 7; /* This flex value determines its proportion relative to the info panel */
     min-width: 0; /* Allows content to shrink without overflow */
@@ -3034,10 +2128,6 @@ pre {
 }
 
 .project-details-container {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-grow: 1; */
     display: flex;
     flex-wrap: wrap; /* Allows the content to wrap on smaller screens */
     align-items: flex-start;
@@ -3101,22 +2191,6 @@ pre {
     margin-bottom: 10px;
 }
 
-.project-info-list2 {
-    flex-grow: 1; 
-    max-width: 65%;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.project-info-list2 li {
-    display: flex; /* Use flexbox for icon and text alignment */
-    align-items: center;
-    margin-bottom: 5px; /* Space between list items */
-    color: white;
-    font-size: 1em;
-}
-
 #about-info-list-item {
   font-size: 1.05em;
   margin-bottom: 15px;
@@ -3134,24 +2208,12 @@ pre {
     flex-shrink: 0;
 }
 
-.project-info-list2 p {
-    margin: 0;
-    line-height: 1.2;
-}
-
 .tags-and-platform {
     margin-top: auto; /* Pushes this container and its contents to the bottom */
     display: flex;
     justify-content: space-between;
     align-items: flex-end; /* Aligns the tags and icon to the bottom of their container */
     padding-top: 15px; /* Add some space between the info list and this container */
-}
-
-.software-icons {
-    display: flex;
-    flex-direction: column;
-    gap: 8px; /* Space between icons */
-    margin-left: 20px;
 }
 
 .software-icons-grid {
@@ -3182,7 +2244,6 @@ pre {
     margin-top: auto;
 }
 
-/* --- Separator (optional, for multiple entries) --- */
 .project-entry-separator {
     height: 1px; /* A thin line */
     background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent); /* Faded line */
@@ -3261,98 +2322,9 @@ pre {
     }
 }
 
-
-
-.project-hover-info {
-    position: absolute; /* Position relative to .project-entry */
-    right: -280px; /* Initially off-screen to the right (width + some buffer) */
-    top: 0;
-    width: 260px; /* Width of the info box */
-    /* height: 100%;  */
-    background-color: #33435c; /* Background color for the info box */
-    /* border-radius: 12px; */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Deeper shadow for "popping out" */
-    padding: 15px;
-    opacity: 0; /* Initially hidden */
-    visibility: hidden; /* Ensure it's not focusable/interactable when hidden */
-    pointer-events: none; /* Allows clicks to pass through when hidden */
-    transition: opacity 0.3s ease-in-out, right 0.3s ease-in-out; /* Smooth animation */
-    z-index: 1000;
-    display: flex; /* Flexbox for stacking content inside */
-    flex-direction: column;
-    justify-content: space-between; /* Distribute content */
-    min-height: 200px;
-
-    /* position: relative; */
-}
-
-.project-hover-info::before {
-    content: ''; /* Essential for pseudo-elements */
-    position: absolute;
-    left: -18px; /* Position it to the left of the hover box */
-    top: 15%; /* Vertically center it */
-    transform: translateY(-50%); /* Adjust for perfect vertical centering */
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent; /* Top border of the triangle */
-    border-bottom: 10px solid transparent; /* Bottom border of the triangle */
-    border-right: 18px solid #33435c; /* Right border forms the solid part of the triangle, matching background */
-    filter: drop-shadow(-6px 0px 3px rgba(0, 0, 0, 0.5));
-}
-
-/* Show on project-entry hover */
-.project-entry:hover .project-hover-info {
-    opacity: 1;
-    right: -290px; /* Adjust to place it just next to the main entry */
-    visibility: visible;
-    pointer-events: auto; /* Allow interaction when visible */
-}
-
-.hover-info-title {
-    color: #fff;
-    font-size: 1.4em;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.hover-info-date {
-    /* font-size: 0.85em; */
-    color: #aaa;
-    margin-bottom: 10px;
-}
-
-.hover-info-image {
-    width: 100%;
-    height: 120px; /* Fixed height for the small preview image */
-    overflow: hidden;
-    border-radius: 6px;
-    margin-bottom: 10px;
-}
-
-.hover-info-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the area, cropping if needed */
-    display: block;
-}
-
-.hover-info-image video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.hover-info-reviews {
-    /* font-size: 0.85em; */
-    color: #ccc;
-    margin-bottom: 10px;
-}
-
-.review-score {
-    color: #88C070; /* Green for positive */
-    font-weight: bold;
-}
+/* ============================================== */
+/* == TAGS AND PLATFORM ICON                   == */
+/* ============================================== */
 
 .hover-info-tags {
     display: flex;
@@ -3370,14 +2342,6 @@ pre {
     white-space: nowrap;
 }
 
-.hover-info-price {
-    color: #65B2FF; /* Highlight color for price */
-    font-weight: bold;
-    font-size: 1.1em;
-    text-align: right;
-    margin-top: auto; /* Pushes price to the bottom */
-}
-
 
 /* --- Responsive Adjustments (Add these to your existing media queries) --- */
 @media (max-width: 1200px) {
@@ -3392,15 +2356,6 @@ pre {
     }
 }
 
-@media (max-width: 992px) {
-    /* When project-entry stacks vertically, hide the hover panel */
-    .project-hover-info {
-        display: none; /* Hide the hover info panel on smaller screens */
-    }
-}
-
-
-
 .platform-icon {
     /* Use Flexbox to align icons and manage spacing */
     display: flex;
@@ -3414,9 +2369,10 @@ pre {
     color: white;
 }
 
+/* ============================================== */
+/* == OTHER PROJECTS PAGE                      == */
+/* ============================================== */
 
-
-/* Section Container for Sandbox Projects */
 .sandbox-projects-section {
     padding: 40px 20px;
     /* background-color: #2a3447;  */
@@ -3524,7 +2480,10 @@ pre {
     margin-bottom: 5px; /* For wrapping tags */
 }
 
-/* Footer Styles */
+/* ============================================== */
+/* == FOOTER                                   == */
+/* ============================================== */
+
 .site-footer {
     background-color: #1a222f; /* A darker shade for the footer */
     color: #a7bedc; /* Light text color */
@@ -3575,6 +2534,10 @@ pre {
 .footer-social a:hover {
     color: #fff; /* White on hover */
 }
+
+/* ============================================== */
+/* == BLOG PAGE                                == */
+/* ============================================== */
 
 .page-section.portfolio .container {
     max-width: 900px; /* Limit content width for better readability */
@@ -3668,35 +2631,4 @@ pre {
     .blog-post p {
         font-size: 0.95em;
     }
-}
-
-
-
-/* FADE ANIMS ON PAGE SWITCH */
-/*
-  This ensures a smooth transition on all elements.
-  The transition duration should match the JavaScript initialization below.
-*/
-#swup {
-  opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-/*
-  This class is added by Swup to the HTML element
-  when a page is loading. It sets the starting opacity for the fade-out.
-*/
-html.is-animating #swup {
-  opacity: 0;
-}
-
-/*
-  This is an optional class for the fade-in effect on the new page.
-  The new page will start with this class, then Swup removes it.
-*/
-.transition-fade {
-  opacity: 0;
-}
-.transition-fade.is-active {
-  opacity: 1;
 }
